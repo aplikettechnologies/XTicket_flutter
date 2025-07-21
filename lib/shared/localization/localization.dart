@@ -14,21 +14,20 @@ class Localization {
 
   Map flattedTransalation(Map<dynamic, dynamic> json, [String prifix = '']) {
     Map<dynamic, dynamic> transaction = {};
-    json.forEach(
-      (dynamic key, dynamic value) {
-        if (value is Map) {
-          transaction.addAll(flattedTransalation(value, '$prifix$key.'));
-        } else {
-          transaction['$prifix$key'] = value.toString();
-        }
-      },
-    );
+    json.forEach((dynamic key, dynamic value) {
+      if (value is Map) {
+        transaction.addAll(flattedTransalation(value, '$prifix$key.'));
+      } else {
+        transaction['$prifix$key'] = value.toString();
+      }
+    });
     return transaction;
   }
 
   Future load() async {
-    String jsonStringValue = await rootBundle
-        .loadString('assets/languages/${locale?.languageCode}.json');
+    String jsonStringValue = await rootBundle.loadString(
+      'assets/languages/${locale?.languageCode}.json',
+    );
 
     Map mappedValue = json.decode(jsonStringValue);
 
@@ -51,7 +50,7 @@ class LocalizationDelegate extends LocalizationsDelegate<Localization> {
   static Localization? instance;
 
   @override
-  bool isSupported(Locale locale) => ['hi'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => ['en'].contains(locale.languageCode);
 
   @override
   Future<Localization> load(Locale locale) async {
