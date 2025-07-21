@@ -1,0 +1,30 @@
+{
+    "onboarding": {
+        "skip": "Skip",
+        "buyTicketWith": "Buy Ticket with",
+        "quickEasyChickIn": "Quick & Easy Chick-In",
+        "discoverEventsTailoredForYou": "Discover Events Tailored for you",
+        "next": "Next",
+        "getstarted":"Get’s Started"
+    },
+    "login": {
+        "title": "Login",
+        "email": "Email",
+        "password": "Password",
+        "forgotPassword": "Forgot Password?",
+        "loginButton": "Login",
+        "dontHaveAccount": "Don't have an account?",
+        "signUp": "Sign Up"
+    },
+    "register": {
+        "title": "Register",
+        "fullName": "Full Name",
+        "email": "Email",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "registerButton": "Register",
+        "alreadyHaveAccount": "Already have an account?",
+        "login": "Login"
+    },
+    "home": {}
+}
