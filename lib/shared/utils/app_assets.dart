@@ -7,6 +7,9 @@ class AppAssets {
   static const String bgOnboarding = "${baseSvg}bg_onboarding.svg";
   static const String icAppLogoWithTitle =
       "${baseSvg}ic_applogo_with_title.svg";
+  static const String bgOnboarding1 = "${baseSvg}onboarding_1.svg";
+  static const String bgOnboarding2 = "${baseSvg}onboarding_2.svg";
+  static const String bgOnboarding3 = "${baseSvg}onboarding_3.svg";
 
   //LoginScreen
   static const String icAppLogo = "${baseSvg}ic_app_logo.svg";
