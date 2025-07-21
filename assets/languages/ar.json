@@ -8,23 +8,14 @@
     "getstarted": "ابدأ الآن"
   },
   "login": {
-    "title": "تسجيل الدخول",
-    "email": "البريد الإلكتروني",
+    "welcome": "مرحبًا",
+    "sign_in_to_your_account": "سجّل الدخول إلى حسابك",
+    "email_address": "عنوان البريد الإلكتروني",
     "password": "كلمة المرور",
-    "forgotPassword": "هل نسيت كلمة المرور؟",
-    "loginButton": "تسجيل الدخول",
-    "dontHaveAccount": "ليس لديك حساب؟",
-    "signUp": "سجل الآن"
-  },
-  "register": {
-    "title": "إنشاء حساب",
-    "fullName": "الاسم الكامل",
-    "email": "البريد الإلكتروني",
-    "password": "كلمة المرور",
-    "confirmPassword": "تأكيد كلمة المرور",
-    "registerButton": "إنشاء حساب",
-    "alreadyHaveAccount": "لديك حساب بالفعل؟",
-    "login": "تسجيل الدخول"
+    "sign_in": "تسجيل الدخول",
+    "or_sign_in_with": "أو قم بتسجيل الدخول باستخدام",
+    "dont_have_an_account": "ليس لديك حساب؟",
+    "sign_up": "إنشاء حساب"
   },
   "home": {}
 }
