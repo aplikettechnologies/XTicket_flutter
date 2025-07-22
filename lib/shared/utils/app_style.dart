@@ -61,4 +61,32 @@ class AppStyle {
     fontFamily: 'Manrope',
     fontWeight: FontWeight.w500,
   );
+
+  //ButtonStyle
+  static TextStyle buttonTextStyle = TextStyle(
+    color: AppColor.white,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: "Manrope",
+  );
+  static TextStyle buttonLoadingTextStyle = TextStyle(
+    color: AppColor.white,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: "Manrope",
+  );
+
+  //ToastStyle
+  static TextStyle toastTitleTextStyle = TextStyle(
+    color: AppColor.neutralColor01,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: "Manrope",
+  );
+  static TextStyle toastSubTitleTextStyle = TextStyle(
+    color: AppColor.neutralColor01,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    fontFamily: "Manrope",
+  );
 }

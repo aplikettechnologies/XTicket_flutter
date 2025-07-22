@@ -1,7 +1,7 @@
 {
     "onboarding": {
         "skip": "Skip",
-        "buyTicketWith": "Buy Ticket with",
+        "buyTicketWith": "Buy Ticket with Ease",
         "quickEasyChickIn": "Quick & Easy Chick-In",
         "discoverEventsTailoredForYou": "Discover Events Tailored for you",
         "next": "Next",
@@ -17,5 +17,21 @@
         "dont_have_an_account": "Don’t have an account?",
         "sign_up": "Sign Up"
     },
-    "home": {}
+    "registration": {
+        "welcome": "Welcome",
+        "enter_your_account_here": "Enter your account here",
+        "user_name": "User name",
+        "email_address": "Email Address",
+        "password": "Password",
+        "sign_in": "Sign In",
+        "or_sign_in_with": "Or Sign In With",
+        "already_have_an_account": "Already have an account?",
+        "sign_up": "Sign Up"
+    },
+    "forget_password": {
+        "forget_password": "Forgot Password",
+        "enter_the_email_associated": "Enter the email associated with your account and we’ll send an email to reset your password",
+        "email": "Email",
+        "send_email": "Send Email"
+    }
 }
