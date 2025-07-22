@@ -33,5 +33,14 @@
         "enter_the_email_associated": "Enter the email associated with your account and we’ll send an email to reset your password",
         "email": "Email",
         "send_email": "Send Email"
+    },
+    "dashboard": {
+        "home": "Home",
+        "myTicket": "My Ticket",
+        "events": "Events",
+        "nearMe": "Near me",
+        "profile": "Profile",
+        "english": "English",
+        "arabic": "Arabic"
     }
 }

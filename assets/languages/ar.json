@@ -17,5 +17,14 @@
     "dont_have_an_account": "ليس لديك حساب؟",
     "sign_up": "إنشاء حساب"
   },
+  "dashboard": {
+    "home": "الرئيسية",
+    "myTicket": "تذاكري",
+    "events": "الفعاليات",
+    "nearMe": "بالقرب مني",
+    "profile": "الملف الشخصي",
+    "english": "الإنجليزية",
+    "arabic": "العربية"
+  },
   "home": {}
 }

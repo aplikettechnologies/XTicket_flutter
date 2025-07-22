@@ -27,4 +27,7 @@ class AppColor {
 
   //RedColor
   static const Color red = Color(0xffDC2626);
+
+  static const Color navigationUnselectedColor = Color(0xff737373);
+  static const Color navigationSelectedColor = Color(0xff17907C);
 }
