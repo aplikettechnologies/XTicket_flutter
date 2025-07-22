@@ -6,7 +6,7 @@ import '../utils/app_color.dart';
 Widget appButton({
   required BuildContext context,
   required String text,
-  required VoidCallback onPressed,
+  required void Function()? onPressed,
   Color? backgroundColor,
   Color? textColor,
   double? width,
@@ -46,7 +46,6 @@ Widget appButton({
                   ? _loadingPleaseWaitWidget()
                   : Text(
                     text,
-                    key: const ValueKey('buttonText'),
                     style: TextStyle(
                       color: textColor ?? AppColor.white,
                       fontSize: fontSize ?? 14.sp,
