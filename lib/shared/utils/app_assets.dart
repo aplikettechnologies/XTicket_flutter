@@ -17,4 +17,15 @@ class AppAssets {
   static const String icPassword = "${baseSvg}ic_password.svg";
   static const String icGoogle = "${baseSvg}ic_google.svg";
   static const String icFacebook = "${baseSvg}ic_facebook.svg";
+
+  //Dashboard
+  static const String icHome = "${baseSvg}ic_home.svg";
+  static const String icTicket = "${baseSvg}ic_ticket.svg";
+  static const String icUserProfile = "${baseSvg}ic_user_profile.svg";
+  static const String icEvent = "${baseSvg}ic_event.svg";
+  static const String icSearch = "${baseSvg}ic_search.svg";
+
+  static const String icNotification = "${baseSvg}ic_notification.svg";
+  static const String icDrawerMenu = "${baseSvg}ic_drawer_menu.svg";
+  static const String icDownArrow = "${baseSvg}ic_down_arrow.svg";
 }

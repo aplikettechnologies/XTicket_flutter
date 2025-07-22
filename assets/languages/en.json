@@ -17,5 +17,14 @@
         "dont_have_an_account": "Don’t have an account?",
         "sign_up": "Sign Up"
     },
+    "dashboard": {
+        "home": "Home",
+        "myTicket": "My Ticket",
+        "events": "Events",
+        "nearMe": "Near me",
+        "profile": "Profile",
+        "english": "English",
+        "arabic": "Arabic"
+    },
     "home": {}
 }

@@ -14,4 +14,8 @@ class AppColor {
 
   //White
   static const Color white = Color(0xffFFFFFF);
+  static const Color black = Color(0xFF000000);
+
+  static const Color navigationUnselectedColor = Color(0xff737373);
+  static const Color navigationSelectedColor = Color(0xff17907C);
 }

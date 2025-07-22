@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_state_manager/src/simple/get_state.dart';
+import 'package:xticket/app/modules/onboarding/onboarding_controller.dart';
+import 'package:xticket/app/modules/onboarding/widgets/onboarding_list_tile.dart';
+import 'package:xticket/routes/app_routes.dart';
 import 'package:xticket/shared/localization/localization_const.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 import 'package:xticket/shared/utils/app_color.dart';
@@ -26,103 +31,122 @@ class OnboardingScreen extends StatelessWidget {
       ),
       child: Scaffold(
         extendBodyBehindAppBar: true,
-        body: Stack(
-          children: [
-            SafeArea(
-              child: Align(
-                alignment: Alignment.topCenter,
-                child: SvgPicture.asset(
-                  AppAssets.icAppLogoWithTitle,
-                  height: 44.h,
-                  width: 73.w,
-                  fit: BoxFit.cover,
-                  alignment: Alignment.topCenter,
-                ),
-              ),
-            ),
-            SafeArea(
-              child: Align(
-                alignment: Alignment.topRight,
-                child: appTextButton(
-                  onPressed: () {},
-                  label: getTranslation(context, "onboarding.skip"),
-                  style: TextStyle(
-                    color: AppColor.primaryColor01,
-                    fontSize: 14.sp,
-                    fontFamily: "Manrope",
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-            ),
-            Positioned.fill(
-              child: SvgPicture.asset(
-                AppAssets.bgOnboarding,
-                fit: BoxFit.cover,
-              ),
-            ),
-
-            Padding(
-              padding: EdgeInsets.only(top: 100.h),
-              child: SafeArea(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    SvgPicture.asset(
-                      AppAssets.bgOnboarding1,
-                      width: double.infinity,
-                      height: MediaQuery.sizeOf(context).height / 1.9,
-                      fit: BoxFit.cover,
+        body: GetBuilder(
+          init: OnboardingController(),
+          builder:
+              (controller) => Stack(
+                alignment: Alignment.center,
+                children: [
+                  Positioned.fill(
+                    child: SvgPicture.asset(
+                      AppAssets.bgOnboarding,
+                      fit: BoxFit.fill,
+                      height: MediaQuery.sizeOf(context).height,
+                      width: MediaQuery.sizeOf(context).width,
                     ),
-                    SizedBox(height: 28.h),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: Text(
-                        getTranslation(context, "onboarding.buyTicketWith"),
-                        textAlign: TextAlign.start,
+                  ),
+                  SafeArea(
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: SvgPicture.asset(
+                        AppAssets.icAppLogoWithTitle,
+                        height: 44.h,
+                        width: 73.w,
+                        fit: BoxFit.cover,
+                        alignment: Alignment.topCenter,
+                      ),
+                    ),
+                  ),
+                  SafeArea(
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: appTextButton(
+                        onPressed: () => Get.toNamed(AppRoutes.dashboard),
+                        label: getTranslation(context, "onboarding.skip"),
                         style: TextStyle(
-                          color: AppColor.secondaryColorDark,
-                          fontWeight: FontWeight.w800,
-                          fontSize: 36.sp,
+                          color: AppColor.primaryColor01,
+                          fontSize: 14.sp,
                           fontFamily: "Manrope",
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),
-                    SizedBox(height: 10.h),
+                  ),
 
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                  Padding(
+                    padding: EdgeInsets.only(top: 100.h),
+                    child: SafeArea(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: List.generate(
-                              3,
-                              (index) =>
-                                  AppIndicator(index: index, currentPage: 2),
+                          Expanded(
+                            child: PageView.builder(
+                              controller: controller.pageController,
+                              itemCount: controller.onboardingList.length,
+                              scrollDirection: Axis.horizontal,
+                              onPageChanged: (value) {
+                                controller.updatePage(value);
+                              },
+                              itemBuilder: (context, index) {
+                                final item = controller.onboardingList[index];
+                                return onBoardingListTile(
+                                  context: context,
+                                  item: item,
+                                );
+                              },
                             ),
                           ),
 
-                          appButton(
-                            height: 40.h,
-                            width: 130.w,
-                            context: context,
-                            onPressed: () {},
-                            text: getTranslation(context, "onboarding.next"),
+                          SizedBox(height: 10.h),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 16.w),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: List.generate(
+                                    controller.onboardingList.length,
+                                    (index) => AppIndicator(
+                                      index: index,
+                                      currentPage: controller.currentPage,
+                                    ),
+                                  ),
+                                ),
+
+                                appButton(
+                                  height: 40.h,
+                                  width:
+                                      controller.currentPage == 2
+                                          ? 150.w
+                                          : 130.w,
+                                  context: context,
+                                  onPressed: controller.goToNextPage,
+                                  text:
+                                      controller.currentPage == 2
+                                          ? getTranslation(
+                                            context,
+                                            "onboarding.getstarted",
+                                          )
+                                          : getTranslation(
+                                            context,
+                                            "onboarding.next",
+                                          ),
+                                ),
+                              ],
+                            ),
                           ),
+                          SizedBox(height: 40.h),
                         ],
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ),
-          ],
         ),
       ),
     );
