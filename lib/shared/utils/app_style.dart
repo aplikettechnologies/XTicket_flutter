@@ -3,12 +3,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:xticket/shared/utils/app_color.dart';
 
 class AppStyle {
-  //Primary
+  //------------------------ PRIMARY COLOR ------------------------//
   static TextStyle primary1Semibold20Manrope = TextStyle(
     color: AppColor.primaryColor01,
     fontSize: 20.sp,
     fontFamily: 'Manrope',
     fontWeight: FontWeight.w600,
+  );
+  static TextStyle primary1Medium14Manrope = TextStyle(
+    color: AppColor.primaryColor01,
+    fontSize: 14.sp,
+    fontFamily: 'Manrope',
+    fontWeight: FontWeight.w500,
   );
   static TextStyle primary4Semibold12Manrope = TextStyle(
     color: AppColor.primaryColor04,
@@ -23,12 +29,36 @@ class AppStyle {
     fontWeight: FontWeight.w500,
   );
 
-  //Neutral
+  //------------------------ NEUTRAL COLOR ------------------------//
+  static TextStyle neutral5Regular12Manrope = TextStyle(
+    color: AppColor.neutralColor05,
+    fontSize: 12.sp,
+    fontFamily: 'Manrope',
+    fontWeight: FontWeight.w400,
+  );
+  static TextStyle neutral4Medium12Manrope = TextStyle(
+    color: AppColor.neutralColor04,
+    fontSize: 12.sp,
+    fontFamily: 'Manrope',
+    fontWeight: FontWeight.w500,
+  );
   static TextStyle neutral4Regular12Manrope = TextStyle(
     color: AppColor.neutralColor04,
     fontSize: 12.sp,
     fontFamily: 'Manrope',
     fontWeight: FontWeight.w400,
+  );
+  static TextStyle neutral2SemiBold14Manrope = TextStyle(
+    color: AppColor.neutralColor02,
+    fontSize: 14.sp,
+    fontFamily: 'Manrope',
+    fontWeight: FontWeight.w600,
+  );
+  static TextStyle neutral3Medium14Manrope = TextStyle(
+    color: AppColor.neutralColor03,
+    fontSize: 14.sp,
+    fontFamily: 'Manrope',
+    fontWeight: FontWeight.w500,
   );
   static TextStyle neutral5Medium14Manrope = TextStyle(
     color: AppColor.neutralColor05,
@@ -42,7 +72,6 @@ class AppStyle {
     fontFamily: 'Lato',
     fontWeight: FontWeight.w400,
   );
-
   static TextStyle neutral3Reguler12Lato = TextStyle(
     color: AppColor.neutralColor03,
     fontSize: 12.sp,
@@ -50,7 +79,13 @@ class AppStyle {
     fontWeight: FontWeight.w400,
   );
 
-  //Dark
+  //------------------------ DARK COLOR ------------------------//
+  static TextStyle darkBold24Lato = TextStyle(
+    color: AppColor.dark,
+    fontSize: 24.sp,
+    fontFamily: 'Lato',
+    fontWeight: FontWeight.w700,
+  );
   static TextStyle darkReguler14Manrope = TextStyle(
     color: AppColor.dark,
     fontSize: 14.sp,
@@ -75,8 +110,15 @@ class AppStyle {
     fontFamily: 'Lato',
     fontWeight: FontWeight.w500,
   );
-  //Black
-  static TextStyle blackBold14Lato = TextStyle(
+
+  //------------------------ BLACK COLOR ------------------------//
+  static TextStyle blackMedium18Manrope = TextStyle(
+    color: AppColor.black,
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: "Manrope",
+  );
+  static TextStyle black14BoldLato = TextStyle(
     color: AppColor.black,
     fontSize: 14.sp,
     fontFamily: 'Lato',
@@ -100,7 +142,26 @@ class AppStyle {
     fontFamily: 'Lato',
     fontWeight: FontWeight.w400,
   );
-  //Yellow
+  static TextStyle blackMedium12Lato = TextStyle(
+    color: AppColor.black,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: "Lato",
+  );
+  static TextStyle blackBold16Lato = TextStyle(
+    color: AppColor.black,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w700,
+    fontFamily: "Lato",
+  );
+  static TextStyle blackExtraBold20Lato = TextStyle(
+    color: AppColor.black,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w800,
+    fontFamily: "Lato",
+  );
+
+  //------------------------ YELLOW COLOR ------------------------//
   static TextStyle yellowMedium12Lato = TextStyle(
     color: AppColor.yellow,
     fontSize: 12.sp,
@@ -108,7 +169,23 @@ class AppStyle {
     fontWeight: FontWeight.w500,
   );
 
-  //Appbar
+  //------------------------ WHITE COLOR ------------------------//
+  static TextStyle whiteMedium14Lato = TextStyle(
+    color: AppColor.white,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: "Lato",
+  );
+
+  //------------------------ GREY COLOR ------------------------//
+  static TextStyle grey2Regular12Lato = TextStyle(
+    color: AppColor.grey2,
+    fontSize: 12.sp,
+    fontFamily: 'Lato',
+    fontWeight: FontWeight.w400,
+  );
+
+  //------------------------ APPBAR STYLE ------------------------//
   static TextStyle appbarTitleTextStyle = TextStyle(
     color: AppColor.dark,
     fontSize: 20.sp,
@@ -116,7 +193,7 @@ class AppStyle {
     fontWeight: FontWeight.w600,
   );
 
-  //TextFieldStyle
+  //------------------------ TEXTFIELD STYLE ------------------------//
   static TextStyle hintTextStyle = TextStyle(
     color: AppColor.neutralColor05,
     fontSize: 14.sp,
@@ -142,7 +219,7 @@ class AppStyle {
     fontWeight: FontWeight.w500,
   );
 
-  //ButtonStyle
+  //------------------------ BUTTON STYLE ------------------------//
   static TextStyle buttonTextStyle = TextStyle(
     color: AppColor.white,
     fontSize: 14.sp,
@@ -156,7 +233,7 @@ class AppStyle {
     fontFamily: "Manrope",
   );
 
-  //ToastStyle
+  //------------------------ TOAST STYLE ------------------------//
   static TextStyle toastTitleTextStyle = TextStyle(
     color: AppColor.neutralColor01,
     fontSize: 16.sp,
@@ -168,5 +245,19 @@ class AppStyle {
     fontSize: 12.sp,
     fontWeight: FontWeight.w400,
     fontFamily: "Manrope",
+  );
+
+  //------------------------ SEARCH STYLE ------------------------//
+  static TextStyle searchHintTextStyle = TextStyle(
+    color: AppColor.grey2,
+    fontSize: 12.sp,
+    fontFamily: 'Lato',
+    fontWeight: FontWeight.w400,
+  );
+  static TextStyle searchTextStyle = TextStyle(
+    color: AppColor.primaryColor01,
+    fontSize: 12.sp,
+    fontFamily: 'Lato',
+    fontWeight: FontWeight.w400,
   );
 }

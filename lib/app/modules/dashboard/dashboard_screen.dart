@@ -3,11 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:xticket/app/modules/dashboard/dashboard_controller.dart';
-import 'package:xticket/shared/localization/localization_const.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 import 'package:xticket/shared/utils/app_color.dart';
-
+import '../../../shared/widgets/app_svg_iconbutton.dart';
 import '../../../shared/widgets/common_bottombar.dart';
+import 'widgets/change_language_dropdown.dart';
+import 'widgets/custom_drawer_widget.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -18,100 +19,49 @@ class DashboardScreen extends StatelessWidget {
       init: DashboardController(),
       builder: (controller) {
         return Scaffold(
+          backgroundColor: AppColor.white,
           appBar: AppBar(
             backgroundColor: AppColor.primaryColor04,
             automaticallyImplyLeading: false,
-            leadingWidth: 30.w,
-            leading: SvgPicture.asset(
-              AppAssets.icDrawerMenu,
-              height: 24.h,
-              width: 24.w,
-              fit: BoxFit.contain,
+            leadingWidth: 45.w,
+            leading: Builder(
+              builder: (context) {
+                return IconButton(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 8.sp,
+                    horizontal: 12.w,
+                  ),
+                  onPressed: () => Scaffold.of(context).openDrawer(),
+                  icon: SvgPicture.asset(
+                    AppAssets.icDrawerMenu,
+                    height: 24.h,
+                    width: 24.w,
+                    fit: BoxFit.cover,
+                  ),
+                );
+              },
             ),
             centerTitle: true,
             title: SvgPicture.asset(
-              AppAssets.icAppLogo,
-              height: 24.h,
-              width: 24.w,
-              fit: BoxFit.contain,
+              AppAssets.icAppLogoTitleWhite,
+              height: 31.h,
+              width: 55.w,
+              fit: BoxFit.fill,
             ),
+            elevation: 4,
             actions: [
-              SvgPicture.asset(
-                AppAssets.icNotification,
-                height: 24.h,
-                width: 24.w,
-                fit: BoxFit.contain,
+              svgIconButton(
+                iconPath: AppAssets.icNotification,
+                onPressed: () {
+                  // handle tap
+                },
+                padding: EdgeInsets.all(5.sp),
               ),
-              SizedBox(width: 10.w),
-              PopupMenuButton<String>(
-                onSelected: (value) {},
-                icon: Row(
-                  spacing: 6.w,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    SvgPicture.asset(
-                      AppAssets.icDownArrow,
-                      height: 24,
-                      width: 24,
-                      fit: BoxFit.contain,
-                    ),
-                    Text("AR"),
-                  ],
-                ),
-                padding: EdgeInsets.all(10.sp),
-                itemBuilder:
-                    (BuildContext context) => [
-                      PopupMenuItem(
-                        value: 'en',
-                        child: Row(
-                          spacing: 10.w,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Container(
-                              height: 24.h,
-                              width: 24.w,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: AppColor.primaryColor04,
-                              ),
-                            ),
-                            Text(getTranslation(context, "dashboard.english")),
-                          ],
-                        ),
-                      ),
-                      PopupMenuItem(
-                        value: 'ar',
-                        child: Row(
-                          spacing: 10.w,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Container(
-                              height: 24.h,
-                              width: 24.w,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: AppColor.primaryColor04,
-                              ),
-                            ),
-                            Text(getTranslation(context, "dashboard.arabic")),
-                          ],
-                        ),
-                      ),
-                    ],
-                elevation: 4,
-                color: AppColor.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12.r), // rounded corners
-                ),
-              ),
+
+              changeLanguageDropdown(context),
             ],
           ),
+          drawer: customerDrawerWidget(context: context),
           body:
               controller.bottomNavigationScreens[controller.currentIndex.value],
           bottomNavigationBar: Column(

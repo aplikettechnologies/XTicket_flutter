@@ -5,11 +5,15 @@ import 'package:xticket/shared/utils/app_color.dart';
 class AppIndicator extends StatelessWidget {
   final int index;
   final int currentPage;
+  final Color? activeColor;
+  final Color? unActiveColor;
 
   const AppIndicator({
     super.key,
     required this.index,
     required this.currentPage,
+    this.activeColor,
+    this.unActiveColor,
   });
 
   @override
@@ -22,8 +26,8 @@ class AppIndicator extends StatelessWidget {
       decoration: BoxDecoration(
         color:
             index == currentPage
-                ? AppColor.secondaryColorDark
-                : AppColor.neutralColor07,
+                ? activeColor ?? AppColor.secondaryColorDark
+                : unActiveColor ?? AppColor.neutralColor07,
         shape: BoxShape.circle,
       ),
     );

@@ -4,12 +4,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:xticket/app/modules/event/event_controller.dart';
 import 'package:xticket/app/modules/event/widget/item_event_list.dart';
+import 'package:xticket/routes/app_routes.dart';
 import 'package:xticket/shared/localization/localization_const.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
+import 'package:xticket/shared/utils/app_style.dart';
 import 'package:xticket/shared/widgets/app_button.dart';
 
 import '../../../shared/utils/app_color.dart';
-import '../../../shared/widgets/app_searchField.dart';
+import '../../../shared/widgets/app_search_field.dart';
 import 'widget/item_category_list.dart';
 
 class EventScreen extends StatelessWidget {
@@ -42,8 +44,14 @@ class EventScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Expanded(
-                            flex: 4,
-                            child: appSearchField(context: context),
+                            flex: 5,
+                            child: appSearchField(
+                              context: context,
+                              hintText: getTranslation(
+                                context,
+                                'event.search_events',
+                              ),
+                            ),
                           ),
                           SizedBox(width: 8.w),
                           Expanded(
@@ -73,10 +81,26 @@ class EventScreen extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              child: SvgPicture.asset(
-                                AppAssets.icFilter,
-                                height: 24.h,
-                                width: 24.h,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    getTranslation(context, 'event.city'),
+                                    style: AppStyle.grey2Regular12Lato.copyWith(
+                                      color: AppColor.grey2,
+                                    ),
+                                  ),
+                                  SizedBox(width: 10.w),
+                                  Padding(
+                                    padding: EdgeInsets.only(top: 4.h),
+                                    child: SvgPicture.asset(
+                                      AppAssets.icDropdown,
+                                      height: 6.h,
+                                      width: 10.h,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
@@ -177,7 +201,9 @@ class EventScreen extends StatelessWidget {
               child: appButton(
                 context: context,
                 text: getTranslation(context, 'event.create_event'),
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(AppRoutes.createEvent);
+                },
               ),
             ),
           ],

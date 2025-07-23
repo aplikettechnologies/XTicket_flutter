@@ -60,7 +60,7 @@ class OnboardingScreen extends StatelessWidget {
                     child: Align(
                       alignment: Alignment.topRight,
                       child: appTextButton(
-                        onPressed: () => Get.toNamed(AppRoutes.dashboard),
+                        onPressed: () => Get.offAllNamed(AppRoutes.login),
                         label: getTranslation(context, "onboarding.skip"),
                         style: TextStyle(
                           color: AppColor.primaryColor01,

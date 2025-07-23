@@ -71,7 +71,7 @@ Widget appSearchField({
       },
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: hintTextStyle ?? AppStyle.hintTextStyle,
+        hintStyle: hintTextStyle ?? AppStyle.searchHintTextStyle,
         fillColor: AppColor.white,
         filled: true,
         prefixIcon:

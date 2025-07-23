@@ -15,7 +15,8 @@
         "sign_in": "Sign In",
         "or_sign_in_with": "Or Sign In With",
         "dont_have_an_account": "Don’t have an account?",
-        "sign_up": "Sign Up"
+        "sign_up": "Sign Up",
+        "forgot_password": "Forgot Password"
     },
     "registration": {
         "welcome": "Welcome",
@@ -26,7 +27,8 @@
         "sign_in": "Sign In",
         "or_sign_in_with": "Or Sign In With",
         "already_have_an_account": "Already have an account?",
-        "sign_up": "Sign Up"
+        "sign_up": "Sign Up",
+        "forgot_password": "Forgot Password"
     },
     "forget_password": {
         "forget_password": "Forgot Password",
@@ -80,5 +82,23 @@
         "concerts": "Concerts",
         "workshops": "Workshops",
         "health": "Health"
+    },
+    "drawer": {
+        "myEvents": "My Events",
+        "myTickets": "My Tickets",
+        "eQueue": "E-Queue",
+        "favorite": "Favorite",
+        "settings": "Settings",
+        "faq": "FAQ",
+        "privacyPolicy": "Privacy Policy",
+        "logout": "Logout"
+    },
+    "ticket": {
+        "looking_for_your_tickets": "Looking for your tickets?",
+        "explore_events": "Explore events",
+        "valid": "Valid"
+    },
+    "home": {
+        "search_events": "Search events"
     }
 }

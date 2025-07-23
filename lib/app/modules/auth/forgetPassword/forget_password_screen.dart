@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:xticket/shared/localization/localization_const.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 import 'package:xticket/shared/utils/app_style.dart';
-import 'package:xticket/shared/widgets/app_toast.dart';
-
 import '../../../../shared/utils/app_color.dart';
 import '../../../../shared/widgets/app_button.dart';
 import '../../../../shared/widgets/app_textformfield.dart';
@@ -19,12 +18,17 @@ class ForgetPasswordScreen extends StatelessWidget {
       appBar: AppBar(
         leadingWidth: 50.w,
         backgroundColor: AppColor.white,
-        leading: Padding(
-          padding: EdgeInsets.only(left: 20.w),
-          child: SvgPicture.asset(
-            AppAssets.icArrowLeft,
-            height: 24.h,
-            width: 24.w,
+        leading: InkWell(
+          onTap: () {
+            Get.back();
+          },
+          child: Padding(
+            padding: EdgeInsets.only(left: 20.w),
+            child: SvgPicture.asset(
+              AppAssets.icArrowLeft,
+              height: 24.h,
+              width: 24.w,
+            ),
           ),
         ),
       ),
@@ -110,11 +114,12 @@ class ForgetPasswordScreen extends StatelessWidget {
                 appButton(
                   context: context,
                   onPressed: () {
-                    AppToast.showSuccess(
-                      subTitle: 'Invalid email or password',
-                      title: 'Please input correct email or password',
-                      context: context,
-                    );
+                    Get.back();
+                    // AppToast.showSuccess(
+                    //   subTitle: 'Invalid email or password',
+                    //   title: 'Please input correct email or password',
+                    //   context: context,
+                    // );
                   },
                   text: getTranslation(context, 'forget_password.send_email'),
                 ),

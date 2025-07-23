@@ -97,7 +97,7 @@ class EventDetailsScreen extends StatelessWidget {
                         Expanded(
                           child: Text(
                             'Summer Splash A Seasonal Celebration',
-                            style: AppStyle.blackBold14Lato,
+                            style: AppStyle.black14BoldLato,
                           ),
                         ),
                         SizedBox(width: 50.w),

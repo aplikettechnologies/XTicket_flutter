@@ -42,7 +42,7 @@ class OnboardingController extends GetxController {
   void goToNextPage() {
     if (currentPage == 2) {
       // Navigation
-      Get.toNamed(AppRoutes.dashboard);
+      Get.offAllNamed(AppRoutes.login);
     } else {
       pageController.nextPage(
         duration: const Duration(milliseconds: 300),

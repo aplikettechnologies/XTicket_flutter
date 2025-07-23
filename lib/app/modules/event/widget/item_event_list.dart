@@ -15,6 +15,7 @@ Widget itemEventList() {
             borderRadius: BorderRadius.circular(8.r),
             child: appImageNetwork(
               height: 103.h,
+              loadingSize: 30.h,
               url:
                   'https://www.digitalclassworld.com/blog/wp-content/uploads/2021/02/Full-form-of-URL-1-1024x824.jpg',
             ),
@@ -64,7 +65,7 @@ Widget itemEventList() {
       Text(
         'Global Finance Insights',
         maxLines: 1,
-        style: AppStyle.blackBold14Lato,
+        style: AppStyle.black14BoldLato,
       ),
     ],
   );
