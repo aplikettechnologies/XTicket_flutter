@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:xticket/app/modules/auth/login/login_controller.dart';
 import 'package:xticket/shared/localization/localization_const.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 import 'package:xticket/shared/utils/app_color.dart';
@@ -11,14 +10,15 @@ import 'package:xticket/shared/widgets/app_divider.dart';
 import 'package:xticket/shared/widgets/app_textformfield.dart';
 
 import '../../../../shared/widgets/app_button.dart';
+import 'registration_controller.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class RegistrationScreen extends StatelessWidget {
+  const RegistrationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<LoginController>(
-      init: LoginController(),
+    return GetBuilder<RegistrationController>(
+      init: RegistrationController(),
       builder: (controller) {
         return Scaffold(
           body: SafeArea(
@@ -50,17 +50,39 @@ class LoginScreen extends StatelessWidget {
 
                   //Welcome
                   Text(
-                    getTranslation(context, 'login.welcome'),
+                    getTranslation(context, 'registration.welcome'),
                     style: AppStyle.primary1Semibold20Manrope,
                   ),
                   SizedBox(height: 4.h),
 
                   //SignIn
                   Text(
-                    getTranslation(context, 'login.sign_in_to_your_account'),
+                    getTranslation(
+                      context,
+                      'registration.enter_your_account_here',
+                    ),
                     style: AppStyle.neutral4Regular12Manrope,
                   ),
                   SizedBox(height: 29.h),
+
+                  //UserName
+                  appTextFormField(
+                    context: context,
+                    prefixIcon: Padding(
+                      padding: EdgeInsets.only(left: 14.w, top: 2.h),
+                      child: SvgPicture.asset(
+                        AppAssets.icMail,
+                        height: 24.h,
+                        width: 24.w,
+                      ),
+                    ),
+                    hintText: getTranslation(context, 'registration.user_name'),
+                    headerText: getTranslation(
+                      context,
+                      'registration.user_name',
+                    ),
+                  ),
+                  SizedBox(height: 14.h),
 
                   //EmailAddress
                   appTextFormField(
@@ -73,8 +95,14 @@ class LoginScreen extends StatelessWidget {
                         width: 24.w,
                       ),
                     ),
-                    hintText: getTranslation(context, 'login.email_address'),
-                    headerText: getTranslation(context, 'login.email_address'),
+                    hintText: getTranslation(
+                      context,
+                      'registration.email_address',
+                    ),
+                    headerText: getTranslation(
+                      context,
+                      'registration.email_address',
+                    ),
                   ),
                   SizedBox(height: 14.h),
 
@@ -89,8 +117,11 @@ class LoginScreen extends StatelessWidget {
                         width: 24.w,
                       ),
                     ),
-                    hintText: getTranslation(context, 'login.password'),
-                    headerText: getTranslation(context, 'login.password'),
+                    hintText: getTranslation(context, 'registration.password'),
+                    headerText: getTranslation(
+                      context,
+                      'registration.password',
+                    ),
                   ),
                   SizedBox(height: 36.h),
 
@@ -98,7 +129,7 @@ class LoginScreen extends StatelessWidget {
                   appButton(
                     context: context,
                     onPressed: () {},
-                    text: getTranslation(context, 'login.sign_in'),
+                    text: getTranslation(context, 'registration.sign_up'),
                   ),
                   SizedBox(height: 24.h),
 
@@ -110,7 +141,7 @@ class LoginScreen extends StatelessWidget {
                       Expanded(child: appDivider()),
                       SizedBox(width: 7.w),
                       Text(
-                        getTranslation(context, 'login.or_sign_in_with'),
+                        getTranslation(context, 'registration.or_sign_in_with'),
                         style: AppStyle.darkReguler14Manrope,
                       ),
                       SizedBox(width: 7.w),
@@ -170,13 +201,16 @@ class LoginScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  getTranslation(context, 'login.dont_have_an_account'),
+                  getTranslation(
+                    context,
+                    'registration.already_have_an_account',
+                  ),
                   style: AppStyle.neutral4Regular12Manrope,
                 ),
                 SizedBox(width: 2.w),
 
                 Text(
-                  getTranslation(context, 'login.sign_up'),
+                  getTranslation(context, 'registration.sign_in'),
                   style: AppStyle.primary4Semibold12Manrope,
                 ),
               ],
