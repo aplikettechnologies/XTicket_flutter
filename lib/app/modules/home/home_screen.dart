@@ -64,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                           () => AppIndicator(
                             index: index,
                             currentPage: controller.currentBannerIndex.value,
-                            activeColor: AppColor.lightGrey3,
+                            activeColor: AppColor.grey3,
                             unActiveColor: AppColor.neutralColor04,
                           ),
                         ),
@@ -102,7 +102,7 @@ class HomeScreen extends StatelessWidget {
                         child: TextFormField(
                           cursorHeight: 20.h,
                           controller: controller.searchEventController,
-                          style: AppStyle.lightGrey2Regular12Lato,
+                          style: AppStyle.grey2Regular12Lato,
                           decoration: InputDecoration(
                             prefixIconConstraints: BoxConstraints(
                               minWidth: 40.w,
@@ -112,7 +112,7 @@ class HomeScreen extends StatelessWidget {
                               context,
                               "home.search_events",
                             ),
-                            hintStyle: AppStyle.lightGrey2Regular12Lato,
+                            hintStyle: AppStyle.grey2Regular12Lato,
                             prefixIcon: Padding(
                               padding: EdgeInsets.only(
                                 left: 12.w,

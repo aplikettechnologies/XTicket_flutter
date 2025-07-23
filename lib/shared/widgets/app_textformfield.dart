@@ -71,7 +71,6 @@ Widget appTextFormField({
         maxLength: maxLength,
         maxLines: maxLines,
         minLines: minLines,
-
         focusNode: focusNode,
         onChanged: onChanged,
         onFieldSubmitted: onFieldSubmitted,

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:xticket/shared/localization/localization_const.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 import 'package:xticket/shared/utils/app_color.dart';
 import 'package:xticket/shared/utils/app_style.dart';
 
+import '../../../shared/localization/localization_const.dart';
 import 'ticker_dialog_widget.dart';
 
 Widget iconTextRow({required String iconPath, required String value}) {
@@ -63,7 +63,7 @@ Widget ticketListTile({required BuildContext context}) {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Summer Splash - Ladies", style: AppStyle.black16BoldLato),
+                Text("Summer Splash - Ladies", style: AppStyle.blackBold16Lato),
                 SizedBox(height: 5.h),
                 Text("Al Safa Park", style: AppStyle.neutral5Regular12Manrope),
                 SizedBox(height: 5.h),
@@ -79,7 +79,7 @@ Widget ticketListTile({required BuildContext context}) {
                 SizedBox(height: 8.h),
                 iconTextRow(
                   iconPath: AppAssets.icValidRed,
-                  value: getTranslation(context, "ticket.valid"),
+                  value: getTranslation(context, 'ticket.valid'),
                 ),
               ],
             ),

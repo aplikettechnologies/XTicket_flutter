@@ -8,8 +8,16 @@ class AppAssets {
   static const String icDummyQrCode = "${basePathDummy}dummy_qr_code.svg";
 
   //CommonIcons
+  static const String icNoImage = "${baseSvg}ic_no_image.jpg";
   static const String icClose = "${baseSvg}ic_close.svg";
   static const String icArrowLeft = "${baseSvg}ic_arrow_left.svg";
+  static const String icShare = "${baseSvg}ic_share.svg";
+  static const String icLike = "${baseSvg}ic_like.svg";
+  static const String icUnfilledStar = "${baseSvg}ic_unfilled_star.svg";
+  static const String icFilledStar = "${baseSvg}ic_filled_star.svg";
+  static const String icSearchfield = "${baseSvg}ic_search_field.svg";
+  static const String icFilter = "${baseSvg}ic_filter.svg";
+  static const String icDropdown = "${baseSvg}ic_dropdown.svg";
 
   // Onboarding
   static const String bgOnboarding = "${baseSvg}bg_onboarding.svg";
@@ -37,6 +45,24 @@ class AppAssets {
   static const String icNotification = "${baseSvg}ic_notification.svg";
   static const String icDrawerMenu = "${baseSvg}ic_drawer_menu.svg";
   static const String icDownArrow = "${baseSvg}ic_down_arrow.svg";
+
+  //EventDetails
+  static const String icCalender = "${baseSvg}ic_calendar.svg";
+  static const String icClock = "${baseSvg}ic_clock.svg";
+  static const String icWhatsapp = "${baseSvg}ic_whatsapp.svg";
+  static const String icCall = "${baseSvg}ic_call.svg";
+  static const String icLocation = "${baseSvg}ic_location.svg";
+  static const String icFacebookGreen = "${baseSvg}ic_facebook_green.svg";
+  static const String icYoutube = "${baseSvg}ic_youtube.svg";
+  static const String icLinkedIn = "${baseSvg}ic_linkedin.svg";
+
+  //EventScreen
+  static const String icTechnology = "${baseSvg}ic_technology.svg";
+  static const String icSeminars = "${baseSvg}ic_seminars.svg";
+  static const String icEducation = "${baseSvg}ic_education.svg";
+  static const String icConcerts = "${baseSvg}ic_concerts.svg";
+  static const String icWorkshops = "${baseSvg}ic_workshops.svg";
+  static const String icHealth = "${baseSvg}ic_health.svg";
   static const String icAppLogoTitleWhite =
       "${baseSvg}ic_applogo_title_white.svg";
 
@@ -58,7 +84,6 @@ class AppAssets {
   //My Ticket
   static const String icEmptyTicket = "${baseSvg}ic_empty_ticket.svg";
   static const String icCalendar = "${baseSvg}ic_calendar.svg";
-  static const String icClock = "${baseSvg}ic_clock.svg";
   static const String icValidRed = "${baseSvg}ic_valid_red.svg";
 
   //Home

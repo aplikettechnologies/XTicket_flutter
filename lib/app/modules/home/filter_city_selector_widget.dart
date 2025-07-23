@@ -42,7 +42,7 @@ Widget filterCitySelector({
                 children: [
                   Text(
                     controller.selectedCity.value,
-                    style: AppStyle.lightGrey2Regular12Lato,
+                    style: AppStyle.grey2Regular12Lato,
                   ),
                   SizedBox(width: 5.w),
                   SvgPicture.asset(

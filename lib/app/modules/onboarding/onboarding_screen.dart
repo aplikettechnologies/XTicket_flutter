@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:xticket/app/modules/onboarding/onboarding_controller.dart';
 import 'package:xticket/app/modules/onboarding/widgets/onboarding_list_tile.dart';
 import 'package:xticket/routes/app_routes.dart';
@@ -61,7 +60,7 @@ class OnboardingScreen extends StatelessWidget {
                     child: Align(
                       alignment: Alignment.topRight,
                       child: appTextButton(
-                        onPressed: () => Get.toNamed(AppRoutes.dashboard),
+                        onPressed: () => Get.offAllNamed(AppRoutes.login),
                         label: getTranslation(context, "onboarding.skip"),
                         style: TextStyle(
                           color: AppColor.primaryColor01,

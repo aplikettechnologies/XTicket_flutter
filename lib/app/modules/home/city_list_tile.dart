@@ -32,7 +32,7 @@ Widget cityListTile({required String city, required bool isSelect}) {
                 : null,
       ),
 
-      Text(city, style: AppStyle.black12MediumLato),
+      Text(city, style: AppStyle.blackMedium12Lato),
     ],
   );
 }

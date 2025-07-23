@@ -27,7 +27,7 @@ Widget emptyTicketWidget(BuildContext context) {
 
           Text(
             getTranslation(context, "ticket.looking_for_your_tickets"),
-            style: AppStyle.dark24BoldLato,
+            style: AppStyle.darkBold24Lato,
           ),
           SizedBox(height: 40.h),
           appButton(

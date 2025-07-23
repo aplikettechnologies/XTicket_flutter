@@ -15,7 +15,8 @@
         "sign_in": "Sign In",
         "or_sign_in_with": "Or Sign In With",
         "dont_have_an_account": "Don’t have an account?",
-        "sign_up": "Sign Up"
+        "sign_up": "Sign Up",
+        "forgot_password": "Forgot Password"
     },
     "registration": {
         "welcome": "Welcome",
@@ -26,7 +27,8 @@
         "sign_in": "Sign In",
         "or_sign_in_with": "Or Sign In With",
         "already_have_an_account": "Already have an account?",
-        "sign_up": "Sign Up"
+        "sign_up": "Sign Up",
+        "forgot_password": "Forgot Password"
     },
     "forget_password": {
         "forget_password": "Forgot Password",
@@ -42,6 +44,44 @@
         "profile": "Profile",
         "english": "English",
         "arabic": "Arabic"
+    },
+    "event_details": {
+        "about": "About",
+        "category": "Category",
+        "go_to_map": "Go to map",
+        "find_us": "Find us",
+        "images": "Images",
+        "book_now": "Book now"
+    },
+    "notification": {
+        "notifications": "Notifications"
+    },
+    "ticket_booking": {
+        "ticket_booking": "Ticket Booking",
+        "enter_your_info": "Enter your Info",
+        "full_name": "Full Name",
+        "enter_your_name": "Enter your name",
+        "email_address": "Email Address",
+        "enter_your_email": "Enter your email",
+        "number_of_tickets": "Number of tickets",
+        "enter_another_info": "Enter another Info",
+        "payment_details": "Payment Details",
+        "ticket": "Ticket",
+        "total": "Total",
+        "sar": "SAR",
+        "continue": "Continue"
+    },
+    "event": {
+        "search_events": "Search events",
+        "city": "City",
+        "all_event": "All Events",
+        "create_event": "Create event",
+        "technology": "Technology",
+        "seminars": "Seminars",
+        "education": "Education",
+        "concerts": "Concerts",
+        "workshops": "Workshops",
+        "health": "Health"
     },
     "drawer": {
         "myEvents": "My Events",

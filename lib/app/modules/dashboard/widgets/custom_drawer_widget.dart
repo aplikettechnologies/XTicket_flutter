@@ -99,7 +99,7 @@ Widget customerDrawerWidget({required BuildContext context}) {
                           title: getTranslation(context, "drawer.logout"),
                           leadingIcon: AppAssets.icLogoutWhite,
                           trailingIcon: AppAssets.icLeftArrow,
-                          onTap: () {   
+                          onTap: () {
                             // Handle Logout tap
                           },
                         ),
@@ -146,7 +146,7 @@ Widget customDrawerHeader() {
                 shape: BoxShape.circle,
               ),
             ),
-            Text("Emily Smith", style: AppStyle.black20ExtraBoldLato),
+            Text("Emily Smith", style: AppStyle.blackExtraBold20Lato),
           ],
         ),
       ),
@@ -166,9 +166,7 @@ Widget drawerListTile({
       padding: EdgeInsets.only(bottom: 15.h),
       margin: EdgeInsets.only(bottom: 15.h),
       decoration: BoxDecoration(
-        border: Border(
-          bottom: BorderSide(color: AppColor.lightGrey, width: 1.w),
-        ),
+        border: Border(bottom: BorderSide(color: AppColor.grey, width: 1.w)),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -182,7 +180,7 @@ Widget drawerListTile({
           ),
           Text(
             title,
-            style: AppStyle.white14MediumLato,
+            style: AppStyle.whiteMedium14Lato,
             overflow: TextOverflow.ellipsis,
           ),
           if (trailingIcon != null)

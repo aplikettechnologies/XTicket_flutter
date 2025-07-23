@@ -58,7 +58,7 @@ changeLanguageDropdown(BuildContext context) {
                   ),
                   Text(
                     getTranslation(context, "dashboard.english"),
-                    style: AppStyle.black12MediumLato,
+                    style: AppStyle.blackMedium12Lato,
                   ),
                 ],
               ),
@@ -81,7 +81,7 @@ changeLanguageDropdown(BuildContext context) {
                   ),
                   Text(
                     getTranslation(context, "dashboard.arabic"),
-                    style: AppStyle.black12MediumLato,
+                    style: AppStyle.blackMedium12Lato,
                   ),
                 ],
               ),
