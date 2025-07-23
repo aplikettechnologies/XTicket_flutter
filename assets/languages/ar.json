@@ -26,5 +26,19 @@
     "english": "الإنجليزية",
     "arabic": "العربية"
   },
-  "home": {}
+  "drawer": {
+    "myEvents": "فعالياتي",
+    "myTickets": "تذاكري",
+    "eQueue": "الطابور الإلكتروني",
+    "favorite": "المفضلة",
+    "settings": "الإعدادات",
+    "faq": "الأسئلة الشائعة",
+    "privacyPolicy": "سياسة الخصوصية",
+    "logout": "تسجيل الخروج"
+  },
+  "ticket": {
+    "looking_for_your_tickets": "تبحث عن تذاكرك؟",
+    "explore_events": "استكشف الفعاليات",
+    "valid": "صالح"
+  }
 }

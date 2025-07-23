@@ -42,5 +42,23 @@
         "profile": "Profile",
         "english": "English",
         "arabic": "Arabic"
+    },
+    "drawer": {
+        "myEvents": "My Events",
+        "myTickets": "My Tickets",
+        "eQueue": "E-Queue",
+        "favorite": "Favorite",
+        "settings": "Settings",
+        "faq": "FAQ",
+        "privacyPolicy": "Privacy Policy",
+        "logout": "Logout"
+    },
+    "ticket": {
+        "looking_for_your_tickets": "Looking for your tickets?",
+        "explore_events": "Explore events",
+        "valid": "Valid"
+    },
+    "home": {
+        "search_events": "Search events"
     }
 }

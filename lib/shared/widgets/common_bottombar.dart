@@ -61,7 +61,7 @@ Widget customBottomNavigationBar({
                   // ignore: deprecated_member_use
                   color:
                       selectedIndex == index
-                          ? AppColor.navigationSelectedColor
+                          ? AppColor.primaryColor04
                           : AppColor.navigationUnselectedColor,
                 ),
                 SizedBox(height: 8.h),
@@ -70,7 +70,7 @@ Widget customBottomNavigationBar({
                   style: TextStyle(
                     color:
                         selectedIndex == index
-                            ? AppColor.navigationSelectedColor
+                            ? AppColor.primaryColor04
                             : AppColor.navigationUnselectedColor,
 
                     fontSize: 12.sp,
