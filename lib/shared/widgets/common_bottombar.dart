@@ -33,14 +33,6 @@ Widget customBottomNavigationBar({
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: List.generate(activeAssets.length, (index) {
-        int selectedIndex =
-            currentIndex == 2
-                ? 1
-                : currentIndex == 8
-                ? 2
-                : currentIndex == 1
-                ? 3
-                : currentIndex;
         return Expanded(
           child: InkWell(
             highlightColor: Colors.transparent,
@@ -60,7 +52,7 @@ Widget customBottomNavigationBar({
                   fit: BoxFit.cover,
                   // ignore: deprecated_member_use
                   color:
-                      selectedIndex == index
+                      currentIndex == index
                           ? AppColor.navigationSelectedColor
                           : AppColor.navigationUnselectedColor,
                 ),
@@ -69,7 +61,7 @@ Widget customBottomNavigationBar({
                   navigationTitle[index],
                   style: TextStyle(
                     color:
-                        selectedIndex == index
+                        currentIndex == index
                             ? AppColor.navigationSelectedColor
                             : AppColor.navigationUnselectedColor,
 

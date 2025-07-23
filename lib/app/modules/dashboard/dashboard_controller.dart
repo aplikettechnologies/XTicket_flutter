@@ -7,7 +7,7 @@ import 'package:xticket/app/modules/ticket/ticket_screen.dart';
 import 'package:xticket/shared/localization/localization_const.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 
-import '../near_me/nearme_screen.dart';
+import '../nearMe/nearme_screen.dart';
 
 class DashboardController extends GetxController {
   RxInt currentIndex = 0.obs;

@@ -71,7 +71,7 @@ class RegistrationScreen extends StatelessWidget {
                     prefixIcon: Padding(
                       padding: EdgeInsets.only(left: 14.w, top: 2.h),
                       child: SvgPicture.asset(
-                        AppAssets.icMail,
+                        AppAssets.icUser,
                         height: 24.h,
                         width: 24.w,
                       ),

@@ -42,5 +42,43 @@
         "profile": "Profile",
         "english": "English",
         "arabic": "Arabic"
+    },
+    "event_details": {
+        "about": "About",
+        "category": "Category",
+        "go_to_map": "Go to map",
+        "find_us": "Find us",
+        "images": "Images",
+        "book_now": "Book now"
+    },
+    "notification": {
+        "notifications": "Notifications"
+    },
+    "ticket_booking": {
+        "ticket_booking": "Ticket Booking",
+        "enter_your_info": "Enter your Info",
+        "full_name": "Full Name",
+        "enter_your_name": "Enter your name",
+        "email_address": "Email Address",
+        "enter_your_email": "Enter your email",
+        "number_of_tickets": "Number of tickets",
+        "enter_another_info": "Enter another Info",
+        "payment_details": "Payment Details",
+        "ticket": "Ticket",
+        "total": "Total",
+        "sar": "SAR",
+        "continue": "Continue"
+    },
+    "event": {
+        "search_events": "Search events",
+        "city": "City",
+        "all_event": "All Events",
+        "create_event": "Create event",
+        "technology": "Technology",
+        "seminars": "Seminars",
+        "education": "Education",
+        "concerts": "Concerts",
+        "workshops": "Workshops",
+        "health": "Health"
     }
 }
