@@ -6,6 +6,7 @@ import 'package:xticket/app/modules/dashboard/dashboard_controller.dart';
 import 'package:xticket/shared/localization/localization_const.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 import 'package:xticket/shared/utils/app_style.dart';
+import 'package:xticket/shared/widgets/app_image_network.dart';
 
 import '../../../../shared/utils/app_color.dart';
 
@@ -131,19 +132,20 @@ Widget customDrawerHeader() {
     color: AppColor.secondaryColorBlack,
     width: double.infinity,
     child: Padding(
-      padding: EdgeInsets.only(top: 20.h, left: 28.w),
+      padding: EdgeInsets.only(top: 20.h, left: 28.w, bottom: 28.h),
       child: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 10.h,
           children: [
-            Container(
-              width: 60.w,
-              height: 55.h,
-              decoration: BoxDecoration(
-                color: AppColor.black,
-                shape: BoxShape.circle,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(100.r),
+              child: appImageNetwork(
+                width: 60.r,
+                height: 60.r,
+                url:
+                    "https://images.pexels.com/photos/50855/pexels-photo-50855.jpeg",
               ),
             ),
             Text("Emily Smith", style: AppStyle.blackExtraBold20Lato),

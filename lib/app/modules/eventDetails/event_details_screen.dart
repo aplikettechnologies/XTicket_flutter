@@ -30,7 +30,6 @@ class EventDetailsScreen extends StatelessWidget {
                   //Image
                   appImageNetwork(
                     height: 177.h,
-                    loadingSize: 20.h,
                     url:
                         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS92eisuWOx3tEjeW14mT9ACVgXDwIRBGtnww&s',
                   ),
@@ -86,7 +85,6 @@ class EventDetailsScreen extends StatelessWidget {
                           child: appImageNetwork(
                             height: 28.h,
                             width: 32.w,
-                            loadingSize: 20.h,
                             url:
                                 'https://png.pngtree.com/png-clipart/20190611/original/pngtree-wolf-logo-png-image_2306634.jpg',
                           ),

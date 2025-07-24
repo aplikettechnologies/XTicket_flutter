@@ -88,4 +88,10 @@ class AppAssets {
 
   //Home
   static const String icFilterSetting = "${baseSvg}ic_filter_setting.svg";
+
+  //Screen
+  static const String icScreen = "${baseSvg}ic_screen.svg";
+
+  //Payment Bottom Sheet
+  static const String icVisa = "${baseSvg}ic_visa.svg";
 }

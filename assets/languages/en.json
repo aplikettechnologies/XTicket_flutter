@@ -100,5 +100,29 @@
     },
     "home": {
         "search_events": "Search events"
+    },
+    "choose_seat": {
+        "choose_seat_text": "Choose Seat",
+        "screen": "Screen",
+        "available": "Available",
+        "Selected": "Selected",
+        "chosen": "Chosen",
+        "continue_to_payment": "Continue to payment"
+    },
+    "payment_bottomsheet": {
+        "event_payment": "Event Payment",
+        "number_of_tickets": "Number of Tickets",
+        "ticket_type": "Ticket Type",
+        "ticket_price": "Ticket Price",
+        "complete_payment": "Complete Payment",
+        "apply": "Apply"
+    },
+    "profile": {
+        "full_name": "Full Name",
+        "phone_number": "Phone Number",
+        "city": "City",
+        "notionality": "Notionality",
+        "date_of_birth": "Date of Birth",
+        "gender": "Gender"
     }
-}
+}ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDG5S71En+hYGCVgARi+uYUjpcTZO+pJwwnirRco9B6jkNyqz2iFu+pbgtAdd3wcm8IVR7U/hz84pEeub7te/SCX/IckCet087h1NdfjxGYBbHhw1jbN6X85dNh+sUfOBmUBetvpB8wYYYDzSRzZwbLgjhLQMl06SOJmT++hL84jxVL2WFemTBzVqUzb47JlJPsWGmauD2C/Guxa1hRohCa+Ld/eqiedoEn/CmjnwxQoGdnJXZmiipBDOHgUDvG4bepVvBg/Vn/Xi5HL8DbTVbKtHlNSxnVUqsmwA3JsATpmzT1AG26yOXTticxr768rVYxE7WlfpaXbjbO2FAqIba857MELEgr0rDDdvICuBnIj2OFdPMgTMmmGfYRQkBIDH017xMswoeqIjvdyTkBhLet3fuh4F0cWd1RHjNukopqfIjA6FkU7Ar1wSEQnEKE1Phg81n302RO1f2sde+GcrJFOpuS8pWAN7s2/9q9oOfFhF8EOGgUKWUU4Hxjy5H/a1Lk2VDTCDmDKib9rGZI4JFDpSF1xDY9NzI7B28Rt5qEpJDC8ra7Lf7oTTreJUWsAbgcD9OaM0JfnUeki1s7GdLN75DYb+YOUh5krzM4HWYX6fK0bNWbBya1ITg011VINg1Cc6zTAD1KfDmD4WUHQk2KWP0IMotXRreQY8h0TWSQ+Q== jayesh.kubavat@apliket.com

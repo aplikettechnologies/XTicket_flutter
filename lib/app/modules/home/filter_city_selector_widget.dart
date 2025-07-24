@@ -17,85 +17,102 @@ Widget filterCitySelector({
 }) {
   return Expanded(
     flex: 2,
-    child: StatefulBuilder(
-      builder:
-          (context, setState) => PopupMenuButton<String>(
-            menuPadding: EdgeInsets.zero,
-            icon: Container(
-              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50.r),
-                color: AppColor.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColor.black.withValues(alpha: 0.10),
-                    offset: Offset(1, 1),
-                    blurRadius: 10,
-                    spreadRadius: 1,
-                    blurStyle: BlurStyle.outer,
-                  ),
-                ],
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    controller.selectedCity.value,
-                    style: AppStyle.grey2Regular12Lato,
-                  ),
-                  SizedBox(width: 5.w),
-                  SvgPicture.asset(
-                    AppAssets.icDownArrow.removeAllWhitespace,
-                    width: 24.w,
-                    height: 24.h,
-                    fit: BoxFit.contain,
-                    color: AppColor.primaryColor04,
-                  ),
-                ],
-              ),
+    child: PopupMenuButton<String>(
+      menuPadding: EdgeInsets.zero,
+      icon: Container(
+        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(100.r),
+          color: AppColor.white,
+          boxShadow: [
+            BoxShadow(
+              color: AppColor.black.withValues(alpha: 0.1),
+              offset: Offset(1, 1),
+              blurRadius: 10,
+              spreadRadius: 0,
             ),
-            padding: EdgeInsets.zero,
-            position: PopupMenuPosition.under,
-            itemBuilder: (BuildContext context) {
-              return [
-                // Custom search field
-                PopupMenuItem<String>(
-                  enabled: false,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Search',
-                      prefixIcon: Icon(Icons.search, color: Colors.teal),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      contentPadding: EdgeInsets.symmetric(horizontal: 10),
-                    ),
-                    onChanged: (query) {
-                      // You need to call setState outside PopupMenu here — workaround needed
-                    },
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              controller.selectedCity.value,
+              style: AppStyle.grey2Regular12Lato,
+            ),
+            SizedBox(width: 5.w),
+            SvgPicture.asset(
+              AppAssets.icDownArrow.removeAllWhitespace,
+              width: 24.w,
+              height: 24.h,
+              fit: BoxFit.contain,
+              color: AppColor.primaryColor04,
+            ),
+          ],
+        ),
+      ),
+      padding: EdgeInsets.zero,
+      position: PopupMenuPosition.under,
+
+      itemBuilder: (BuildContext context) {
+        return [
+          // Custom search field
+          PopupMenuItem<String>(
+            enabled: false,
+            child: Container(
+              width: MediaQuery.sizeOf(context).width * 0.5,
+              padding: EdgeInsets.symmetric(vertical: 16.h),
+              child: TextFormField(
+                cursorColor: AppColor.primaryColor04,
+                decoration: InputDecoration(
+                  prefixIconConstraints: BoxConstraints(
+                    minWidth: 40.w,
+                    minHeight: 40.h,
                   ),
-                ),
-                // Divider
-                const PopupMenuDivider(),
-                // The actual list of cities
-                ...controller.cities.map((city) {
-                  return PopupMenuItem<String>(
-                    value: city,
-                    child: cityListTile(
-                      city: city,
-                      isSelect: controller.selectedCity.value == city,
+                  prefixIcon: Padding(
+                    padding: EdgeInsets.only(
+                      left: 12.w,
+                      right: 8.w,
+                    ), // adjust spacing
+                    child: SvgPicture.asset(
+                      AppAssets.icSearch.removeAllWhitespace,
+                      width: 24.w,
+                      height: 24.h,
+                      fit: BoxFit.contain,
                     ),
-                  );
-                }),
-              ];
-            },
-            elevation: 0,
-            color: AppColor.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12.r),
+                  ),
+                  hintText: 'Search',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                  enabledBorder: AppStyle.searchCityTextFormFieldBorder,
+                  errorBorder: AppStyle.searchCityTextFormFieldBorder,
+                  focusedBorder: AppStyle.searchCityTextFormFieldBorder,
+                  disabledBorder: AppStyle.searchCityTextFormFieldBorder,
+                  focusedErrorBorder: AppStyle.searchCityTextFormFieldBorder,
+                ),
+                onChanged: (query) => controller.filterCities(query),
+              ),
             ),
           ),
+          // The actual list of cities
+          ...controller.filteredCities.map((city) {
+            return PopupMenuItem<String>(
+              value: city,
+              onTap: () => controller.setCity(city),
+              child: cityListTile(
+                city: city,
+                isSelect: controller.selectedCity.value == city,
+              ),
+            );
+          }),
+        ];
+      },
+      elevation: 2,
+      color: AppColor.white,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
     ),
   );
 }
