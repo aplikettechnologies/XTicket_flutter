@@ -10,7 +10,7 @@ import '../app/modules/onboarding/onboarding_screen.dart';
 
 class AppPages {
   static final List<GetPage<dynamic>> routes = [
-    GetPage(name: "/", page: () => OnboardingScreen()),
+    GetPage(name: "/", page: () => CreateEventScreen()),
     GetPage(name: AppRoutes.login, page: () => LoginScreen()),
     GetPage(name: AppRoutes.registration, page: () => RegistrationScreen()),
     GetPage(name: AppRoutes.forgetPassword, page: () => ForgetPasswordScreen()),

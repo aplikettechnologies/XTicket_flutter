@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:xticket/app/modules/dashboard/dashboard_controller.dart';
+import 'package:xticket/routes/app_routes.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 import 'package:xticket/shared/utils/app_color.dart';
 import '../../../shared/widgets/app_svg_iconbutton.dart';
@@ -53,7 +54,7 @@ class DashboardScreen extends StatelessWidget {
               svgIconButton(
                 iconPath: AppAssets.icNotification,
                 onPressed: () {
-                  // handle tap
+                  Get.toNamed(AppRoutes.notification);
                 },
                 padding: EdgeInsets.all(5.sp),
               ),

@@ -3,6 +3,7 @@ class AppAssets {
   static const String baseFonts = "assets/fonts/";
   static const String baseImages = "assets/images/";
   static const String basePathDummy = "assets/dummy_images/";
+
   //Dummy
   static const String imgDummyDetails = "${basePathDummy}img_dummy_details.png";
   static const String icDummyQrCode = "${basePathDummy}dummy_qr_code.svg";
@@ -18,6 +19,7 @@ class AppAssets {
   static const String icSearchfield = "${baseSvg}ic_search_field.svg";
   static const String icFilter = "${baseSvg}ic_filter.svg";
   static const String icDropdown = "${baseSvg}ic_dropdown.svg";
+  static const String icFieldDropdown = "${baseSvg}ic_field_dropdown.svg";
 
   // Onboarding
   static const String bgOnboarding = "${baseSvg}bg_onboarding.svg";
@@ -88,4 +90,9 @@ class AppAssets {
 
   //Home
   static const String icFilterSetting = "${baseSvg}ic_filter_setting.svg";
+
+  //createEvent
+  static const String icUpload = "${baseSvg}ic_upload.svg";
+  static const String icMarker = "${baseSvg}ic_marker.svg";
+  static const String icTarget = "${baseSvg}ic_target.svg";
 }

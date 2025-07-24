@@ -80,17 +80,23 @@ class AppStyle {
   );
 
   //------------------------ DARK COLOR ------------------------//
-  static TextStyle darkBold24Lato = TextStyle(
-    color: AppColor.dark,
-    fontSize: 24.sp,
-    fontFamily: 'Lato',
-    fontWeight: FontWeight.w700,
-  );
   static TextStyle darkReguler14Manrope = TextStyle(
     color: AppColor.dark,
     fontSize: 14.sp,
     fontFamily: 'Manrope',
     fontWeight: FontWeight.w400,
+  );
+  static TextStyle darkSemibold18Manrope = TextStyle(
+    color: AppColor.dark,
+    fontSize: 18.sp,
+    fontFamily: 'Manrope',
+    fontWeight: FontWeight.w600,
+  );
+  static TextStyle darkExtraBold24Manrope = TextStyle(
+    color: AppColor.dark,
+    fontSize: 20.sp,
+    fontFamily: 'Manrope',
+    fontWeight: FontWeight.w800,
   );
   static TextStyle darkReguler12Lato = TextStyle(
     color: AppColor.dark,
@@ -109,6 +115,12 @@ class AppStyle {
     fontSize: 14.sp,
     fontFamily: 'Lato',
     fontWeight: FontWeight.w500,
+  );
+  static TextStyle darkBold24Lato = TextStyle(
+    color: AppColor.dark,
+    fontSize: 24.sp,
+    fontFamily: 'Lato',
+    fontWeight: FontWeight.w700,
   );
 
   //------------------------ BLACK COLOR ------------------------//
