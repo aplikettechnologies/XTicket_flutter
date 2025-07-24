@@ -5,7 +5,7 @@ import 'package:xticket/app/modules/createEvent/create_event_controller.dart';
 import 'package:xticket/app/modules/createEvent/widget/tab_details_widget.dart';
 import 'package:xticket/app/modules/createEvent/widget/tab_general_widget.dart';
 import 'package:xticket/app/modules/createEvent/widget/tab_location_widget.dart';
-import 'package:xticket/app/modules/createEvent/widget/tab_share_widget.dart';
+import 'package:xticket/app/modules/createEvent/widget/tab_confirm_widget.dart';
 import 'package:xticket/shared/localization/localization_const.dart';
 import 'package:xticket/shared/utils/app_color.dart';
 import 'package:xticket/shared/utils/app_style.dart';
@@ -59,7 +59,9 @@ class CreateEventScreen extends StatelessWidget {
                       Tab(
                         text: getTranslation(context, 'create_event.details'),
                       ),
-                      Tab(text: getTranslation(context, 'create_event.share')),
+                      Tab(
+                        text: getTranslation(context, 'create_event.confirm'),
+                      ),
                     ],
                   ),
                 ),
@@ -71,7 +73,7 @@ class CreateEventScreen extends StatelessWidget {
                       generalTab(context: context),
                       locationTab(context: context),
                       detailsTab(context: context),
-                      shareTab(),
+                      confirmTab(context: context),
                     ],
                   ),
                 ),

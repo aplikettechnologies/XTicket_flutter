@@ -5,6 +5,8 @@ class CreateEventController extends GetxController
     with GetTickerProviderStateMixin {
   late TabController tabController;
   String selectedPrice = 'item 1';
+  String? selectStartTime;
+  String? selectEndTime;
 
   @override
   void onInit() {

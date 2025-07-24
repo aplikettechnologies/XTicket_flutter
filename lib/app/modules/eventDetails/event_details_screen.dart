@@ -46,7 +46,7 @@ class EventDetailsScreen extends StatelessWidget {
                       children: [
                         //Arrow
                         SvgPicture.asset(
-                          AppAssets.icArrowLeft,
+                          AppAssets.icBack,
                           height: 24.h,
                           width: 24.w,
                         ),

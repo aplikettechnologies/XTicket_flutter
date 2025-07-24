@@ -48,7 +48,7 @@ PreferredSizeWidget appAppbar({
           Padding(
             padding: EdgeInsets.only(left: 20.w),
             child: SvgPicture.asset(
-              AppAssets.icArrowLeft,
+              AppAssets.icBack,
               height: 24.h,
               width: 24.w,
             ),

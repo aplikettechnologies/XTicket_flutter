@@ -58,8 +58,9 @@ Widget appTextFormField({
     mainAxisAlignment: MainAxisAlignment.start,
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      Text(headerText, style: headerStyle ?? AppStyle.headerTextStyle),
-      SizedBox(height: 8.h),
+      if (headerText != '')
+        Text(headerText, style: headerStyle ?? AppStyle.headerTextStyle),
+      if (headerText != '') SizedBox(height: 8.h),
       TextFormField(
         autofocus: autoFocus ?? false,
         controller: textEditingController,

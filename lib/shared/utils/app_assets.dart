@@ -11,7 +11,7 @@ class AppAssets {
   //CommonIcons
   static const String icNoImage = "${baseSvg}ic_no_image.jpg";
   static const String icClose = "${baseSvg}ic_close.svg";
-  static const String icArrowLeft = "${baseSvg}ic_arrow_left.svg";
+  static const String icBack = "${baseSvg}ic_back.svg";
   static const String icShare = "${baseSvg}ic_share.svg";
   static const String icLike = "${baseSvg}ic_like.svg";
   static const String icUnfilledStar = "${baseSvg}ic_unfilled_star.svg";
@@ -20,6 +20,7 @@ class AppAssets {
   static const String icFilter = "${baseSvg}ic_filter.svg";
   static const String icDropdown = "${baseSvg}ic_dropdown.svg";
   static const String icFieldDropdown = "${baseSvg}ic_field_dropdown.svg";
+  static const String icCheckBroken = "${baseSvg}ic_check_broken.svg";
 
   // Onboarding
   static const String bgOnboarding = "${baseSvg}bg_onboarding.svg";
@@ -81,6 +82,7 @@ class AppAssets {
   static const String icSettingsWhite = "${baseSvg}ic_settings_white.svg";
   static const String icShieldWhite = "${baseSvg}ic_shield_white.svg";
   static const String icTicketWhite = "${baseSvg}ic_ticket_white.svg";
+  static const String icRightArrow = "${baseSvg}ic_right_arrow.svg";
   static const String icLeftArrow = "${baseSvg}ic_left_arrow.svg";
 
   //My Ticket
@@ -95,4 +97,6 @@ class AppAssets {
   static const String icUpload = "${baseSvg}ic_upload.svg";
   static const String icMarker = "${baseSvg}ic_marker.svg";
   static const String icTarget = "${baseSvg}ic_target.svg";
+  static const String icErrorGreen = "${baseSvg}ic_error_green.svg";
+  static const String icPhoto = "${baseSvg}ic_photo.svg";
 }

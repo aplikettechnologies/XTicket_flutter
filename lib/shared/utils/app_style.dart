@@ -16,6 +16,18 @@ class AppStyle {
     fontFamily: 'Manrope',
     fontWeight: FontWeight.w500,
   );
+  static TextStyle primary1Bold14Manrope = TextStyle(
+    color: AppColor.primaryColor01,
+    fontSize: 14.sp,
+    fontFamily: 'Manrope',
+    fontWeight: FontWeight.w700,
+  );
+  static TextStyle primary4Medium14Manrope = TextStyle(
+    color: AppColor.primaryColor04,
+    fontSize: 14.sp,
+    fontFamily: 'Manrope',
+    fontWeight: FontWeight.w500,
+  );
   static TextStyle primary4Semibold12Manrope = TextStyle(
     color: AppColor.primaryColor04,
     fontSize: 12.sp,
@@ -124,10 +136,23 @@ class AppStyle {
   );
 
   //------------------------ BLACK COLOR ------------------------//
+  static TextStyle blackReguler12Manrope = TextStyle(
+    color: AppColor.black,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    fontFamily: "Manrope",
+  );
+
   static TextStyle blackMedium18Manrope = TextStyle(
     color: AppColor.black,
     fontSize: 18.sp,
     fontWeight: FontWeight.w500,
+    fontFamily: "Manrope",
+  );
+  static TextStyle blackSemibold20Manrope = TextStyle(
+    color: AppColor.black,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w600,
     fontFamily: "Manrope",
   );
   static TextStyle black14BoldLato = TextStyle(
