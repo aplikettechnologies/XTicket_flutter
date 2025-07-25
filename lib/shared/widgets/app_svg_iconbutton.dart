@@ -7,6 +7,7 @@ Widget svgIconButton({
   required VoidCallback onPressed,
   double? size,
   EdgeInsets? padding,
+  Color? color,
 }) {
   return IconButton(
     padding: padding ?? EdgeInsets.zero,
@@ -17,6 +18,8 @@ Widget svgIconButton({
       height: size ?? 24.h,
       width: size ?? 24.w,
       fit: BoxFit.contain,
+      colorFilter:
+          color != null ? ColorFilter.mode(color, BlendMode.srcIn) : null,
     ),
   );
 }

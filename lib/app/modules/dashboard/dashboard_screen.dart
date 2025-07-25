@@ -57,17 +57,28 @@ class DashboardScreen extends StatelessWidget {
                       fit: BoxFit.fill,
                     ),
             elevation: 4,
-            actions: [
-              svgIconButton(
-                iconPath: AppAssets.icNotification,
-                onPressed: () {
-                  // handle tap
-                },
-                padding: EdgeInsets.all(5.sp),
-              ),
+            actions:
+                controller.currentIndex.value == 4
+                    ? [
+                      svgIconButton(
+                        iconPath: AppAssets.icSettingsWhite,
+                        onPressed: () {
+                          // handle tap
+                        },
+                        padding: EdgeInsets.all(5.sp),
+                      ),
+                    ]
+                    : [
+                      svgIconButton(
+                        iconPath: AppAssets.icNotification,
+                        onPressed: () {
+                          // handle tap
+                        },
+                        padding: EdgeInsets.all(5.sp),
+                      ),
 
-              changeLanguageDropdown(context),
-            ],
+                      changeLanguageDropdown(context),
+                    ],
           ),
           drawer: customerDrawerWidget(context: context),
           body:

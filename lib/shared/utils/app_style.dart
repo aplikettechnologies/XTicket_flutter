@@ -32,6 +32,13 @@ class AppStyle {
     fontWeight: FontWeight.w500,
   );
 
+  static TextStyle primary4RegularManrope = TextStyle(
+    color: AppColor.primaryColor04,
+    fontSize: 14.sp,
+    fontFamily: 'Manripe',
+    fontWeight: FontWeight.w400,
+  );
+
   static TextStyle primaryColor04ExtraBold14Lato = TextStyle(
     color: AppColor.primaryColor04,
     fontSize: 14.sp,
@@ -135,6 +142,13 @@ class AppStyle {
     fontWeight: FontWeight.w500,
     fontFamily: "Manrope",
   );
+  static TextStyle blackBold14Manrope = TextStyle(
+    color: AppColor.black,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
+    fontFamily: "Manrope",
+  );
+
   static TextStyle black14BoldLato = TextStyle(
     color: AppColor.black,
     fontSize: 14.sp,
