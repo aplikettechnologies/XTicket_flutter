@@ -166,12 +166,16 @@ class EventScreen extends StatelessWidget {
                     //AllEvent
                     GridView.builder(
                       itemCount: 5,
-                      padding: EdgeInsets.symmetric(horizontal: 16.w),
+                      padding: EdgeInsets.only(
+                        left: 16.w,
+                        right: 16.w,
+                        bottom: 16.h,
+                      ),
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
-                        childAspectRatio: 1.25,
+                        childAspectRatio: 1.10,
                         crossAxisSpacing: 10,
                         mainAxisSpacing: 10,
                       ),

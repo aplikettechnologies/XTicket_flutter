@@ -3,8 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:xticket/app/modules/dashboard/dashboard_controller.dart';
+import 'package:xticket/shared/localization/localization_const.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 import 'package:xticket/shared/utils/app_color.dart';
+import 'package:xticket/shared/utils/app_style.dart';
+import '../../../routes/app_routes.dart';
 import '../../../shared/widgets/app_svg_iconbutton.dart';
 import '../../../shared/widgets/common_bottombar.dart';
 import 'widgets/change_language_dropdown.dart';
@@ -41,25 +44,43 @@ class DashboardScreen extends StatelessWidget {
                 );
               },
             ),
-            centerTitle: true,
-            title: SvgPicture.asset(
-              AppAssets.icAppLogoTitleWhite,
-              height: 31.h,
-              width: 55.w,
-              fit: BoxFit.fill,
-            ),
+            centerTitle: controller.currentIndex.value == 4 ? false : true,
+            title:
+                controller.currentIndex.value == 4
+                    ? Text(
+                      getTranslation(context, "dashboard.profile"),
+                      style: AppStyle.whiteBold20Lato,
+                    )
+                    : SvgPicture.asset(
+                      AppAssets.icAppLogoTitleWhite,
+                      height: 31.h,
+                      width: 55.w,
+                      fit: BoxFit.fill,
+                    ),
             elevation: 4,
-            actions: [
-              svgIconButton(
-                iconPath: AppAssets.icNotification,
-                onPressed: () {
-                  // handle tap
-                },
-                padding: EdgeInsets.all(5.sp),
-              ),
+            actions:
+                controller.currentIndex.value == 4
+                    ? [
+                      svgIconButton(
+                        iconPath: AppAssets.icSettingsWhite,
+                        onPressed: () {
+                          Get.toNamed(AppRoutes.settings);
+                          // handle tap
+                        },
+                        padding: EdgeInsets.all(5.sp),
+                      ),
+                    ]
+                    : [
+                      svgIconButton(
+                        iconPath: AppAssets.icNotification,
+                        onPressed: () {
+                          // handle tap
+                        },
+                        padding: EdgeInsets.all(5.sp),
+                      ),
 
-              changeLanguageDropdown(context),
-            ],
+                      changeLanguageDropdown(context),
+                    ],
           ),
           drawer: customerDrawerWidget(context: context),
           body:
