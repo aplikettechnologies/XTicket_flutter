@@ -107,4 +107,7 @@ class AppAssets {
 
   //Profile
   static const String icEditProfile = "${baseSvg}ic_edit_profile.svg";
+
+  //Search
+  static const String icLanguage = "${baseSvg}ic_language.svg";
 }

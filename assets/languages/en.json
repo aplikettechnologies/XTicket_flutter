@@ -183,5 +183,24 @@
         "new_password": "New Password",
         "confirm_new_password": "Confirm new Password",
         "confirm": "Confirm"
+    },
+    "search": {
+        "search": "Search",
+        "city": "City",
+        "search_events": "Search events",
+        "filters": "Filters",
+        "select_category": "Select Category",
+        "technology": "Technology",
+        "seminars": "Seminars",
+        "education": "Education",
+        "workshop": "Workshop",
+        "concerts": "Concerts",
+        "health": "Health",
+        "select_country": "Select Country",
+        "country": "Country",
+        "date": "Date",
+        "select_date": "Select date",
+        "reset": "Reset",
+        "apply_filters": "Apply filters"
     }
 }

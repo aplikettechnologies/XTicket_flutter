@@ -10,6 +10,7 @@ Widget appDropdown({
   required Function(String?) onChanged,
   required String selectedValue,
   required List<String> items,
+  Widget? customButton,
 }) {
   return DropdownButtonHideUnderline(
     child: DropdownButton2<String>(
@@ -44,33 +45,35 @@ Widget appDropdown({
               .toList(),
       onChanged: onChanged,
       value: selectedValue,
-      customButton: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
-        decoration: BoxDecoration(
-          color: AppColor.white,
-          borderRadius: BorderRadius.circular(100.r),
-          border: Border.all(color: AppColor.grey2),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              child: Text(
-                selectedValue.toString(),
-                style: AppStyle.appbarTitleTextStyle,
-              ),
+      customButton:
+          customButton ??
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+            decoration: BoxDecoration(
+              color: AppColor.white,
+              borderRadius: BorderRadius.circular(100.r),
+              border: Border.all(color: AppColor.grey2),
             ),
-            SizedBox(width: 5.w),
-            SvgPicture.asset(
-              AppAssets.icFieldDropdown,
-              height: 24.h,
-              width: 24.w,
-              fit: BoxFit.cover,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Text(
+                    selectedValue.toString(),
+                    style: AppStyle.appbarTitleTextStyle,
+                  ),
+                ),
+                SizedBox(width: 5.w),
+                SvgPicture.asset(
+                  AppAssets.icFieldDropdown,
+                  height: 24.h,
+                  width: 24.w,
+                  fit: BoxFit.cover,
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
+          ),
     ),
   );
 }
