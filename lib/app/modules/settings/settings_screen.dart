@@ -4,7 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 import 'package:xticket/shared/utils/app_color.dart';
 import 'package:xticket/shared/utils/app_style.dart';
-import 'package:xticket/shared/widgets/app_svg_iconbutton.dart';
 
 import '../../../shared/localization/localization_const.dart';
 import '../../../shared/widgets/app_appbar.dart';

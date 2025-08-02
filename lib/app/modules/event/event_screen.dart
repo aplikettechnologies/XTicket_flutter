@@ -180,7 +180,12 @@ class EventScreen extends StatelessWidget {
                         mainAxisSpacing: 10,
                       ),
                       itemBuilder: (context, index) {
-                        return itemEventList();
+                        return InkWell(
+                          onTap: () {
+                            Get.toNamed(AppRoutes.eventDetails);
+                          },
+                          child: itemEventList(),
+                        );
                       },
                     ),
                   ],

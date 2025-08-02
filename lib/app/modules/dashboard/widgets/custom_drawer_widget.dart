@@ -35,7 +35,7 @@ Widget customerDrawerWidget({required BuildContext context}) {
                         drawerListTile(
                           title: getTranslation(context, "drawer.myEvents"),
                           leadingIcon: AppAssets.icEventWhite,
-                          trailingIcon: AppAssets.icLeftArrow,
+                          trailingIcon: AppAssets.icRightArrow,
                           onTap: () {
                             Get.back();
                             controller.setTabIndex(2);
@@ -46,7 +46,7 @@ Widget customerDrawerWidget({required BuildContext context}) {
                         drawerListTile(
                           title: getTranslation(context, "drawer.myTickets"),
                           leadingIcon: AppAssets.icTicketWhite,
-                          trailingIcon: AppAssets.icLeftArrow,
+                          trailingIcon: AppAssets.icRightArrow,
                           onTap: () {
                             Get.back();
                             controller.setTabIndex(1);
@@ -55,7 +55,7 @@ Widget customerDrawerWidget({required BuildContext context}) {
                         drawerListTile(
                           title: getTranslation(context, "drawer.eQueue"),
                           leadingIcon: AppAssets.icSearchWhite,
-                          trailingIcon: AppAssets.icLeftArrow,
+                          trailingIcon: AppAssets.icRightArrow,
                           onTap: () {
                             Get.back();
                             controller.setTabIndex(3);
@@ -64,7 +64,7 @@ Widget customerDrawerWidget({required BuildContext context}) {
                         drawerListTile(
                           title: getTranslation(context, "drawer.favorite"),
                           leadingIcon: AppAssets.icHeartWhite,
-                          trailingIcon: AppAssets.icLeftArrow,
+                          trailingIcon: AppAssets.icRightArrow,
                           onTap: () {
                             Get.back();
                           },
@@ -72,7 +72,7 @@ Widget customerDrawerWidget({required BuildContext context}) {
                         drawerListTile(
                           title: getTranslation(context, "drawer.settings"),
                           leadingIcon: AppAssets.icSettingsWhite,
-                          trailingIcon: AppAssets.icLeftArrow,
+                          trailingIcon: AppAssets.icRightArrow,
                           onTap: () {
                             // Handle Settings tap
                           },
@@ -80,7 +80,7 @@ Widget customerDrawerWidget({required BuildContext context}) {
                         drawerListTile(
                           title: getTranslation(context, "drawer.faq"),
                           leadingIcon: AppAssets.icFaqWhite,
-                          trailingIcon: AppAssets.icLeftArrow,
+                          trailingIcon: AppAssets.icRightArrow,
                           onTap: () {
                             // Handle FAQ tap
                           },
@@ -91,7 +91,7 @@ Widget customerDrawerWidget({required BuildContext context}) {
                             "drawer.privacyPolicy",
                           ),
                           leadingIcon: AppAssets.icShieldWhite,
-                          trailingIcon: AppAssets.icLeftArrow,
+                          trailingIcon: AppAssets.icRightArrow,
                           onTap: () {
                             // Handle Privacy Policy tap
                           },
@@ -99,7 +99,7 @@ Widget customerDrawerWidget({required BuildContext context}) {
                         drawerListTile(
                           title: getTranslation(context, "drawer.logout"),
                           leadingIcon: AppAssets.icLogoutWhite,
-                          trailingIcon: AppAssets.icLeftArrow,
+                          trailingIcon: AppAssets.icRightArrow,
                           onTap: () {
                             // Handle Logout tap
                           },

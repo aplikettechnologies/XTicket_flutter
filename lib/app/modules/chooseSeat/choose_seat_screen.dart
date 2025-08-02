@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:xticket/app/modules/choose_seat/choose_seat_controller.dart';
-import 'package:xticket/app/modules/choose_seat/seat_layout_widget.dart';
-import 'package:xticket/app/modules/event_payment/event_payment_bottomsheet_widget.dart';
+import 'package:xticket/app/modules/chooseSeat/choose_seat_controller.dart';
+import 'package:xticket/app/modules/chooseSeat/seat_layout_widget.dart';
+import 'package:xticket/app/modules/eventPayment/event_payment_bottomsheet_widget.dart';
 import 'package:xticket/shared/utils/app_color.dart';
 import 'package:xticket/shared/utils/app_style.dart';
 import 'package:xticket/shared/widgets/app_button.dart';

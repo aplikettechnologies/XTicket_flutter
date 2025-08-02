@@ -17,6 +17,18 @@ class AppStyle {
     fontFamily: 'Manrope',
     fontWeight: FontWeight.w500,
   );
+  static TextStyle primary1Bold14Manrope = TextStyle(
+    color: AppColor.primaryColor01,
+    fontSize: 14.sp,
+    fontFamily: 'Manrope',
+    fontWeight: FontWeight.w700,
+  );
+  static TextStyle primary4Medium14Manrope = TextStyle(
+    color: AppColor.primaryColor04,
+    fontSize: 14.sp,
+    fontFamily: 'Manrope',
+    fontWeight: FontWeight.w500,
+  );
 
   static TextStyle primary4Semibold12Manrope = TextStyle(
     color: AppColor.primaryColor04,
@@ -97,17 +109,23 @@ class AppStyle {
   );
 
   //------------------------ DARK COLOR ------------------------//
-  static TextStyle darkBold24Lato = TextStyle(
-    color: AppColor.dark,
-    fontSize: 24.sp,
-    fontFamily: 'Lato',
-    fontWeight: FontWeight.w700,
-  );
   static TextStyle darkReguler14Manrope = TextStyle(
     color: AppColor.dark,
     fontSize: 14.sp,
     fontFamily: 'Manrope',
     fontWeight: FontWeight.w400,
+  );
+  static TextStyle darkSemibold18Manrope = TextStyle(
+    color: AppColor.dark,
+    fontSize: 18.sp,
+    fontFamily: 'Manrope',
+    fontWeight: FontWeight.w600,
+  );
+  static TextStyle darkExtraBold24Manrope = TextStyle(
+    color: AppColor.dark,
+    fontSize: 20.sp,
+    fontFamily: 'Manrope',
+    fontWeight: FontWeight.w800,
   );
   static TextStyle darkReguler12Lato = TextStyle(
     color: AppColor.dark,
@@ -127,6 +145,12 @@ class AppStyle {
     fontFamily: 'Lato',
     fontWeight: FontWeight.w500,
   );
+  static TextStyle darkBold24Lato = TextStyle(
+    color: AppColor.dark,
+    fontSize: 24.sp,
+    fontFamily: 'Lato',
+    fontWeight: FontWeight.w700,
+  );
 
   static TextStyle dark14ExtraBoldLato = TextStyle(
     color: AppColor.dark,
@@ -136,10 +160,23 @@ class AppStyle {
   );
 
   //------------------------ BLACK COLOR ------------------------//
+  static TextStyle blackReguler12Manrope = TextStyle(
+    color: AppColor.black,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    fontFamily: "Manrope",
+  );
+
   static TextStyle blackMedium18Manrope = TextStyle(
     color: AppColor.black,
     fontSize: 18.sp,
     fontWeight: FontWeight.w500,
+    fontFamily: "Manrope",
+  );
+  static TextStyle blackSemibold20Manrope = TextStyle(
+    color: AppColor.black,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w600,
     fontFamily: "Manrope",
   );
   static TextStyle blackBold14Manrope = TextStyle(
