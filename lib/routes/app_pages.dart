@@ -4,6 +4,7 @@ import 'package:xticket/app/modules/auth/login/login_screen.dart';
 import 'package:xticket/app/modules/auth/registration/registration_screen.dart';
 import 'package:xticket/app/modules/createEvent/create_event_screen.dart';
 import 'package:xticket/app/modules/dashboard/dashboard_screen.dart';
+import 'package:xticket/app/modules/settings/settings_screen.dart';
 import 'package:xticket/routes/app_routes.dart';
 import '../app/modules/notification/notification_screen.dart';
 import '../app/modules/onboarding/onboarding_screen.dart';
@@ -17,5 +18,6 @@ class AppPages {
     GetPage(name: AppRoutes.dashboard, page: () => DashboardScreen()),
     GetPage(name: AppRoutes.notification, page: () => NotificationScreen()),
     GetPage(name: AppRoutes.createEvent, page: () => CreateEventScreen()),
+    GetPage(name: AppRoutes.settings, page: () => SettingsScreen()),
   ];
 }

@@ -58,9 +58,72 @@ class SettingsScreen extends StatelessWidget {
             ),
 
             SizedBox(height: 16.h),
-            settingsListTile(
+            settingsLogoutWidget(
               title: getTranslation(context, "settings.logout"),
               subtitle: "m.yasir.k.2001@gmail.com",
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget settingsLogoutWidget({
+    required String title,
+    void Function()? onTap,
+    required String subtitle,
+  }) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+        decoration: BoxDecoration(
+          color: AppColor.neutralColor09.withValues(alpha: 0.99),
+          boxShadow: [
+            BoxShadow(
+              color: AppColor.black.withValues(alpha: 0.08),
+              blurRadius: 3,
+              spreadRadius: 0,
+              offset: Offset(0, 1),
+            ),
+            BoxShadow(
+              color: AppColor.black.withValues(alpha: 0.12),
+              blurRadius: 1,
+              offset: Offset(0, 2),
+              spreadRadius: 0,
+            ),
+            BoxShadow(
+              color: AppColor.black.withValues(alpha: 0.12),
+              blurRadius: 1,
+              offset: Offset(0, 1),
+              spreadRadius: 0,
+            ),
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(title, style: AppStyle.blackBold14Manrope),
+                  Text(
+                    "m.yasir.k.2001@gmail.com",
+                    style: AppStyle.primary4RegularManrope,
+                  ),
+                ],
+              ),
+            ),
+
+            SvgPicture.asset(
+              AppAssets.icLeftArrow,
+              height: 24.h,
+              width: 24.w,
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(AppColor.black, BlendMode.srcIn),
             ),
           ],
         ),

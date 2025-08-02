@@ -7,6 +7,7 @@ import 'package:xticket/shared/localization/localization_const.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 import 'package:xticket/shared/utils/app_color.dart';
 import 'package:xticket/shared/utils/app_style.dart';
+import '../../../routes/app_routes.dart';
 import '../../../shared/widgets/app_svg_iconbutton.dart';
 import '../../../shared/widgets/common_bottombar.dart';
 import 'widgets/change_language_dropdown.dart';
@@ -63,6 +64,7 @@ class DashboardScreen extends StatelessWidget {
                       svgIconButton(
                         iconPath: AppAssets.icSettingsWhite,
                         onPressed: () {
+                          Get.toNamed(AppRoutes.settings);
                           // handle tap
                         },
                         padding: EdgeInsets.all(5.sp),
