@@ -26,7 +26,7 @@ Widget appTextFormField({
   InputBorder? enableBorder,
   InputBorder? focusedBorder,
   String? hintText,
-  required String headerText,
+  String headerText = '',
   String? errorText,
   String? prefixText,
   String? suffixText,
@@ -59,7 +59,10 @@ Widget appTextFormField({
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       if (headerText != '')
-        Text(headerText, style: headerStyle ?? AppStyle.headerTextStyle),
+        Text(
+          headerText.toString(),
+          style: headerStyle ?? AppStyle.headerTextStyle,
+        ),
       if (headerText != '') SizedBox(height: 8.h),
       TextFormField(
         autofocus: autoFocus ?? false,

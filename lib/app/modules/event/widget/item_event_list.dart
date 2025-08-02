@@ -7,15 +7,14 @@ import 'package:xticket/shared/widgets/app_image_network.dart';
 Widget itemEventList() {
   return Column(
     mainAxisAlignment: MainAxisAlignment.start,
-    crossAxisAlignment: CrossAxisAlignment.center,
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Stack(
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(8.r),
             child: appImageNetwork(
-              height: 103.h,
-              loadingSize: 30.h,
+              height: 130.h,
               url:
                   'https://www.digitalclassworld.com/blog/wp-content/uploads/2021/02/Full-form-of-URL-1-1024x824.jpg',
             ),
@@ -40,6 +39,8 @@ Widget itemEventList() {
               color: AppColor.lightYellow1,
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   '01',

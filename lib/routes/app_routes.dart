@@ -8,4 +8,6 @@ abstract class AppRoutes {
   static const dashboard = '/dashboard';
   static const notification = '/notification';
   static const createEvent = '/createEvent';
+  static const settings = '/settings';
+  static const changePassword = '/changePassword';
 }

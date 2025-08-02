@@ -10,6 +10,7 @@ class AppStyle {
     fontFamily: 'Manrope',
     fontWeight: FontWeight.w600,
   );
+
   static TextStyle primary1Medium14Manrope = TextStyle(
     color: AppColor.primaryColor01,
     fontSize: 14.sp,
@@ -28,17 +29,33 @@ class AppStyle {
     fontFamily: 'Manrope',
     fontWeight: FontWeight.w500,
   );
+
   static TextStyle primary4Semibold12Manrope = TextStyle(
     color: AppColor.primaryColor04,
     fontSize: 12.sp,
     fontFamily: 'Manrope',
     fontWeight: FontWeight.w600,
   );
+
   static TextStyle primary4Medium12Lato = TextStyle(
     color: AppColor.primaryColor04,
     fontSize: 12.sp,
     fontFamily: 'Lato',
     fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle primary4RegularManrope = TextStyle(
+    color: AppColor.primaryColor04,
+    fontSize: 14.sp,
+    fontFamily: 'Manripe',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle primaryColor04ExtraBold14Lato = TextStyle(
+    color: AppColor.primaryColor04,
+    fontSize: 14.sp,
+    fontFamily: 'Lato',
+    fontWeight: FontWeight.w900,
   );
 
   //------------------------ NEUTRAL COLOR ------------------------//
@@ -135,6 +152,13 @@ class AppStyle {
     fontWeight: FontWeight.w700,
   );
 
+  static TextStyle dark14ExtraBoldLato = TextStyle(
+    color: AppColor.dark,
+    fontSize: 14.sp,
+    fontFamily: 'Lato',
+    fontWeight: FontWeight.w900,
+  );
+
   //------------------------ BLACK COLOR ------------------------//
   static TextStyle blackReguler12Manrope = TextStyle(
     color: AppColor.black,
@@ -155,6 +179,13 @@ class AppStyle {
     fontWeight: FontWeight.w600,
     fontFamily: "Manrope",
   );
+  static TextStyle blackBold14Manrope = TextStyle(
+    color: AppColor.black,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
+    fontFamily: "Manrope",
+  );
+
   static TextStyle black14BoldLato = TextStyle(
     color: AppColor.black,
     fontSize: 14.sp,
@@ -198,6 +229,13 @@ class AppStyle {
     fontFamily: "Lato",
   );
 
+  static TextStyle black16ExtraBoldManrope = TextStyle(
+    color: AppColor.black,
+    fontSize: 16.sp,
+    fontFamily: 'Manrope',
+    fontWeight: FontWeight.w700,
+  );
+
   //------------------------ YELLOW COLOR ------------------------//
   static TextStyle yellowMedium12Lato = TextStyle(
     color: AppColor.yellow,
@@ -211,6 +249,13 @@ class AppStyle {
     color: AppColor.white,
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
+    fontFamily: "Lato",
+  );
+
+  static TextStyle whiteBold20Lato = TextStyle(
+    color: AppColor.white,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w600,
     fontFamily: "Lato",
   );
 
@@ -296,5 +341,11 @@ class AppStyle {
     fontSize: 12.sp,
     fontFamily: 'Lato',
     fontWeight: FontWeight.w400,
+  );
+
+  //Search City Decotation
+  static InputBorder searchCityTextFormFieldBorder = OutlineInputBorder(
+    borderRadius: BorderRadius.circular(50.r),
+    borderSide: BorderSide(color: AppColor.grey1, width: 1.w),
   );
 }

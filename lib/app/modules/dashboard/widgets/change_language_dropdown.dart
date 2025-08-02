@@ -57,7 +57,7 @@ changeLanguageDropdown(BuildContext context) {
                     fit: BoxFit.cover,
                   ),
                   Text(
-                    getTranslation(context, "dashboard.english"),
+                    getTranslation(context, "dashboard.arabic"),
                     style: AppStyle.blackMedium12Lato,
                   ),
                 ],
@@ -80,7 +80,7 @@ changeLanguageDropdown(BuildContext context) {
                     fit: BoxFit.cover,
                   ),
                   Text(
-                    getTranslation(context, "dashboard.arabic"),
+                    getTranslation(context, "dashboard.english"),
                     style: AppStyle.blackMedium12Lato,
                   ),
                 ],

@@ -21,6 +21,7 @@ PreferredSizeWidget appAppbar({
   double? leadingWidth,
   List<Widget>? actions,
   Widget? backIcon,
+  bool? centerTitle,
 }) {
   return AppBar(
     systemOverlayStyle: SystemUiOverlayStyle(
@@ -34,7 +35,7 @@ PreferredSizeWidget appAppbar({
     ),
     actions: actions,
     backgroundColor: bgColor ?? AppColor.white,
-
+    centerTitle: centerTitle,
     scrolledUnderElevation: 0,
     leadingWidth: leadingWidth ?? 50.w,
     leading: InkWell(

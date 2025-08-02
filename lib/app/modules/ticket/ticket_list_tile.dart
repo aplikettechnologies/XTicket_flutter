@@ -8,7 +8,11 @@ import 'package:xticket/shared/utils/app_style.dart';
 import '../../../shared/localization/localization_const.dart';
 import 'ticker_dialog_widget.dart';
 
-Widget iconTextRow({required String iconPath, required String value}) {
+Widget iconTextRow({
+  required String iconPath,
+  required String value,
+  required Color color,
+}) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.start,
     crossAxisAlignment: CrossAxisAlignment.center,
@@ -18,6 +22,7 @@ Widget iconTextRow({required String iconPath, required String value}) {
         height: 24.h,
         width: 24.w,
         fit: BoxFit.contain,
+        colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
       ),
       SizedBox(width: 8.w),
       Text(value, style: AppStyle.neutral4Medium12Manrope),
@@ -70,16 +75,19 @@ Widget ticketListTile({required BuildContext context}) {
                 iconTextRow(
                   iconPath: AppAssets.icCalendar,
                   value: "Mar 19, 2024 - Mar 21, 2024",
+                  color: AppColor.neutralColor04,
                 ),
                 SizedBox(height: 5.h),
                 iconTextRow(
                   iconPath: AppAssets.icClock,
                   value: "8:30 PM - 11:30 PM",
+                  color: AppColor.neutralColor04,
                 ),
                 SizedBox(height: 8.h),
                 iconTextRow(
                   iconPath: AppAssets.icValidRed,
                   value: getTranslation(context, 'ticket.valid'),
+                  color: AppColor.navigationSelectedColor,
                 ),
               ],
             ),

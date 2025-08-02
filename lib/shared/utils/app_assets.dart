@@ -99,4 +99,12 @@ class AppAssets {
   static const String icTarget = "${baseSvg}ic_target.svg";
   static const String icErrorGreen = "${baseSvg}ic_error_green.svg";
   static const String icPhoto = "${baseSvg}ic_photo.svg";
+  //Screen
+  static const String icScreen = "${baseSvg}ic_screen.svg";
+
+  //Payment Bottom Sheet
+  static const String icVisa = "${baseSvg}ic_visa.svg";
+
+  //Profile
+  static const String icEditProfile = "${baseSvg}ic_edit_profile.svg";
 }
