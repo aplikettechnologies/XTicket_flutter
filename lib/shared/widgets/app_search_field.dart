@@ -79,7 +79,7 @@ Widget appSearchField({
         prefixIcon:
             prefixIcon ??
             Padding(
-              padding: EdgeInsets.only(left: 14.w),
+              padding: EdgeInsets.only(left: 14.w, right: 14.w),
               child: SvgPicture.asset(
                 AppAssets.icSearchfield,
                 height: 24.h,

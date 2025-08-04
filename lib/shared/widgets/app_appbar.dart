@@ -47,12 +47,13 @@ PreferredSizeWidget appAppbar({
       child:
           backIcon ??
           Padding(
-            padding: EdgeInsets.only(left: 20.w),
-            child: SvgPicture.asset(
-              AppAssets.icBack,
-              height: 24.h,
-              width: 24.w,
-            ),
+            padding: EdgeInsets.only(left: 20.w, right: 20.w),
+            child: Icon(Icons.arrow_back, size: 24.sp),
+            //  SvgPicture.asset(
+            //   AppAssets.icBack,
+            //   height: 24.h,
+            //   width: 24.w,
+            // ),
           ),
     ),
     title: Text(title, style: AppStyle.appbarTitleTextStyle),

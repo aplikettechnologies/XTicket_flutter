@@ -67,7 +67,10 @@ class DashboardScreen extends StatelessWidget {
                 padding: EdgeInsets.all(5.sp),
               ),
 
-              changeLanguageDropdown(context),
+              changeLanguageDropdown(
+                context,
+                (languageCode) => controller.changeLanguages(languageCode),
+              ),
             ],
           ),
           drawer: customerDrawerWidget(context: context),

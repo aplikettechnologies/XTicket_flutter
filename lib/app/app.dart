@@ -26,14 +26,13 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: AppRoutes.home,
         getPages: AppPages.routes,
-        supportedLocales: const [Locale('en')],
+        supportedLocales: [Locale('en'), Locale('ar')],
         localizationsDelegates: [
           Localization.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
         ],
-
         locale: const Locale('en'),
       ),
     );

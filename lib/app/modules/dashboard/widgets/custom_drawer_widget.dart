@@ -133,7 +133,12 @@ Widget customDrawerHeader() {
     color: AppColor.secondaryColorBlack,
     width: double.infinity,
     child: Padding(
-      padding: EdgeInsets.only(top: 20.h, left: 28.w, bottom: 28.h),
+      padding: EdgeInsets.only(
+        top: 20.h,
+        left: 28.w,
+        right: 28.w,
+        bottom: 28.h,
+      ),
       child: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xticket/app/modules/event/event_screen.dart';
@@ -42,7 +44,9 @@ class DashboardController extends GetxController {
     update();
   }
 
-  Future<void> changeLanguage() async {
-    
+  void changeLanguages(String languageCode) async {
+    Locale newLocale = await setLocale(languageCode);
+    Get.updateLocale(newLocale);
+    log("newLocale: ${newLocale.languageCode}");
   }
 }
