@@ -1,14 +1,17 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:xticket/shared/localization/localization_const.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 import 'package:xticket/shared/utils/app_color.dart';
+import 'package:xticket/shared/utils/app_configuration.dart'
+    show AppConfiguration;
 import 'package:xticket/shared/utils/app_style.dart';
 
-changeLanguageDropdown(BuildContext context) {
+changeLanguageDropdown(
+  BuildContext context,
+  void Function(String)? onSelected,
+) {
   return Theme(
     data: Theme.of(context).copyWith(
       splashColor: Colors.transparent,
@@ -18,7 +21,9 @@ changeLanguageDropdown(BuildContext context) {
     ),
     child: PopupMenuButton<String>(
       onSelected: (value) {
-        log("language --> $value");
+        if (onSelected != null) {
+          onSelected(value);
+        }
       },
       icon: Row(
         spacing: 6.w,
@@ -32,7 +37,10 @@ changeLanguageDropdown(BuildContext context) {
             width: 24.w,
             fit: BoxFit.contain,
           ),
-          Text("AR", style: AppStyle.buttonLoadingTextStyle),
+          Text(
+            AppConfiguration.languageCode.toUpperCase(),
+            style: AppStyle.buttonLoadingTextStyle,
+          ),
           SizedBox(width: 8.w),
         ],
       ),
@@ -43,7 +51,7 @@ changeLanguageDropdown(BuildContext context) {
             PopupMenuItem(
               onTap: () {},
               padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 6),
-              value: 'en',
+              value: 'ar',
               child: Row(
                 spacing: 10.w,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -66,7 +74,7 @@ changeLanguageDropdown(BuildContext context) {
             PopupMenuItem(
               onTap: () {},
               padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 6),
-              value: 'ar',
+              value: 'en',
               child: Row(
                 spacing: 10.w,
                 mainAxisAlignment: MainAxisAlignment.start,

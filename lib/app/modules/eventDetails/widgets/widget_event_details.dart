@@ -8,6 +8,8 @@ Widget eventDetails({required String icon, required String value}) {
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: 16.w),
     child: Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SvgPicture.asset(
           icon,
@@ -19,7 +21,7 @@ Widget eventDetails({required String icon, required String value}) {
           ),
         ),
         SizedBox(width: 8.w),
-        Text(value, style: AppStyle.neutral3Reguler12Lato),
+        Expanded(child: Text(value, style: AppStyle.neutral3Reguler12Lato)),
       ],
     ),
   );

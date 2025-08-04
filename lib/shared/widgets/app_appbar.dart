@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:xticket/shared/utils/app_color.dart';
 import 'package:xticket/shared/utils/app_style.dart';
-
-import '../utils/app_assets.dart';
 
 PreferredSizeWidget appAppbar({
   required String title,
@@ -47,12 +44,13 @@ PreferredSizeWidget appAppbar({
       child:
           backIcon ??
           Padding(
-            padding: EdgeInsets.only(left: 20.w),
-            child: SvgPicture.asset(
-              AppAssets.icBack,
-              height: 24.h,
-              width: 24.w,
-            ),
+            padding: EdgeInsets.only(left: 20.w, right: 20.w),
+            child: Icon(Icons.arrow_back, size: 24.sp),
+            //  SvgPicture.asset(
+            //   AppAssets.icBack,
+            //   height: 24.h,
+            //   width: 24.w,
+            // ),
           ),
     ),
     title: Text(title, style: AppStyle.appbarTitleTextStyle),

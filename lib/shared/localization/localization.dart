@@ -50,7 +50,7 @@ class LocalizationDelegate extends LocalizationsDelegate<Localization> {
   static Localization? instance;
 
   @override
-  bool isSupported(Locale locale) => ['en'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => ['en', 'ar'].contains(locale.languageCode);
 
   @override
   Future<Localization> load(Locale locale) async {

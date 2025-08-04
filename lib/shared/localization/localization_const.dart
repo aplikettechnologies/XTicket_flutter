@@ -10,7 +10,8 @@ String translation(String key) {
   return Localization.instance.getTranslation(key);
 }
 
-const String hindi = 'hi';
+const String english = 'en';
+const String arabic = 'ar';
 
 Future<Locale> setLocale(String languageCode) async {
   CurrentLocalStorage.setLanguageCode(languageCode: languageCode);
@@ -18,20 +19,18 @@ Future<Locale> setLocale(String languageCode) async {
 }
 
 Future<Locale> getLocale() async {
-  String languageCode = await CurrentLocalStorage.getLanguageCode() ?? hindi;
+  String languageCode = await CurrentLocalStorage.getLanguageCode() ?? english;
 
   return _locale(languageCode);
 }
 
 Locale _locale(String languageCode) {
-  Locale temp;
-
   switch (languageCode) {
-    case hindi:
-      temp = Locale(languageCode);
-      break;
+    case english:
+      return const Locale(english);
+    case arabic:
+      return const Locale(arabic);
     default:
-      temp = const Locale(hindi);
+      return const Locale(english);
   }
-  return temp;
 }

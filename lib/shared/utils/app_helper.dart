@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import 'app_color.dart';
 
@@ -31,5 +32,23 @@ class AppHelper {
         return bottomSheetWidget;
       },
     );
+  }
+
+  static String getDay(String fullDate) {
+    try {
+      final DateTime date = DateFormat('dd MMM yyyy').parse(fullDate);
+      return DateFormat('dd').format(date); // e.g. "18"
+    } catch (e) {
+      return '';
+    }
+  }
+
+  static String getMonthMMM(String fullDate) {
+    try {
+      final DateTime date = DateFormat('dd MMM yyyy').parse(fullDate);
+      return DateFormat('MMM').format(date); // e.g. "Jun"
+    } catch (e) {
+      return '';
+    }
   }
 }

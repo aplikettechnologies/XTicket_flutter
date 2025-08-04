@@ -113,4 +113,9 @@ class AppAssets {
   //Near me
   static const String icMap = "${baseSvg}ic_map.svg";
   static const String icRefresh = "${baseSvg}ic_refresh.svg";
+
+  //My event
+  static const String icThreeDot = "${baseSvg}ic_three_dot.svg";
+  static const String icEdit = "${baseSvg}ic_edit.svg";
+  static const String icDelete = "${baseSvg}ic_delete.svg";
 }

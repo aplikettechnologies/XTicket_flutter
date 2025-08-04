@@ -214,7 +214,7 @@ class HomeScreen extends StatelessWidget {
 
                 //AllEvent
                 GridView.builder(
-                  itemCount: 5,
+                  itemCount: controller.summerSplashEvent.length,
                   padding: EdgeInsets.only(
                     left: 16.w,
                     right: 16.w,
@@ -229,7 +229,15 @@ class HomeScreen extends StatelessWidget {
                     mainAxisSpacing: 10,
                   ),
                   itemBuilder: (context, index) {
-                    return itemEventList();
+                    return InkWell(
+                      onTap: () {
+                        Get.toNamed(
+                          AppRoutes.eventDetails,
+                          arguments: controller.summerSplashEvent[index],
+                        );
+                      },
+                      child: itemEventList(controller.summerSplashEvent[index]),
+                    );
                   },
                 ),
               ],

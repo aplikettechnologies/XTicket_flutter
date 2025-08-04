@@ -20,7 +20,7 @@ class MapScreen extends StatelessWidget {
         return Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: appAppbar(
-            title: getTranslation(context, "Map"),
+            title: getTranslation(context, "dashboard.map"),
             centerTitle: true,
           ),
           body: Stack(

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:xticket/app/modules/eventDetails/widgets/widget_event_details.dart';
+import 'package:xticket/app/modules/home/events_model.dart';
 import 'package:xticket/shared/localization/localization_const.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 import 'package:xticket/shared/utils/app_color.dart';
@@ -12,8 +13,11 @@ import 'package:xticket/shared/widgets/app_divider.dart';
 import 'package:xticket/shared/widgets/app_image_network.dart';
 import 'package:xticket/shared/widgets/app_rating_bar.dart';
 
+import '../../../routes/app_routes.dart';
+
 class EventDetailsScreen extends StatelessWidget {
-  const EventDetailsScreen({super.key});
+  final EventDetails data;
+  const EventDetailsScreen({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +28,7 @@ class EventDetailsScreen extends StatelessWidget {
           slivers: [
             SliverAppBar(
               scrolledUnderElevation: 0,
-              expandedHeight: 177.h,
+              expandedHeight: 220.h,
               leadingWidth: 50.w,
               leading: InkWell(
                 onTap: () {
@@ -57,11 +61,7 @@ class EventDetailsScreen extends StatelessWidget {
                 background: Stack(
                   children: [
                     //Image
-                    appImageNetwork(
-                      height: 177.h,
-                      url:
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS92eisuWOx3tEjeW14mT9ACVgXDwIRBGtnww&s',
-                    ),
+                    appImageNetwork(height: 220.h, url: data.images.first),
                   ],
                 ),
               ),
@@ -98,8 +98,7 @@ class EventDetailsScreen extends StatelessWidget {
                               child: appImageNetwork(
                                 height: 28.h,
                                 width: 32.w,
-                                url:
-                                    'https://png.pngtree.com/png-clipart/20190611/original/pngtree-wolf-logo-png-image_2306634.jpg',
+                                url: data.orgenagerLogo,
                               ),
                             ),
                             SizedBox(width: 8.w),
@@ -107,7 +106,7 @@ class EventDetailsScreen extends StatelessWidget {
                             //Title
                             Expanded(
                               child: Text(
-                                'Summer Splash A Seasonal Celebration',
+                                data.title,
                                 style: AppStyle.black14BoldLato,
                               ),
                             ),
@@ -137,7 +136,7 @@ class EventDetailsScreen extends StatelessWidget {
                               itemSize: 24.w,
                               ignoreGestures: true,
                               itemCount: 5,
-                              initialRating: 3,
+                              initialRating: data.rating,
                               itemBuilder: (context, index) {
                                 return SvgPicture.asset(
                                   AppAssets.icFilledStar,
@@ -146,7 +145,10 @@ class EventDetailsScreen extends StatelessWidget {
                                 );
                               },
                             ),
-                            Text('(3)', style: AppStyle.yellowMedium12Lato),
+                            Text(
+                              '(${data.rating.toInt()})',
+                              style: AppStyle.yellowMedium12Lato,
+                            ),
                           ],
                         ),
                         SizedBox(height: 20.h),
@@ -157,10 +159,7 @@ class EventDetailsScreen extends StatelessWidget {
                           style: AppStyle.blackSemiBold18Lato,
                         ),
                         SizedBox(height: 6.h),
-                        Text(
-                          "Join us for the annual Summer Splash, the premier event of the season that brings together music, water games, and summer festivities. Celebrate the sunny days with live performances from top-tier bands and DJs, indulge in delicious summer treats, and participate in a variety of water activities. Whether you're looking to relax and soak up the sun or dance the night away, Summer Splash has something for everyone. It's not just an event; it's a summer tradition!",
-                          style: AppStyle.neutral4Reguler14Lato,
-                        ),
+                        Text(data.about, style: AppStyle.neutral4Reguler14Lato),
                         SizedBox(height: 16.h),
 
                         //Category
@@ -179,7 +178,7 @@ class EventDetailsScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(100.r),
                           ),
                           child: Text(
-                            'Concert',
+                            data.category,
                             style: AppStyle.darkReguler12Lato,
                           ),
                         ),
@@ -196,36 +195,30 @@ class EventDetailsScreen extends StatelessWidget {
                   SizedBox(height: 16.h),
 
                   //Calender
-                  eventDetails(
-                    icon: AppAssets.icCalender,
-                    value: '18 Jun 2024',
-                  ),
+                  eventDetails(icon: AppAssets.icCalender, value: data.date),
                   SizedBox(height: 12.h),
 
                   //Clock
-                  eventDetails(icon: AppAssets.icClock, value: '09:00 AM'),
+                  eventDetails(icon: AppAssets.icClock, value: data.time),
                   SizedBox(height: 12.h),
 
                   //Ticket
-                  eventDetails(
-                    icon: AppAssets.icTicket,
-                    value: 'From: 300.00 SAR',
-                  ),
+                  eventDetails(icon: AppAssets.icTicket, value: data.price),
                   SizedBox(height: 12.h),
 
                   //Whatsapp
-                  eventDetails(icon: AppAssets.icWhatsapp, value: '012048355'),
+                  eventDetails(
+                    icon: AppAssets.icWhatsapp,
+                    value: data.whatsapp,
+                  ),
                   SizedBox(height: 12.h),
 
                   //Call
-                  eventDetails(icon: AppAssets.icCall, value: '012048355'),
+                  eventDetails(icon: AppAssets.icCall, value: data.phone),
                   SizedBox(height: 12.h),
 
                   //Mail
-                  eventDetails(
-                    icon: AppAssets.icMail,
-                    value: 'summer@gmail.com',
-                  ),
+                  eventDetails(icon: AppAssets.icMail, value: data.email),
                   SizedBox(height: 12.h),
 
                   //Location
@@ -236,26 +229,32 @@ class EventDetailsScreen extends StatelessWidget {
                       Expanded(
                         child: eventDetails(
                           icon: AppAssets.icLocation,
-                          value: 'Al Safa Park, Jeddah, Saudi Arabia',
+                          value: data.location,
                         ),
                       ),
-                      Container(
-                        alignment: Alignment.center,
-                        margin: EdgeInsets.only(right: 16.w),
-                        padding: EdgeInsets.symmetric(
-                          vertical: 3.h,
-                          horizontal: 13.w,
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100.r),
-                          border: Border.all(
-                            color: AppColor.primaryColor04,
-                            width: 1.w,
+
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () => Get.toNamed(AppRoutes.map),
+                        child: Container(
+                          alignment: Alignment.center,
+                          margin: EdgeInsets.only(right: 16.w),
+                          padding: EdgeInsets.symmetric(
+                            vertical: 3.h,
+                            horizontal: 13.w,
                           ),
-                        ),
-                        child: Text(
-                          getTranslation(context, 'event_details.go_to_map'),
-                          style: AppStyle.primary4Medium12Lato,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(100.r),
+                            border: Border.all(
+                              color: AppColor.primaryColor04,
+                              width: 1.w,
+                            ),
+                          ),
+                          child: Text(
+                            getTranslation(context, 'event_details.go_to_map'),
+                            style: AppStyle.primary4Medium12Lato,
+                          ),
                         ),
                       ),
                     ],
@@ -329,7 +328,7 @@ class EventDetailsScreen extends StatelessWidget {
                       height: 65.h,
                       child: ListView.builder(
                         shrinkWrap: true,
-                        itemCount: 10,
+                        itemCount: data.images.length,
                         scrollDirection: Axis.horizontal,
                         padding: EdgeInsets.zero,
                         itemBuilder: (context, index) {
@@ -340,8 +339,7 @@ class EventDetailsScreen extends StatelessWidget {
                               child: appImageNetwork(
                                 height: 65.h,
                                 width: 110.w,
-                                url:
-                                    'https://media.istockphoto.com/id/939568002/photo/family-photo-portrait-four-relatives-are-hugging-on-the-white-background-smiling-at-home-blond.jpg?s=612x612&w=0&k=20&c=gSmK_r_XEs8l9D2WTjUp_Z-P3CrTYptAfp_XxewHltg=',
+                                url: data.images[index],
                               ),
                             ),
                           );
@@ -378,7 +376,9 @@ class EventDetailsScreen extends StatelessWidget {
         child: appButton(
           context: context,
           text: getTranslation(context, 'event_details.book_now'),
-          onPressed: () {},
+          onPressed: () {
+            Get.toNamed(AppRoutes.chooseSeat);
+          },
         ),
       ),
     );
