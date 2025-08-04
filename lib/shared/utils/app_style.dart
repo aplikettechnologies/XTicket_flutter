@@ -108,6 +108,13 @@ class AppStyle {
     fontWeight: FontWeight.w400,
   );
 
+  static TextStyle neutral2Medium14Manrope = TextStyle(
+    color: AppColor.neutralColor02,
+    fontSize: 14.sp,
+    fontFamily: 'Manrope',
+    fontWeight: FontWeight.w500,
+  );
+
   //------------------------ DARK COLOR ------------------------//
   static TextStyle darkReguler14Manrope = TextStyle(
     color: AppColor.dark,

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:xticket/app/modules/dashboard/dashboard_controller.dart';
+import 'package:xticket/app/modules/myevents/my_events_screen.dart';
 import 'package:xticket/routes/app_routes.dart';
 import 'package:xticket/shared/localization/localization_const.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
@@ -37,12 +38,11 @@ Widget customerDrawerWidget({required BuildContext context}) {
                           title: getTranslation(context, "drawer.myEvents"),
                           leadingIcon: AppAssets.icEventWhite,
                           trailingIcon: AppAssets.icRightArrow,
-                          onTap: () {
-                            Get.back();
-                            controller.setTabIndex(2);
-
-                            // Handle My Events tap
-                          },
+                          onTap:
+                              () =>
+                                  Get
+                                    ..back()
+                                    ..to(MyEventsScreen()),
                         ),
                         drawerListTile(
                           title: getTranslation(context, "drawer.myTickets"),

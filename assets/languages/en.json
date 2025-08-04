@@ -82,7 +82,9 @@
         "education": "Education",
         "concerts": "Concerts",
         "workshops": "Workshops",
-        "health": "Health"
+        "health": "Health",
+        "edit": "Edit",
+        "delete": "Delete"
     },
     "drawer": {
         "myEvents": "My Events",
