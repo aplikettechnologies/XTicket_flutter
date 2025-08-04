@@ -7,6 +7,7 @@ import 'package:xticket/app/modules/dashboard/dashboard_screen.dart';
 import 'package:xticket/app/modules/eventDetails/event_details_screen.dart';
 import 'package:xticket/app/modules/map/map_screen.dart';
 import 'package:xticket/app/modules/onboarding/onboarding_screen.dart';
+import 'package:xticket/app/modules/search/search_screen.dart';
 import 'package:xticket/app/modules/settings/settings_screen.dart';
 import 'package:xticket/routes/app_routes.dart';
 import '../app/modules/changePassword/change_password_screen.dart';
@@ -29,5 +30,6 @@ class AppPages {
       page: () => MapScreen(),
       transition: Transition.noTransition,
     ),
+    GetPage(name: AppRoutes.search, page: () => SearchScreen()),
   ];
 }

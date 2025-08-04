@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 import 'package:xticket/shared/widgets/app_button.dart';
-import 'package:xticket/shared/widgets/app_select_date.dart';
+import 'package:xticket/shared/widgets/app_select_time.dart';
 import '../../../../shared/localization/localization_const.dart';
 import '../../../../shared/utils/app_color.dart';
 import '../../../../shared/utils/app_dropdown.dart';
@@ -96,6 +96,7 @@ Widget detailsTab({required BuildContext context}) {
           ),
           SizedBox(height: 8.h),
           appDropdown(
+            hintText: getTranslation(context, 'search.select_price'),
             onChanged: (value) {
               controller.selectedPrice = value!;
               controller.update();

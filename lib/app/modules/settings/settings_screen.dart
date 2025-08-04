@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:xticket/routes/app_routes.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 import 'package:xticket/shared/utils/app_color.dart';
 import 'package:xticket/shared/utils/app_style.dart';
@@ -51,6 +53,9 @@ class SettingsScreen extends StatelessWidget {
             ),
             SizedBox(height: 16.h),
             settingsListTile(
+              onTap: () {
+                Get.toNamed(AppRoutes.changePassword);
+              },
               title: getTranslation(context, "settings.change_password"),
             ),
 
