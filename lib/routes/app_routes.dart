@@ -10,4 +10,5 @@ abstract class AppRoutes {
   static const createEvent = '/createEvent';
   static const settings = '/settings';
   static const changePassword = '/changePassword';
+  static const map = '/map';
 }

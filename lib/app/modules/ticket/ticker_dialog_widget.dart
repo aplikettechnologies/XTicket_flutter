@@ -8,6 +8,8 @@ import 'package:xticket/shared/utils/app_color.dart';
 import 'package:xticket/shared/utils/app_style.dart';
 import 'package:xticket/shared/widgets/app_svg_iconbutton.dart';
 
+import '../../../routes/app_routes.dart';
+
 class TicketPopupCard extends StatelessWidget {
   const TicketPopupCard({super.key});
 
@@ -35,11 +37,18 @@ class TicketPopupCard extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10.h),
-              SvgPicture.asset(
-                AppAssets.icDummyQrCode,
-                height: 200.h,
-                width: 200.w,
-                fit: BoxFit.contain,
+              InkWell(
+                onTap:
+                    () =>
+                        Get
+                          ..back()
+                          ..toNamed(AppRoutes.map),
+                child: SvgPicture.asset(
+                  AppAssets.icDummyQrCode,
+                  height: 200.h,
+                  width: 200.w,
+                  fit: BoxFit.contain,
+                ),
               ),
               SizedBox(height: 13.h),
               Text("233556TU46NJ", style: AppStyle.blackMedium18Manrope),
