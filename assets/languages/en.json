@@ -99,7 +99,8 @@
         "valid": "Valid"
     },
     "home": {
-        "search_events": "Search events"
+        "search_events": "Search events",
+        "city": "City"
     },
     "create_event": {
         "create_event": "Create Event",

@@ -38,15 +38,20 @@ class SearchScreen extends StatelessWidget {
                       Expanded(
                         flex: 5,
                         child: appSearchField(
-                          prefixIcon: Padding(
-                            padding: EdgeInsets.only(left: 14.w),
-                            child: SvgPicture.asset(
-                              AppAssets.icBack,
-                              height: 24.h,
-                              width: 24.w,
-                              colorFilter: ColorFilter.mode(
-                                AppColor.grey2,
-                                BlendMode.srcIn,
+                          prefixIcon: InkWell(
+                            onTap: () {
+                              Get.back();
+                            },
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 14.w),
+                              child: SvgPicture.asset(
+                                AppAssets.icBack,
+                                height: 24.h,
+                                width: 24.w,
+                                colorFilter: ColorFilter.mode(
+                                  AppColor.grey2,
+                                  BlendMode.srcIn,
+                                ),
                               ),
                             ),
                           ),
@@ -136,7 +141,7 @@ class SearchScreen extends StatelessWidget {
                             height: 48.h,
                             padding: EdgeInsets.symmetric(
                               horizontal: 19.w,
-                              vertical: 10.h,
+                              vertical: 13.h,
                             ),
                             alignment: Alignment.center,
                             decoration: BoxDecoration(

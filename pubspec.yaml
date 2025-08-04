@@ -50,6 +50,8 @@ dependencies:
   dropdown_button2: ^2.3.9
   fade_shimmer: ^2.4.0
   intl: ^0.19.0
+  google_maps_flutter: ^2.12.3
+  geolocator: ^14.0.2
 
 dev_dependencies:
   flutter_test:

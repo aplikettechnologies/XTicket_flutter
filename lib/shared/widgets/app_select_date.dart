@@ -12,6 +12,7 @@ Widget appSelectDate({
   double? width,
   required String title,
   TextStyle? titleStyle,
+  Widget? customButton,
   void Function(DateTime?)? onDatePicked,
 }) {
   return InkWell(
@@ -29,34 +30,36 @@ Widget appSelectDate({
       }
     },
 
-    child: Container(
-      width: width ?? double.infinity,
-      height: height ?? 40.h,
-      alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 14.w),
-      decoration: BoxDecoration(
-        color: AppColor.neutralColor08,
-        borderRadius: BorderRadius.circular(100.r),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SvgPicture.asset(AppAssets.icCalendar, height: 24.h, width: 24.w),
-          SizedBox(width: 8.w),
-
-          Expanded(
-            child: Text(
-              title,
-              style: AppStyle.neutral4Reguler14Lato.copyWith(
-                color: AppColor.neutralColor05,
-              ),
-            ),
+    child:
+        customButton ??
+        Container(
+          width: width ?? double.infinity,
+          height: height ?? 40.h,
+          alignment: Alignment.center,
+          padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 14.w),
+          decoration: BoxDecoration(
+            color: AppColor.neutralColor08,
+            borderRadius: BorderRadius.circular(100.r),
           ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SvgPicture.asset(AppAssets.icCalendar, height: 24.h, width: 24.w),
+              SizedBox(width: 8.w),
 
-          SizedBox(width: 5.w),
-        ],
-      ),
-    ),
+              Expanded(
+                child: Text(
+                  title,
+                  style: AppStyle.neutral4Reguler14Lato.copyWith(
+                    color: AppColor.neutralColor05,
+                  ),
+                ),
+              ),
+
+              SizedBox(width: 5.w),
+            ],
+          ),
+        ),
   );
 }
