@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:xticket/app/modules/settings/setting_controller.dart';
 import 'package:xticket/routes/app_routes.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 import 'package:xticket/shared/utils/app_color.dart';
@@ -21,51 +22,64 @@ class SettingsScreen extends StatelessWidget {
         centerTitle: true,
         title: getTranslation(context, 'settings.title'),
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
-        child: Column(
-          children: [
-            settingsListTile(
-              title: getTranslation(context, "settings.email"),
-              subtitle: "m.yasir.k.2001@gmail.com",
-            ),
-            settingsListTile(
-              title: getTranslation(context, "settings.full_name"),
-              subtitle: "Muhammad Yasir",
-            ),
+      body: GetBuilder<SettingController>(
+        init: SettingController(),
+        builder: (controller) {
+          return Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                settingsListTile(
+                  title: getTranslation(context, "settings.email"),
+                  subtitle: "m.yasir.k.2001@gmail.com",
+                ),
+                settingsListTile(
+                  title: getTranslation(context, "settings.full_name"),
+                  subtitle: "Muhammad Yasir",
+                ),
 
-            SizedBox(height: 16.h),
-            settingsListTile(
-              title: getTranslation(context, "settings.notification"),
-            ),
-            settingsListTile(
-              title: getTranslation(context, "settings.share_app"),
-            ),
-            SizedBox(height: 16.h),
-            settingsListTile(
-              title: getTranslation(context, "settings.rate_us"),
-            ),
-            settingsListTile(
-              title: getTranslation(context, "settings.privacy_policy"),
-            ),
-            settingsListTile(
-              title: getTranslation(context, "settings.terms_of_use"),
-            ),
-            SizedBox(height: 16.h),
-            settingsListTile(
-              onTap: () {
-                Get.toNamed(AppRoutes.changePassword);
-              },
-              title: getTranslation(context, "settings.change_password"),
-            ),
+                SizedBox(height: 16.h),
+                settingsListTile(
+                  title: getTranslation(context, "settings.notification"),
+                ),
+                settingsListTile(
+                  title: getTranslation(context, "settings.share_app"),
+                ),
+                SizedBox(height: 16.h),
+                settingsListTile(
+                  title: getTranslation(context, "settings.rate_us"),
+                ),
+                settingsListTile(
+                  title: getTranslation(context, "settings.privacy_policy"),
+                ),
+                settingsListTile(
+                  title: getTranslation(context, "settings.terms_of_use"),
+                ),
+                SizedBox(height: 16.h),
+                settingsListTile(
+                  onTap: () {
+                    Get.toNamed(AppRoutes.changePassword);
+                  },
+                  title: getTranslation(context, "settings.change_password"),
+                ),
 
-            SizedBox(height: 16.h),
-            settingsLogoutWidget(
-              title: getTranslation(context, "settings.logout"),
-              subtitle: "m.yasir.k.2001@gmail.com",
+                SizedBox(height: 16.h),
+                settingsLogoutWidget(
+                  title: getTranslation(context, "settings.logout"),
+                  subtitle: "m.yasir.k.2001@gmail.com",
+                ),
+                SizedBox(height: 8.h),
+
+                Text(
+                  "${getTranslation(context, "settings.version")} ${controller.version}",
+                  style: AppStyle.primary4RegularManrope,
+                ),
+              ],
             ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }

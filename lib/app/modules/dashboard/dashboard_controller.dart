@@ -6,7 +6,8 @@ import 'package:xticket/app/modules/profile/profile_screen.dart';
 import 'package:xticket/app/modules/ticket/ticket_screen.dart';
 import 'package:xticket/shared/localization/localization_const.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
-
+import '../../../shared/localization/current_local_storage.dart';
+import '../../../shared/utils/app_configuration.dart';
 import '../nearMe/nearme_screen.dart';
 
 class DashboardController extends GetxController {
@@ -40,5 +41,12 @@ class DashboardController extends GetxController {
   setTabIndex(int index) {
     currentIndex.value = index;
     update();
+  }
+
+  void changeLanguages(String languageCode) async {
+    Locale newLocale = await setLocale(languageCode);
+    await Get.updateLocale(newLocale);
+    AppConfiguration.languageCode = languageCode;
+    await CurrentLocalStorage.setLanguageCode(languageCode: languageCode);
   }
 }

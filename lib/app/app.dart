@@ -6,6 +6,7 @@ import 'package:xticket/shared/localization/localization.dart';
 import 'package:xticket/shared/utils/app_color.dart';
 import '../routes/app_pages.dart';
 import '../routes/app_routes.dart';
+import '../shared/utils/app_configuration.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -26,15 +27,14 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: AppRoutes.home,
         getPages: AppPages.routes,
-        supportedLocales: const [Locale('en')],
+        supportedLocales: [Locale('en'), Locale('ar')],
         localizationsDelegates: [
           Localization.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
         ],
-
-        locale: const Locale('en'),
+        locale: Locale(AppConfiguration.languageCode),
       ),
     );
   }

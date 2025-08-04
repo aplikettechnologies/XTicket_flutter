@@ -69,7 +69,11 @@ class LoginScreen extends StatelessWidget {
                     appTextFormField(
                       context: context,
                       prefixIcon: Padding(
-                        padding: EdgeInsets.only(left: 14.w, top: 2.h),
+                        padding: EdgeInsets.only(
+                          left: 14.w,
+                          top: 2.h,
+                          right: 14.w,
+                        ),
                         child: SvgPicture.asset(
                           AppAssets.icMail,
                           height: 24.h,
@@ -88,7 +92,11 @@ class LoginScreen extends StatelessWidget {
                     appTextFormField(
                       context: context,
                       prefixIcon: Padding(
-                        padding: EdgeInsets.only(left: 14.w, top: 2.h),
+                        padding: EdgeInsets.only(
+                          left: 14.w,
+                          top: 2.h,
+                          right: 14.w,
+                        ),
                         child: SvgPicture.asset(
                           AppAssets.icPassword,
                           height: 24.h,

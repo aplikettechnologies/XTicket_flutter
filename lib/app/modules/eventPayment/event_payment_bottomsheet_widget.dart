@@ -36,9 +36,40 @@ Widget eventPaymentBottomSheetWidget({required BuildContext context}) {
               ),
             ),
             SizedBox(height: 32.h),
-            appTextFormField(
-              context: context,
-              hintText: getTranslation(context, 'login.password'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+
+              children: [
+                Expanded(
+                  child: appTextFormField(
+                    context: context,
+                    hintText: getTranslation(
+                      context,
+                      "payment_bottomsheet.enter_discount_code",
+                    ),
+                  ),
+                ),
+                SizedBox(width: 6.w),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    elevation: 0,
+                    backgroundColor: AppColor.primaryColor04,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(100.r),
+                    ),
+                  ).copyWith(
+                    overlayColor: WidgetStateProperty.all(Colors.transparent),
+                    splashFactory: NoSplash.splashFactory,
+                  ),
+                  onPressed: () {},
+                  child: Text(
+                    getTranslation(context, "payment_bottomsheet.apply"),
+                    style: AppStyle.buttonTextStyle,
+                  ),
+                ),
+              ],
             ),
             SizedBox(height: 14.h),
             paymentDetailsListTile(

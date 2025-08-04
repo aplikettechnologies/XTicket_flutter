@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:xticket/app/modules/home/events_model.dart';
 import 'package:xticket/shared/utils/app_color.dart';
+import 'package:xticket/shared/utils/app_helper.dart';
 import 'package:xticket/shared/utils/app_style.dart';
 import 'package:xticket/shared/widgets/app_image_network.dart';
 
-Widget itemEventList() {
+Widget itemEventList(EventDetails data) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.start,
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -15,8 +17,9 @@ Widget itemEventList() {
             borderRadius: BorderRadius.circular(8.r),
             child: appImageNetwork(
               height: 130.h,
-              url:
-                  'https://www.digitalclassworld.com/blog/wp-content/uploads/2021/02/Full-form-of-URL-1-1024x824.jpg',
+              url: data.images.first,
+              fit: BoxFit.cover,
+              // 'https://www.digitalclassworld.com/blog/wp-content/uploads/2021/02/Full-form-of-URL-1-1024x824.jpg',
             ),
           ),
 
@@ -43,7 +46,7 @@ Widget itemEventList() {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  '01',
+                  AppHelper.getDay(data.date),
                   style: AppStyle.blackExtrabold18Lato.copyWith(
                     fontSize: 14.sp,
                   ),
@@ -51,7 +54,7 @@ Widget itemEventList() {
                 Transform.translate(
                   offset: Offset(0, -3.h),
                   child: Text(
-                    'Dec',
+                    AppHelper.getMonthMMM(data.date),
                     style: AppStyle.blackReguler12Lato.copyWith(
                       fontSize: 14.sp,
                     ),
@@ -63,11 +66,7 @@ Widget itemEventList() {
         ],
       ),
       SizedBox(height: 8.h),
-      Text(
-        'Global Finance Insights',
-        maxLines: 1,
-        style: AppStyle.black14BoldLato,
-      ),
+      Text(data.title, maxLines: 1, style: AppStyle.black14BoldLato),
     ],
   );
 }
