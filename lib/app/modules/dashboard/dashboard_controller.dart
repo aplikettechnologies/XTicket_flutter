@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xticket/app/modules/event/event_screen.dart';
@@ -8,7 +6,8 @@ import 'package:xticket/app/modules/profile/profile_screen.dart';
 import 'package:xticket/app/modules/ticket/ticket_screen.dart';
 import 'package:xticket/shared/localization/localization_const.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
-
+import '../../../shared/localization/current_local_storage.dart';
+import '../../../shared/utils/app_configuration.dart';
 import '../nearMe/nearme_screen.dart';
 
 class DashboardController extends GetxController {
@@ -46,7 +45,8 @@ class DashboardController extends GetxController {
 
   void changeLanguages(String languageCode) async {
     Locale newLocale = await setLocale(languageCode);
-    Get.updateLocale(newLocale);
-    log("newLocale: ${newLocale.languageCode}");
+    await Get.updateLocale(newLocale);
+    AppConfiguration.languageCode = languageCode;
+    await CurrentLocalStorage.setLanguageCode(languageCode: languageCode);
   }
 }

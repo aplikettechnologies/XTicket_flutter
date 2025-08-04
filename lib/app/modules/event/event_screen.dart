@@ -173,7 +173,7 @@ class EventScreen extends StatelessWidget {
 
                     //AllEvent
                     GridView.builder(
-                      itemCount: 5,
+                      itemCount: controller.events.length,
                       padding: EdgeInsets.only(
                         left: 16.w,
                         right: 16.w,
@@ -190,9 +190,12 @@ class EventScreen extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return InkWell(
                           onTap: () {
-                            Get.toNamed(AppRoutes.eventDetails);
+                            Get.toNamed(
+                              AppRoutes.eventDetails,
+                              arguments: controller.events[index],
+                            );
                           },
-                          child: itemEventList(),
+                          child: itemEventList(controller.events[index]),
                         );
                       },
                     ),

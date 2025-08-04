@@ -184,5 +184,24 @@
     "new_password": "كلمة المرور الجديدة",
     "confirm_new_password": "تأكيد كلمة المرور الجديدة",
     "confirm": "تأكيد"
+  },
+  "search": {
+    "search": "بحث",
+    "city": "المدينة",
+    "search_events": "البحث عن الفعاليات",
+    "filters": "الفلاتر",
+    "select_category": "اختر الفئة",
+    "technology": "التكنولوجيا",
+    "seminars": "الندوات",
+    "education": "التعليم",
+    "workshop": "ورشة عمل",
+    "concerts": "حفلات موسيقية",
+    "health": "الصحة",
+    "select_country": "اختر الدولة",
+    "country": "الدولة",
+    "date": "التاريخ",
+    "select_date": "اختر التاريخ",
+    "reset": "إعادة تعيين",
+    "apply_filters": "تطبيق الفلاتر"
   }
 }

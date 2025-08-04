@@ -152,7 +152,8 @@
         "ticket_type": "Ticket Type",
         "ticket_price": "Ticket Price",
         "complete_payment": "Complete Payment",
-        "apply": "Apply"
+        "apply": "Apply",
+        "enter_discount_code": "Enter discount code"
     },
     "profile": {
         "full_name": "Full Name",
@@ -177,7 +178,7 @@
         "terms_of_use": "Terms of Use",
         "change_password": "Change Password",
         "logout": "Log Out",
-        "version": "Version"
+        "version": "Version:"
     },
     "change_password": {
         "change_password": "Change Password",

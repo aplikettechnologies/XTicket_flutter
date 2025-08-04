@@ -4,6 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:xticket/shared/localization/localization_const.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 import 'package:xticket/shared/utils/app_color.dart';
+import 'package:xticket/shared/utils/app_configuration.dart'
+    show AppConfiguration;
 import 'package:xticket/shared/utils/app_style.dart';
 
 changeLanguageDropdown(
@@ -35,7 +37,10 @@ changeLanguageDropdown(
             width: 24.w,
             fit: BoxFit.contain,
           ),
-          Text("AR", style: AppStyle.buttonLoadingTextStyle),
+          Text(
+            AppConfiguration.languageCode.toUpperCase(),
+            style: AppStyle.buttonLoadingTextStyle,
+          ),
           SizedBox(width: 8.w),
         ],
       ),

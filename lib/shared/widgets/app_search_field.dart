@@ -50,7 +50,7 @@ Widget appSearchField({
       ],
     ),
     child: TextFormField(
-      controller: textEditingController,
+    controller: textEditingController,
       onChanged: onChanged,
       readOnly: readOnly,
       onFieldSubmitted: onFieldSubmitted,
