@@ -10,7 +10,7 @@ class AppHelper {
     showDialog<void>(
       context: context,
       barrierDismissible: true,
-      
+
       barrierColor: AppColor.barrierColor,
       builder: (BuildContext context) {
         return dialogWidget;

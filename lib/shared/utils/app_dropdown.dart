@@ -8,7 +8,8 @@ import '../../../../shared/utils/app_style.dart';
 
 Widget appDropdown({
   required Function(String?) onChanged,
-  required String selectedValue,
+  required String? selectedValue,
+  required String hintText,
   required List<String> items,
   Widget? customButton,
 }) {
@@ -33,7 +34,11 @@ Widget appDropdown({
           ),
         ),
       ),
-
+      onChanged: onChanged,
+      value:
+          (selectedValue != null && items.contains(selectedValue))
+              ? selectedValue
+              : null,
       items:
           items
               .map(
@@ -43,8 +48,7 @@ Widget appDropdown({
                 ),
               )
               .toList(),
-      onChanged: onChanged,
-      value: selectedValue,
+
       customButton:
           customButton ??
           Container(
@@ -60,7 +64,7 @@ Widget appDropdown({
               children: [
                 Expanded(
                   child: Text(
-                    selectedValue.toString(),
+                    selectedValue ?? hintText,
                     style: AppStyle.appbarTitleTextStyle,
                   ),
                 ),

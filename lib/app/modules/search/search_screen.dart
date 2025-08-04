@@ -20,7 +20,7 @@ class SearchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<SearchScreenController>(
       init: SearchScreenController(),
-      builder: (cotroller) {
+      builder: (controller) {
         return Scaffold(
           body: SafeArea(
             child: Column(
@@ -67,7 +67,7 @@ class SearchScreen extends StatelessWidget {
                               context: context,
                               dialogWidget: dialogSelectCity(
                                 context: context,
-                                controller: cotroller,
+                                searchScreenController: controller,
                               ),
                             );
                           },
@@ -128,6 +128,7 @@ class SearchScreen extends StatelessWidget {
                               context: context,
                               bottomSheetWidget: searchFilterBottomSheet(
                                 context: context,
+                                searchScreenController: controller,
                               ),
                             );
                           },
