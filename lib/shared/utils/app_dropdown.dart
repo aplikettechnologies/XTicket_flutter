@@ -10,6 +10,8 @@ Widget appDropdown({
   required Function(String?) onChanged,
   required String selectedValue,
   required List<String> items,
+  BoxDecoration? decoration,
+  TextStyle? selectTextStyle,
 }) {
   return DropdownButtonHideUnderline(
     child: DropdownButton2<String>(
@@ -46,11 +48,13 @@ Widget appDropdown({
       value: selectedValue,
       customButton: Container(
         padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
-        decoration: BoxDecoration(
-          color: AppColor.white,
-          borderRadius: BorderRadius.circular(100.r),
-          border: Border.all(color: AppColor.grey2),
-        ),
+        decoration:
+            decoration ??
+            BoxDecoration(
+              color: AppColor.white,
+              borderRadius: BorderRadius.circular(100.r),
+              border: Border.all(color: AppColor.grey2),
+            ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -58,7 +62,7 @@ Widget appDropdown({
             Expanded(
               child: Text(
                 selectedValue.toString(),
-                style: AppStyle.appbarTitleTextStyle,
+                style: selectTextStyle ?? AppStyle.appbarTitleTextStyle,
               ),
             ),
             SizedBox(width: 5.w),
