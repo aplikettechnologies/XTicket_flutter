@@ -41,4 +41,8 @@ class DashboardController extends GetxController {
     currentIndex.value = index;
     update();
   }
+
+  Future<void> changeLanguage() async {
+    
+  }
 }

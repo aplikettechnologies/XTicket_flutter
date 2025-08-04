@@ -1,35 +1,93 @@
 {
   "onboarding": {
     "skip": "تخطي",
-    "buyTicketWith": "اشترِ التذكرة باستخدام",
+    "buyTicketWith": "اشترِ التذاكر بسهولة",
     "quickEasyChickIn": "تسجيل دخول سريع وسهل",
     "discoverEventsTailoredForYou": "اكتشف الفعاليات المصممة خصيصًا لك",
     "next": "التالي",
     "getstarted": "ابدأ الآن"
   },
   "login": {
-    "welcome": "مرحبًا",
+    "welcome": "مرحباً",
     "sign_in_to_your_account": "سجّل الدخول إلى حسابك",
-    "email_address": "عنوان البريد الإلكتروني",
+    "email_address": "البريد الإلكتروني",
     "password": "كلمة المرور",
     "sign_in": "تسجيل الدخول",
-    "or_sign_in_with": "أو قم بتسجيل الدخول باستخدام",
+    "or_sign_in_with": "أو سجل الدخول باستخدام",
     "dont_have_an_account": "ليس لديك حساب؟",
-    "sign_up": "إنشاء حساب"
+    "sign_up": "إنشاء حساب",
+    "forgot_password": "نسيت كلمة المرور"
+  },
+  "registration": {
+    "welcome": "مرحباً",
+    "enter_your_account_here": "أدخل معلومات حسابك هنا",
+    "user_name": "اسم المستخدم",
+    "email_address": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "sign_in": "تسجيل الدخول",
+    "or_sign_in_with": "أو سجل الدخول باستخدام",
+    "already_have_an_account": "هل لديك حساب بالفعل؟",
+    "sign_up": "إنشاء حساب",
+    "forgot_password": "نسيت كلمة المرور"
+  },
+  "forget_password": {
+    "forget_password": "نسيت كلمة المرور",
+    "enter_the_email_associated": "أدخل البريد الإلكتروني المرتبط بحسابك وسنرسل لك رسالة لإعادة تعيين كلمة المرور",
+    "email": "البريد الإلكتروني",
+    "send_email": "إرسال البريد"
   },
   "dashboard": {
     "home": "الرئيسية",
-    "myTicket": "تذاكري",
+    "myTicket": "تذكرتي",
     "events": "الفعاليات",
     "nearMe": "بالقرب مني",
     "profile": "الملف الشخصي",
     "english": "الإنجليزية",
-    "arabic": "العربية"
+    "arabic": "العربية",
+    "map": "الخريطة"
+  },
+  "event_details": {
+    "about": "حول",
+    "category": "الفئة",
+    "go_to_map": "اذهب إلى الخريطة",
+    "find_us": "اعثر علينا",
+    "images": "الصور",
+    "book_now": "احجز الآن"
+  },
+  "notification": {
+    "notifications": "الإشعارات"
+  },
+  "ticket_booking": {
+    "ticket_booking": "حجز التذاكر",
+    "enter_your_info": "أدخل معلوماتك",
+    "full_name": "الاسم الكامل",
+    "enter_your_name": "أدخل اسمك",
+    "email_address": "البريد الإلكتروني",
+    "enter_your_email": "أدخل بريدك الإلكتروني",
+    "number_of_tickets": "عدد التذاكر",
+    "enter_another_info": "أدخل معلومات إضافية",
+    "payment_details": "تفاصيل الدفع",
+    "ticket": "تذكرة",
+    "total": "الإجمالي",
+    "sar": "ر.س",
+    "continue": "استمرار"
+  },
+  "event": {
+    "search_events": "ابحث عن فعاليات",
+    "city": "المدينة",
+    "all_event": "جميع الفعاليات",
+    "create_event": "إنشاء فعالية",
+    "technology": "تقنية",
+    "seminars": "ندوات",
+    "education": "تعليم",
+    "concerts": "حفلات موسيقية",
+    "workshops": "ورش عمل",
+    "health": "صحة"
   },
   "drawer": {
     "myEvents": "فعالياتي",
     "myTickets": "تذاكري",
-    "eQueue": "الطابور الإلكتروني",
+    "eQueue": "قائمة الانتظار الإلكترونية",
     "favorite": "المفضلة",
     "settings": "الإعدادات",
     "faq": "الأسئلة الشائعة",
@@ -39,6 +97,92 @@
   "ticket": {
     "looking_for_your_tickets": "تبحث عن تذاكرك؟",
     "explore_events": "استكشف الفعاليات",
-    "valid": "صالح"
+    "valid": "صالحة"
+  },
+  "home": {
+    "search_events": "ابحث عن فعاليات"
+  },
+  "create_event": {
+    "create_event": "إنشاء فعالية",
+    "general": "عام",
+    "location": "الموقع",
+    "details": "التفاصيل",
+    "share": "مشاركة",
+    "upload_your_image": "قم بتحميل صورك",
+    "upload_profile": "تحميل الملف الشخصي",
+    "event_title": "عنوان الفعالية",
+    "event_category": "فئة الفعالية",
+    "event_description": "وصف الفعالية",
+    "next": "التالي",
+    "search_location": "ابحث عن الموقع",
+    "select_location": "اختر الموقع",
+    "or": "أو",
+    "email_address": "البريد الإلكتروني",
+    "contact_number": "رقم الاتصال",
+    "whatsapp_number": "رقم الواتساب (اختياري)",
+    "select_price": "اختر السعر",
+    "sar": "ر.س",
+    "time_date": "الوقت والتاريخ",
+    "start_time": "وقت البدء",
+    "end_time": "وقت الانتهاء",
+    "add_social_links": "أضف روابط التواصل الاجتماعي",
+    "enter_social_media_links": "أدخل روابط التواصل الاجتماعي",
+    "image_uploaded": "تم تحميل الصور",
+    "profile_updated": "تم تحديث الملف الشخصي",
+    "title": "العنوان",
+    "description": "الوصف",
+    "price": "السعر",
+    "date_time": "التاريخ والوقت",
+    "social_links": "روابط التواصل الاجتماعي",
+    "confirm": "تأكيد",
+    "previous": "السابق"
+  },
+  "choose_seat": {
+    "choose_seat_text": "اختر المقعد",
+    "screen": "الشاشة",
+    "available": "متاح",
+    "Selected": "محدد",
+    "chosen": "مُختار",
+    "continue_to_payment": "الاستمرار إلى الدفع"
+  },
+  "payment_bottomsheet": {
+    "event_payment": "دفع الفعالية",
+    "number_of_tickets": "عدد التذاكر",
+    "ticket_type": "نوع التذكرة",
+    "ticket_price": "سعر التذكرة",
+    "complete_payment": "إكمال الدفع",
+    "apply": "تطبيق"
+  },
+  "profile": {
+    "full_name": "الاسم الكامل",
+    "phone_number": "رقم الهاتف",
+    "city": "المدينة",
+    "notionality": "الجنسية",
+    "date_of_birth": "تاريخ الميلاد",
+    "gender": "الجنس",
+    "edit_profile": "تعديل الملف الشخصي",
+    "save_changes": "حفظ التغييرات"
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "email": "البريد الإلكتروني",
+    "email_value": "m.yasir.k.2001@gmail.com",
+    "full_name": "الاسم الكامل",
+    "full_name_value": "محمد ياسر",
+    "notification": "الإشعارات",
+    "share_app": "مشاركة التطبيق",
+    "rate_us": "قيّمنا",
+    "privacy_policy": "سياسة الخصوصية",
+    "terms_of_use": "شروط الاستخدام",
+    "change_password": "تغيير كلمة المرور",
+    "logout": "تسجيل الخروج",
+    "version": "الإصدار"
+  },
+  "change_password": {
+    "change_password": "تغيير كلمة المرور",
+    "current_password": "كلمة المرور الحالية",
+    "new_password": "كلمة المرور الجديدة",
+    "confirm_new_password": "تأكيد كلمة المرور الجديدة",
+    "confirm": "تأكيد"
   }
 }

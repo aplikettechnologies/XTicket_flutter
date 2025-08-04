@@ -43,7 +43,8 @@
         "nearMe": "Near me",
         "profile": "Profile",
         "english": "English",
-        "arabic": "Arabic"
+        "arabic": "Arabic",
+        "map": "Map"
     },
     "event_details": {
         "about": "About",

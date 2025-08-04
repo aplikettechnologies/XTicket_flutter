@@ -24,6 +24,10 @@ class AppPages {
     GetPage(name: AppRoutes.settings, page: () => SettingsScreen()),
     GetPage(name: AppRoutes.changePassword, page: () => ChangePasswordScreen()),
     GetPage(name: AppRoutes.eventDetails, page: () => EventDetailsScreen()),
-    GetPage(name: AppRoutes.map, page: () => MapScreen()),
+    GetPage(
+      name: AppRoutes.map,
+      page: () => MapScreen(),
+      transition: Transition.noTransition,
+    ),
   ];
 }
