@@ -8,10 +8,10 @@ import '../../../../shared/utils/app_style.dart';
 
 Widget appDropdown({
   required Function(String?) onChanged,
-  required String selectedValue,
+  required String? selectedValue,
+  required String hintText,
   required List<String> items,
-  BoxDecoration? decoration,
-  TextStyle? selectTextStyle,
+  Widget? customButton,
 }) {
   return DropdownButtonHideUnderline(
     child: DropdownButton2<String>(
@@ -34,7 +34,11 @@ Widget appDropdown({
           ),
         ),
       ),
-
+      onChanged: onChanged,
+      value:
+          (selectedValue != null && items.contains(selectedValue))
+              ? selectedValue
+              : null,
       items:
           items
               .map(
@@ -44,37 +48,36 @@ Widget appDropdown({
                 ),
               )
               .toList(),
-      onChanged: onChanged,
-      value: selectedValue,
-      customButton: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
-        decoration:
-            decoration ??
-            BoxDecoration(
+
+      customButton:
+          customButton ??
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+            decoration: BoxDecoration(
               color: AppColor.white,
               borderRadius: BorderRadius.circular(100.r),
               border: Border.all(color: AppColor.grey2),
             ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              child: Text(
-                selectedValue.toString(),
-                style: selectTextStyle ?? AppStyle.appbarTitleTextStyle,
-              ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Text(
+                    selectedValue ?? hintText,
+                    style: AppStyle.appbarTitleTextStyle,
+                  ),
+                ),
+                SizedBox(width: 5.w),
+                SvgPicture.asset(
+                  AppAssets.icFieldDropdown,
+                  height: 24.h,
+                  width: 24.w,
+                  fit: BoxFit.cover,
+                ),
+              ],
             ),
-            SizedBox(width: 5.w),
-            SvgPicture.asset(
-              AppAssets.icFieldDropdown,
-              height: 24.h,
-              width: 24.w,
-              fit: BoxFit.cover,
-            ),
-          ],
-        ),
-      ),
+          ),
     ),
   );
 }

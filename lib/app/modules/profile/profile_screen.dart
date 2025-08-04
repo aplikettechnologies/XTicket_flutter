@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:xticket/app/modules/profile/profile_controller.dart';
 import 'package:xticket/shared/utils/app_color.dart';
 import 'package:xticket/shared/utils/app_style.dart';
 import 'package:xticket/shared/widgets/app_button.dart';
+import 'package:xticket/shared/widgets/app_select_date.dart';
 
 import '../../../shared/localization/localization_const.dart';
 import '../../../shared/utils/app_assets.dart';
@@ -96,16 +98,13 @@ class ProfileScreen extends StatelessWidget {
                     style: AppStyle.headerTextStyle,
                   ),
                   SizedBox(height: 8.h),
+
                   appDropdown(
-                    selectTextStyle: AppStyle.textTextStyle.copyWith(
-                      fontSize: 16.sp,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColor.grey1,
-                      borderRadius: BorderRadius.circular(100.r),
-                    ),
-                    onChanged:
-                        (value) => controller.updateCity(value.toString()),
+                    hintText: getTranslation(context, 'profile.city'),
+                    onChanged: (value) {
+                      controller.updateCity(value.toString());
+                    },
+                    selectedValue: controller.selectCity,
                     items: [
                       'Dammam',
                       'Riyadh',
@@ -119,8 +118,41 @@ class ProfileScreen extends StatelessWidget {
                       'Al-Hasa',
                       'Jawf',
                     ],
-                    selectedValue: controller.selectCity.value,
+                    customButton: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 14.w,
+                        vertical: 10.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColor.neutralColor08,
+                        borderRadius: BorderRadius.circular(100.r),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              controller.selectCity ??
+                                  getTranslation(context, 'profile.city'),
+                              style: AppStyle.neutral4Reguler14Lato.copyWith(
+                                color: AppColor.neutralColor05,
+                              ),
+                            ),
+                          ),
+
+                          SizedBox(width: 5.w),
+                          SvgPicture.asset(
+                            AppAssets.icFieldDropdown,
+                            height: 24.h,
+                            width: 24.w,
+                            fit: BoxFit.cover,
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
+
                   SizedBox(height: 12.h),
 
                   Text(
@@ -128,17 +160,13 @@ class ProfileScreen extends StatelessWidget {
                     style: AppStyle.headerTextStyle,
                   ),
                   SizedBox(height: 8.h),
+
                   appDropdown(
-                    selectTextStyle: AppStyle.textTextStyle.copyWith(
-                      fontSize: 16.sp,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColor.grey1,
-                      borderRadius: BorderRadius.circular(100.r),
-                    ),
-                    onChanged:
-                        (value) =>
-                            controller.updateNotionality(value.toString()),
+                    hintText: getTranslation(context, 'profile.notionality'),
+                    onChanged: (value) {
+                      controller.updateNotionality(value.toString());
+                    },
+                    selectedValue: controller.selectNotionality,
                     items: [
                       'Afghan',
                       'Albanian',
@@ -157,42 +185,103 @@ class ProfileScreen extends StatelessWidget {
                       'Canadian',
                       'Chilean',
                     ],
-                    selectedValue: controller.selectNotionality.value,
+                    customButton: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 14.w,
+                        vertical: 10.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColor.neutralColor08,
+                        borderRadius: BorderRadius.circular(100.r),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              controller.selectNotionality ??
+                                  getTranslation(
+                                    context,
+                                    'profile.notionality',
+                                  ),
+                              style: AppStyle.neutral4Reguler14Lato.copyWith(
+                                color: AppColor.neutralColor05,
+                              ),
+                            ),
+                          ),
+
+                          SizedBox(width: 5.w),
+                          SvgPicture.asset(
+                            AppAssets.icFieldDropdown,
+                            height: 24.h,
+                            width: 24.w,
+                            fit: BoxFit.cover,
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
+
                   SizedBox(height: 12.h),
-                  appTextFormField(
-                    readOnly: true,
+                  Text(
+                    getTranslation(context, 'profile.date_of_birth'),
+                    style: AppStyle.headerTextStyle,
+                  ),
+                  SizedBox(height: 8.h),
+                  appSelectDate(
                     context: context,
+                    title: getTranslation(context, 'profile.date_of_birth'),
+                    onDatePicked: (date) {
+                      if (date != null) {
+                        controller.selectBirthDay = DateFormat(
+                          'dd-MMM-yyyy',
+                        ).format(date);
+                        controller.update();
+                      }
+                    },
+                    customButton: Container(
+                      width: double.infinity,
+                      height: 45.h,
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.only(
+                        top: 8.h,
+                        bottom: 8.h,
+                        left: 14.w,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColor.neutralColor08,
+                        borderRadius: BorderRadius.circular(100.r),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              controller.selectBirthDay ??
+                                  getTranslation(
+                                    context,
+                                    'profile.date_of_birth',
+                                  ),
+                              style: AppStyle.neutral4Reguler14Lato.copyWith(
+                                color: AppColor.neutralColor05,
+                              ),
+                            ),
+                          ),
+                          SvgPicture.asset(
+                            AppAssets.icCalendar,
+                            height: 24.h,
+                            width: 24.w,
+                          ),
+                          SizedBox(width: 8.w),
 
-                    textEditingController: TextEditingController(
-                      text: controller.selectBirthDay.value,
-                    ),
-                    suffixIcon: svgIconButton(
-                      iconPath: AppAssets.icCalendar,
-                      size: 34.sp,
-                      onPressed: () async {
-                        DateTime? pickedDate = await showDatePicker(
-                          context: context,
-                          initialDate: DateTime(2000, 1, 1),
-                          firstDate: DateTime(1900),
-                          lastDate: DateTime.now(),
-                        );
-
-                        if (pickedDate != null) {
-                          final formattedDate = DateFormat(
-                            'dd MMM, yyyy',
-                          ).format(pickedDate);
-                          controller.updateBirthDay(formattedDate);
-                        }
-                      },
-                      padding: EdgeInsets.all(5.sp),
-                    ),
-                    hintText: getTranslation(context, 'profile.date_of_birth'),
-                    headerText: getTranslation(
-                      context,
-                      'profile.date_of_birth',
+                          SizedBox(width: 5.w),
+                        ],
+                      ),
                     ),
                   ),
+
                   SizedBox(height: 12.h),
 
                   Text(
@@ -200,20 +289,48 @@ class ProfileScreen extends StatelessWidget {
                     style: AppStyle.headerTextStyle,
                   ),
                   SizedBox(height: 8.h),
-                  appDropdown(
-                    selectTextStyle: AppStyle.textTextStyle.copyWith(
-                      fontSize: 16.sp,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColor.grey1,
-                      borderRadius: BorderRadius.circular(100.r),
-                    ),
-                    onChanged:
-                        (value) => controller.updateGender(value.toString()),
-                    items: ['Male', 'Female'],
-                    selectedValue: controller.selectGender.value,
-                  ),
 
+                  appDropdown(
+                    hintText: getTranslation(context, 'profile.gender'),
+                    onChanged: (value) {
+                      controller.updateGender(value.toString());
+                    },
+                    selectedValue: controller.selectGender,
+                    items: ['Male', 'Female', 'Other'],
+                    customButton: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 14.w,
+                        vertical: 10.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColor.neutralColor08,
+                        borderRadius: BorderRadius.circular(100.r),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              controller.selectGender ??
+                                  getTranslation(context, 'profile.gender'),
+                              style: AppStyle.neutral4Reguler14Lato.copyWith(
+                                color: AppColor.neutralColor05,
+                              ),
+                            ),
+                          ),
+
+                          SizedBox(width: 5.w),
+                          SvgPicture.asset(
+                            AppAssets.icFieldDropdown,
+                            height: 24.h,
+                            width: 24.w,
+                            fit: BoxFit.cover,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                   SizedBox(height: 80.h),
                 ],
               ),

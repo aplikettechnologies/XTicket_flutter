@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:xticket/app/modules/home/filter_city_selector_widget.dart';
 import 'package:xticket/app/modules/home/home_controller.dart';
+import 'package:xticket/routes/app_routes.dart';
 import 'package:xticket/shared/localization/localization_const.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 import 'package:xticket/shared/utils/app_color.dart';
 import 'package:xticket/shared/utils/app_indicator.dart';
+import '../../../shared/utils/app_style.dart';
 import '../../../shared/widgets/app_search_field.dart';
 import '../event/widget/item_category_list.dart';
 import '../event/widget/item_event_list.dart';
@@ -78,60 +79,120 @@ class HomeScreen extends StatelessWidget {
                 ),
 
                 SizedBox(height: 18.h),
+
+                //Filters
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    spacing: 12.w,
-                    children: [
-                      Expanded(
-                        flex: 3,
-                        child: appSearchField(
-                          context: context,
-                          hintText: getTranslation(
-                            context,
-                            'event.search_events',
+                  child: InkWell(
+                    onTap: () {
+                      Get.toNamed(AppRoutes.search);
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          flex: 5,
+                          child: appSearchField(
+                            onTap: () {
+                              Get.toNamed(AppRoutes.search);
+                            },
+                            readOnly: true,
+                            context: context,
+                            hintText: getTranslation(
+                              context,
+                              'event.search_events',
+                            ),
                           ),
                         ),
-                      ),
-                      filterCitySelector(
-                        context: context,
-                        controller: controller,
-                      ),
-
-                      Expanded(
-                        flex: 1,
-                        child: Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 14.w,
-                            vertical: 12.h,
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(100.r),
-                            color: AppColor.white,
-                            boxShadow: [
-                              BoxShadow(
-                                color: AppColor.black.withValues(alpha: 0.1),
-                                offset: Offset(1, 1),
-                                blurRadius: 10,
-                                spreadRadius: 0,
+                        SizedBox(width: 8.w),
+                        Expanded(
+                          flex: 3,
+                          child: Container(
+                            height: 48.h,
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 19.w,
+                              vertical: 10.h,
+                            ),
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100.r),
+                              color: AppColor.white,
+                              border: Border.all(
+                                color: AppColor.neutralColor08,
+                                width: 1.w,
                               ),
-                            ],
-                          ),
-                          child: SvgPicture.asset(
-                            AppAssets.icFilterSetting.removeAllWhitespace,
-                            width: 24.w,
-                            height: 24.h,
-                            fit: BoxFit.contain,
-                            // ignore: deprecated_member_use
-                            color: AppColor.primaryColor04,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: AppColor.black.withValues(alpha: 0.1),
+                                  offset: Offset(1, 1),
+                                  blurRadius: 10,
+                                  spreadRadius: 0,
+                                ),
+                              ],
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  getTranslation(context, 'event.city'),
+                                  style: AppStyle.grey2Regular12Lato.copyWith(
+                                    color: AppColor.grey2,
+                                  ),
+                                ),
+                                SizedBox(width: 10.w),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 4.h),
+                                  child: SvgPicture.asset(
+                                    AppAssets.icDropdown,
+                                    height: 6.h,
+                                    width: 10.h,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+
+                        SizedBox(width: 8.w),
+                        Expanded(
+                          flex: 2,
+                          child: Container(
+                            height: 48.h,
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 19.w,
+                              vertical: 13.h,
+                            ),
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100.r),
+                              color: AppColor.white,
+                              border: Border.all(
+                                color: AppColor.neutralColor08,
+                                width: 1.w,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: AppColor.black.withValues(alpha: 0.1),
+                                  offset: Offset(1, 1),
+                                  blurRadius: 10,
+                                  spreadRadius: 0,
+                                ),
+                              ],
+                            ),
+                            child: SvgPicture.asset(
+                              AppAssets.icFilter,
+                              height: 24.h,
+                              width: 24.h,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
+
                 SizedBox(height: 24.h),
                 //CategoryList
                 SizedBox(

@@ -10,7 +10,7 @@ import '../utils/app_style.dart';
 Widget appSearchField({
   required BuildContext context,
   double width = double.infinity,
-
+  bool readOnly = false,
   TextStyle? textStyle,
   TextStyle? hintTextStyle,
   TextCapitalization textCapitalization = TextCapitalization.none,
@@ -52,6 +52,7 @@ Widget appSearchField({
     child: TextFormField(
       controller: textEditingController,
       onChanged: onChanged,
+      readOnly: readOnly,
       onFieldSubmitted: onFieldSubmitted,
       style: textStyle ?? AppStyle.textTextStyle,
       textAlign: textAlign ?? TextAlign.start,
@@ -66,6 +67,7 @@ Widget appSearchField({
       textCapitalization: textCapitalization,
       inputFormatters: inputFormatters,
       cursorColor: cursoreColor,
+      onTap: onTap,
       onTapOutside: (event) {
         FocusScope.of(context).unfocus();
       },
