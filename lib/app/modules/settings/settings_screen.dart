@@ -17,10 +17,8 @@ class SettingsScreen extends StatelessWidget {
       backgroundColor: AppColor.white,
       appBar: appAppbar(
         centerTitle: true,
-
         title: getTranslation(context, 'settings.title'),
       ),
-
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
         child: Column(
