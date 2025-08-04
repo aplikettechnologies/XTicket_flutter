@@ -46,6 +46,8 @@ class AppColor {
   static const Color grey3 = Color(0xff1CAD95);
   static const Color grey4 = Color(0xffEBEBEB);
 
+  static const Color darkGrey = Color(0xff404040);
+
   static const Color navigationUnselectedColor = Color(0xff737373);
   static const Color navigationSelectedColor = Color(0xff17907C);
 
