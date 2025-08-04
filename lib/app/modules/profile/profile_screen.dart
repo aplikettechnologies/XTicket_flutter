@@ -46,13 +46,13 @@ class ProfileScreen extends StatelessWidget {
                                 color: AppColor.neutralColor08,
                                 borderRadius: BorderRadius.circular(100.r),
                               ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(100.r),
+                              child: ClipOval(
                                 child: appImageNetwork(
-                                  width: 60.r,
-                                  height: 60.r,
+                                  width: 80.r,
+                                  height: 80.r,
+                                  fit: BoxFit.cover,
                                   url:
-                                      "https://images.pexels.com/photos/50855/pexels-photo-50855.jpeg",
+                                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQyawVbjORfalGKAFdWZyJbg8cH12xX-MlLw&s",
                                 ),
                               ),
                             ),
@@ -295,6 +295,7 @@ class ProfileScreen extends StatelessWidget {
                     onChanged: (value) {
                       controller.updateGender(value.toString());
                     },
+
                     selectedValue: controller.selectGender,
                     items: ['Male', 'Female', 'Other'],
                     customButton: Container(
@@ -335,6 +336,7 @@ class ProfileScreen extends StatelessWidget {
                 ],
               ),
             ),
+
             //CreateEvent
             Align(
               alignment: Alignment.bottomCenter,

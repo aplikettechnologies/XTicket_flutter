@@ -19,17 +19,31 @@ Widget appSelectDate({
     onTap: () async {
       DateTime? pickedDate = await showDatePicker(
         context: context,
+        initialEntryMode: DatePickerEntryMode.calendarOnly,
         initialDate: DateTime.now(),
         firstDate: DateTime.now(),
         lastDate: DateTime.now().add(Duration(days: 365)),
+
         barrierColor: AppColor.barrierColor,
+
+        builder: (context, child) {
+          return Theme(
+            data: Theme.of(context).copyWith(
+              colorScheme: ColorScheme.light(
+                primary: AppColor.primaryColor04,
+                onPrimary: Colors.white,
+                onSurface: Colors.black,
+              ),
+            ),
+            child: child!,
+          );
+        },
       );
 
       if (onDatePicked != null && pickedDate != null) {
         onDatePicked(pickedDate);
       }
     },
-
     child:
         customButton ??
         Container(

@@ -179,6 +179,7 @@ Widget searchFilterBottomSheet({
             SizedBox(height: 12.h),
             appSelectDate(
               context: context,
+              height: 45.h,
               title:
                   controller.selectDate ??
                   getTranslation(context, 'search.date'),
@@ -199,21 +200,29 @@ Widget searchFilterBottomSheet({
               children: [
                 //Reset
                 Expanded(
-                  child: Container(
-                    height: 40.h,
-                    alignment: Alignment.center,
+                  child: InkWell(
+                    onTap: () {
+                      controller.selectedCountry = null;
+                      controller.selectDate = null;
+                      controller.selectedCategoryIndex = null;
+                      controller.update();
+                    },
+                    child: Container(
+                      height: 40.h,
+                      alignment: Alignment.center,
 
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: AppColor.primaryColor04,
-                        width: 1.w,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: AppColor.primaryColor04,
+                          width: 1.w,
+                        ),
+                        color: AppColor.white,
+                        borderRadius: BorderRadius.circular(100.r),
                       ),
-                      color: AppColor.white,
-                      borderRadius: BorderRadius.circular(100.r),
-                    ),
-                    child: Text(
-                      getTranslation(context, 'search.reset'),
-                      style: AppStyle.primary4Medium14Manrope,
+                      child: Text(
+                        getTranslation(context, 'search.reset'),
+                        style: AppStyle.primary4Medium14Manrope,
+                      ),
                     ),
                   ),
                 ),
@@ -224,7 +233,9 @@ Widget searchFilterBottomSheet({
                   child: appButton(
                     context: context,
                     text: getTranslation(context, 'search.apply_filters'),
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.back();
+                    },
                   ),
                 ),
               ],

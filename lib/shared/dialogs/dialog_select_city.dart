@@ -55,6 +55,7 @@ Widget dialogSelectCity({
                             onChanged: (value) {
                               controller.selectedCityIndex = index;
                               controller.update();
+                              Get.back();
                             },
                           ),
                           SizedBox(width: 8.w),

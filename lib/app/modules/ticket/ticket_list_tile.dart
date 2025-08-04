@@ -4,7 +4,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 import 'package:xticket/shared/utils/app_color.dart';
 import 'package:xticket/shared/utils/app_style.dart';
-
 import '../../../shared/localization/localization_const.dart';
 import 'ticker_dialog_widget.dart';
 
@@ -12,6 +11,7 @@ Widget iconTextRow({
   required String iconPath,
   required String value,
   required Color color,
+  TextStyle? valueStyle,
 }) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.start,
@@ -25,7 +25,7 @@ Widget iconTextRow({
         colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
       ),
       SizedBox(width: 8.w),
-      Text(value, style: AppStyle.neutral4Medium12Manrope),
+      Text(value, style: valueStyle ?? AppStyle.neutral4Medium12Manrope),
     ],
   );
 }
@@ -87,7 +87,10 @@ Widget ticketListTile({required BuildContext context}) {
                 iconTextRow(
                   iconPath: AppAssets.icValidRed,
                   value: getTranslation(context, 'ticket.valid'),
-                  color: AppColor.navigationSelectedColor,
+                  valueStyle: AppStyle.neutral4Medium12Manrope.copyWith(
+                    color: AppColor.primaryColor04,
+                  ),
+                  color: AppColor.primaryColor04,
                 ),
               ],
             ),

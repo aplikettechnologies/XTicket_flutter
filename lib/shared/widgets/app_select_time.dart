@@ -19,6 +19,20 @@ Widget appSelectDate({
         initialTime: TimeOfDay(hour: 7, minute: 15),
         initialEntryMode: TimePickerEntryMode.input,
         barrierColor: AppColor.barrierColor,
+        builder: (context, child) {
+          return Theme(
+            data: Theme.of(context).copyWith(
+              colorScheme: ColorScheme.light(
+                primary: AppColor.primaryColor04,
+                primaryContainer: AppColor.primaryColor10,
+                onPrimary: Colors.white,
+                onSurface: Colors.black,
+              ),
+              textTheme: TextTheme(),
+            ),
+            child: child!,
+          );
+        },
       );
 
       if (onTimePicked != null) {

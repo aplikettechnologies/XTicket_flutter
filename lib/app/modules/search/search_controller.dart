@@ -5,7 +5,7 @@ class SearchScreenController extends GetxController {
   TextEditingController citySearchController = TextEditingController();
   TextEditingController eventSearchController = TextEditingController();
   String? selectedCountry;
-  int selectedCategoryIndex = 0;
+  int? selectedCategoryIndex;
   String selectedCategory = '';
   String selectedCity = '';
   int selectedCityIndex = 0;

@@ -121,7 +121,7 @@ class SettingsScreen extends StatelessWidget {
             ),
 
             SvgPicture.asset(
-              AppAssets.icLeftArrow,
+              AppAssets.icRightArrow,
               height: 24.h,
               width: 24.w,
               fit: BoxFit.cover,
@@ -181,7 +181,7 @@ class SettingsScreen extends StatelessWidget {
                 : SizedBox.shrink(),
 
             SvgPicture.asset(
-              AppAssets.icLeftArrow,
+              AppAssets.icRightArrow,
               height: 24.h,
               width: 24.w,
               fit: BoxFit.cover,

@@ -10,6 +10,8 @@ Widget appDropdown({
   required Function(String?) onChanged,
   required String? selectedValue,
   required String hintText,
+  TextStyle? textStyle,
+  TextStyle? itemTextStyle,
   required List<String> items,
   Widget? customButton,
 }) {
@@ -17,9 +19,10 @@ Widget appDropdown({
     child: DropdownButton2<String>(
       dropdownStyleData: DropdownStyleData(
         elevation: 0,
-        padding: EdgeInsets.only(top: 10.h, bottom: 0.h),
+        padding: EdgeInsets.only(top: 10.h, bottom: 10.h),
         decoration: BoxDecoration(
           color: AppColor.white,
+
           boxShadow: [
             BoxShadow(
               blurRadius: 10,
@@ -35,16 +38,24 @@ Widget appDropdown({
         ),
       ),
       onChanged: onChanged,
+      menuItemStyleData: MenuItemStyleData(
+        height: 35.h,
+        padding: EdgeInsets.only(right: 16.w, left: 16.w),
+      ),
       value:
           (selectedValue != null && items.contains(selectedValue))
               ? selectedValue
               : null,
+
       items:
           items
               .map(
                 (location) => DropdownMenuItem<String>(
                   value: location,
-                  child: Text(location, style: AppStyle.appbarTitleTextStyle),
+                  child: Text(
+                    location,
+                    style: itemTextStyle ?? AppStyle.textTextStyle,
+                  ),
                 ),
               )
               .toList(),
@@ -65,7 +76,7 @@ Widget appDropdown({
                 Expanded(
                   child: Text(
                     selectedValue ?? hintText,
-                    style: AppStyle.appbarTitleTextStyle,
+                    style: textStyle ?? AppStyle.textTextStyle,
                   ),
                 ),
                 SizedBox(width: 5.w),
