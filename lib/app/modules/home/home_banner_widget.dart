@@ -6,6 +6,8 @@ import 'package:xticket/app/modules/home/home_controller.dart';
 import 'package:xticket/shared/utils/app_color.dart';
 import 'package:xticket/shared/utils/app_indicator.dart';
 
+import '../../../shared/widgets/app_image_network.dart';
+
 Widget homeBannerWidget(HomeController controller) {
   return Stack(
     alignment: Alignment.bottomCenter,
@@ -25,10 +27,11 @@ Widget homeBannerWidget(HomeController controller) {
         ),
         items: List.generate(
           controller.eventBanner.length,
-          (index) => Image.network(
-            controller.eventBanner[index].toString(),
-            fit: BoxFit.cover,
+          (index) => appImageNetwork(
+            url: controller.eventBanner[index].toString(),
+            fit: BoxFit.contain,
             width: double.infinity,
+            height: 195.h,
           ),
         ),
       ),

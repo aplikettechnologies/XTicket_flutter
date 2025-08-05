@@ -19,12 +19,11 @@ Widget itemEventList(EventDetails data) {
               height: 130.h,
               url: data.images.first,
               fit: BoxFit.cover,
-              // 'https://www.digitalclassworld.com/blog/wp-content/uploads/2021/02/Full-form-of-URL-1-1024x824.jpg',
             ),
           ),
 
           Container(
-            margin: EdgeInsets.only(left: 21.w),
+            margin: EdgeInsets.only(left: 21.w, right: 21.w),
             padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
             decoration: BoxDecoration(
               boxShadow: [
