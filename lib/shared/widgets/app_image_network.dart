@@ -10,6 +10,7 @@ Widget appImageNetwork({
   required String url,
   BoxFit? fit,
 }) {
+  debugPrint("Loading image: $url");
   return CachedNetworkImage(
     imageUrl: url,
     height: height,
@@ -18,12 +19,14 @@ Widget appImageNetwork({
     progressIndicatorBuilder:
         (context, url, progress) =>
             appShimmerWidger(height: height, width: width, radius: 8.r),
-    errorWidget:
-        (context, url, error) => Image.asset(
-          AppAssets.icNoImage,
-          height: height,
-          width: width,
-          fit: BoxFit.contain,
-        ),
+    errorWidget: (context, url, error) {
+      debugPrint("Image load error: $error");
+      return Image.asset(
+        AppAssets.icNoImage,
+        height: height,
+        width: width,
+        fit: BoxFit.contain,
+      );
+    },
   );
 }

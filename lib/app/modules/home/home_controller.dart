@@ -7,13 +7,22 @@ class HomeController extends GetxController {
   TextEditingController searchEventController = TextEditingController();
   TextEditingController cityController = TextEditingController(text: "Makka");
   List<Map<String, dynamic>> categoryList = [];
+  bool isLoading = false;
+
+  Future<void> getEvents() async {
+    isLoading = true;
+    update();
+    await Future.delayed(Duration(seconds: 2));
+    isLoading = false;
+    update();
+  }
 
   HomeController({required BuildContext context}) {
     categoryList = AppList.appEventCategoryList(context);
   }
 
   List<String> eventBanner = [
-    'https://mir-s3-cdn-cf.behance.net/project_modules/fs/fafe8b78782507.5caecfa8ef0fe.jpg',
+    "https://img.freepik.com/free-psd/event-banner-template-design_23-2149231980.jpg",
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVoORAR5bOcWjWN2ZOLnhOUuuqBjkiIlUtr_DERYg5qww8FmjqGBf8wTWx37JZn7hSsMQ&usqp=CAUg',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWc7PWklGUwhPq6GG3a3ccaqQXzGw0v_hul6drFsHKcXX-VRAZsZs7SsoOMiTIJ8kfraM&usqp=CAU',
   ];
@@ -56,8 +65,9 @@ class HomeController extends GetxController {
   }
 
   @override
-  void onInit() {
+  Future<void> onInit() async {
     super.onInit();
+    await getEvents();
     filteredCities.value = allCities;
   }
 

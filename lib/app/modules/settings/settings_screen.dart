@@ -7,6 +7,7 @@ import 'package:xticket/routes/app_routes.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 import 'package:xticket/shared/utils/app_color.dart';
 import 'package:xticket/shared/utils/app_style.dart';
+import 'package:xticket/shared/widgets/skeletonizer_container.dart';
 
 import '../../../shared/localization/localization_const.dart';
 import '../../../shared/widgets/app_appbar.dart';
@@ -25,58 +26,61 @@ class SettingsScreen extends StatelessWidget {
       body: GetBuilder<SettingController>(
         init: SettingController(),
         builder: (controller) {
-          return Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                settingsListTile(
-                  title: getTranslation(context, "settings.email"),
-                  subtitle: "m.yasir.k.2001@gmail.com",
-                ),
-                settingsListTile(
-                  title: getTranslation(context, "settings.full_name"),
-                  subtitle: "Muhammad Yasir",
-                ),
+          return SkeletonizerContainer(
+            enabled: controller.isLoading,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  settingsListTile(
+                    title: getTranslation(context, "settings.email"),
+                    subtitle: "m.yasir.k.2001@gmail.com",
+                  ),
+                  settingsListTile(
+                    title: getTranslation(context, "settings.full_name"),
+                    subtitle: "Muhammad Yasir",
+                  ),
 
-                SizedBox(height: 16.h),
-                settingsListTile(
-                  title: getTranslation(context, "settings.notification"),
-                ),
-                settingsListTile(
-                  title: getTranslation(context, "settings.share_app"),
-                ),
-                SizedBox(height: 16.h),
-                settingsListTile(
-                  title: getTranslation(context, "settings.rate_us"),
-                ),
-                settingsListTile(
-                  title: getTranslation(context, "settings.privacy_policy"),
-                ),
-                settingsListTile(
-                  title: getTranslation(context, "settings.terms_of_use"),
-                ),
-                SizedBox(height: 16.h),
-                settingsListTile(
-                  onTap: () {
-                    Get.toNamed(AppRoutes.changePassword);
-                  },
-                  title: getTranslation(context, "settings.change_password"),
-                ),
+                  SizedBox(height: 16.h),
+                  settingsListTile(
+                    title: getTranslation(context, "settings.notification"),
+                  ),
+                  settingsListTile(
+                    title: getTranslation(context, "settings.share_app"),
+                  ),
+                  SizedBox(height: 16.h),
+                  settingsListTile(
+                    title: getTranslation(context, "settings.rate_us"),
+                  ),
+                  settingsListTile(
+                    title: getTranslation(context, "settings.privacy_policy"),
+                  ),
+                  settingsListTile(
+                    title: getTranslation(context, "settings.terms_of_use"),
+                  ),
+                  SizedBox(height: 16.h),
+                  settingsListTile(
+                    onTap: () {
+                      Get.toNamed(AppRoutes.changePassword);
+                    },
+                    title: getTranslation(context, "settings.change_password"),
+                  ),
 
-                SizedBox(height: 16.h),
-                settingsLogoutWidget(
-                  title: getTranslation(context, "settings.logout"),
-                  subtitle: "m.yasir.k.2001@gmail.com",
-                ),
-                SizedBox(height: 8.h),
+                  SizedBox(height: 16.h),
+                  settingsLogoutWidget(
+                    title: getTranslation(context, "settings.logout"),
+                    subtitle: "m.yasir.k.2001@gmail.com",
+                  ),
+                  SizedBox(height: 8.h),
 
-                Text(
-                  "${getTranslation(context, "settings.version")} ${controller.version}",
-                  style: AppStyle.primary4RegularManrope,
-                ),
-              ],
+                  Text(
+                    "${getTranslation(context, "settings.version")} ${controller.version}",
+                    style: AppStyle.primary4RegularManrope,
+                  ),
+                ],
+              ),
             ),
           );
         },

@@ -53,6 +53,8 @@ dependencies:
   google_maps_flutter: ^2.12.3
   geolocator: ^14.0.2
   package_info_plus: ^8.3.0
+  skeletonizer: ^1.4.3
+  dio: ^5.8.0+1
 
 dev_dependencies:
   flutter_test:

@@ -6,6 +6,21 @@ import '../home/events_model.dart';
 
 class EventController extends GetxController {
   List<Map<String, dynamic>> categoryList = [];
+  bool isLoading = false;
+
+  Future<void> getEvents() async {
+    isLoading = true;
+    update();
+    await Future.delayed(Duration(seconds: 2));
+    isLoading = false;
+    update();
+  }
+
+  @override
+  Future<void> onInit() async {
+    await getEvents();
+    super.onInit();
+  }
 
   EventController({required BuildContext context}) {
     categoryList = AppList.appEventCategoryList(context);
