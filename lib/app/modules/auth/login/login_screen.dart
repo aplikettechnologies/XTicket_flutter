@@ -9,7 +9,6 @@ import 'package:xticket/shared/utils/app_color.dart';
 import 'package:xticket/shared/utils/app_style.dart';
 import 'package:xticket/shared/widgets/app_divider.dart';
 import 'package:xticket/shared/widgets/app_textformfield.dart';
-
 import '../../../../routes/app_routes.dart';
 import '../../../../shared/widgets/app_button.dart';
 
@@ -124,7 +123,7 @@ class LoginScreen extends StatelessWidget {
                     //signIn
                     appButton(
                       context: context,
-                      onPressed: () {
+                      onPressed: () async {
                         Get.offAllNamed(AppRoutes.dashboard);
                       },
                       text: getTranslation(context, 'login.sign_in'),

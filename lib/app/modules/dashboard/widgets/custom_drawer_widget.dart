@@ -75,7 +75,9 @@ Widget customerDrawerWidget({required BuildContext context}) {
                           leadingIcon: AppAssets.icSettingsWhite,
                           trailingIcon: AppAssets.icRightArrow,
                           onTap: () {
-                            Get.toNamed(AppRoutes.settings);
+                            Get
+                              ..back()
+                              ..toNamed(AppRoutes.settings);
                           },
                         ),
                         drawerListTile(

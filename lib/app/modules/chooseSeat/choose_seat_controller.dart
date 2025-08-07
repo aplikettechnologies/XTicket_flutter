@@ -15,4 +15,20 @@ class ChooseSeatController extends GetxController {
     }
     update();
   }
+
+  bool isLoading = false;
+
+  Future<void> getBookingData() async {
+    isLoading = true;
+    update();
+    await Future.delayed(Duration(seconds: 2));
+    isLoading = false;
+    update();
+  }
+
+  @override
+  Future<void> onInit() async {
+    await getBookingData();
+    super.onInit();
+  }
 }

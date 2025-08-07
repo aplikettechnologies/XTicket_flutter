@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 
-class EventDetailsController extends GetxController {
+class TicketController extends GetxController {
   bool isLoading = false;
 
-  Future<void> getEventDetails() async {
+  Future<void> getTicket() async {
     isLoading = true;
     update();
     await Future.delayed(Duration(seconds: 2));
@@ -13,7 +13,7 @@ class EventDetailsController extends GetxController {
 
   @override
   Future<void> onInit() async {
-    await getEventDetails();
+    await getTicket();
     super.onInit();
   }
 }

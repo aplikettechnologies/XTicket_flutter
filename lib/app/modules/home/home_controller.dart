@@ -7,6 +7,15 @@ class HomeController extends GetxController {
   TextEditingController searchEventController = TextEditingController();
   TextEditingController cityController = TextEditingController(text: "Makka");
   List<Map<String, dynamic>> categoryList = [];
+  bool isLoading = false;
+
+  Future<void> getEvents() async {
+    isLoading = true;
+    update();
+    await Future.delayed(Duration(seconds: 2));
+    isLoading = false;
+    update();
+  }
 
   HomeController({required BuildContext context}) {
     categoryList = AppList.appEventCategoryList(context);
@@ -56,8 +65,9 @@ class HomeController extends GetxController {
   }
 
   @override
-  void onInit() {
+  Future<void> onInit() async {
     super.onInit();
+    await getEvents();
     filteredCities.value = allCities;
   }
 

@@ -10,7 +10,6 @@ class AppStyle {
     fontFamily: 'Manrope',
     fontWeight: FontWeight.w600,
   );
-
   static TextStyle primary1Medium14Manrope = TextStyle(
     color: AppColor.primaryColor01,
     fontSize: 14.sp,

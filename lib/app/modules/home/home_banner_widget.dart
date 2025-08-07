@@ -29,7 +29,7 @@ Widget homeBannerWidget(HomeController controller) {
           controller.eventBanner.length,
           (index) => appImageNetwork(
             url: controller.eventBanner[index].toString(),
-            fit: BoxFit.contain,
+            fit: BoxFit.cover,
             width: double.infinity,
             height: 195.h,
           ),
