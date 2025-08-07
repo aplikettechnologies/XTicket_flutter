@@ -23,6 +23,7 @@ Widget locationTab({required BuildContext context}) {
           SizedBox(height: 32.h),
           //SearchLocation
           appTextFormField(
+            textEditingController: controller.searchLocationTextController,
             context: context,
             headerStyle: AppStyle.darkSemibold18Manrope,
             headerText: getTranslation(context, 'create_event.search_location'),
@@ -60,10 +61,12 @@ Widget locationTab({required BuildContext context}) {
 
           //SelectLocation
           appTextFormField(
+            textEditingController: controller.selectLocationTextController,
             context: context,
             headerStyle: AppStyle.darkSemibold18Manrope,
-            headerText: getTranslation(context, 'create_event.search_location'),
+            headerText: getTranslation(context, 'create_event.select_location'),
             filled: false,
+            readOnly: true,
             prefixIcon: Padding(
               padding: EdgeInsets.only(left: 14.w, top: 2.h),
               child: SvgPicture.asset(

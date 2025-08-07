@@ -95,8 +95,8 @@ class ChooseSeatScreen extends StatelessWidget {
                   rows: 15,
                   columns: 11,
                   seatSize: 12.sp,
-                  selectedSeats: controller.selectedSeats,
-                  reservedSeats: controller.reservedSeats,
+                  chosenSeats: controller.chosenSeats,
+                  reservedSeats: controller.selectedSeats,
                   onSeatTap: (seat) => controller.toggleSeatSelection(seat),
                 ),
                 Padding(

@@ -17,7 +17,8 @@ import '../app/modules/notification/notification_screen.dart';
 
 class AppPages {
   static final List<GetPage<dynamic>> routes = [
-    GetPage(name: "/", page: () => OnboardingScreen()),
+    GetPage(name: "/", page: () => DashboardScreen()),
+    GetPage(name: AppRoutes.onboarding, page: () => OnboardingScreen()),
     GetPage(name: AppRoutes.login, page: () => LoginScreen()),
     GetPage(name: AppRoutes.registration, page: () => RegistrationScreen()),
     GetPage(name: AppRoutes.forgetPassword, page: () => ForgetPasswordScreen()),

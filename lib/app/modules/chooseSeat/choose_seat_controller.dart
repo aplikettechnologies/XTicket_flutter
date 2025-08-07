@@ -3,14 +3,14 @@ import 'package:get/get.dart';
 
 class ChooseSeatController extends GetxController {
   List<int> selectedSeats = <int>[0, 45, 67, 99, 128];
-  List<int> reservedSeats = [85];
+  List<int> chosenSeats = <int>[];
 
   void toggleSeatSelection(int index) {
-    if (selectedSeats.contains(index)) {
-      selectedSeats.remove(index);
+    if (chosenSeats.contains(index)) {
+      chosenSeats.remove(index);
       log("Seat $index deselected");
     } else {
-      selectedSeats.add(index);
+      chosenSeats.add(index);
       log("Seat $index selected");
     }
     update();

@@ -1,4 +1,28 @@
 {
+    "app_validation": {
+        "required": "is required ",
+        "email_required": "Email is required ",
+        "email_invalid_format": "Invalid email format",
+        "contact_no_required": "Contact number is required",
+        "contact_no_invalid_format": "Invalid contact number format",
+        "url_invalid_format": "Invalid URL format",
+        "error": "Error",
+        "please_upload_event_image": "Please upload event images",
+        "please_select_price": "Please select price",
+        "please_select_time": "Please select time",
+        "please_select_city": "Please select city",
+        "please_select_nationality": "Please select nationality",
+        "please_select_dob": "Please select date of birth",
+        "please_select_gender": "Please select gender"
+    },
+    "dialog_select_photo": {
+        "take_photo": "Take Photo",
+        "choose_from_library": "Choose from library"
+    },
+    "splash": {
+        "ticket": "Ticket ",
+        "at": "At"
+    },
     "onboarding": {
         "skip": "Skip",
         "buyTicketWith": "Buy Ticket with Ease",
@@ -161,7 +185,7 @@
         "full_name": "Full Name",
         "phone_number": "Phone Number",
         "city": "City",
-        "notionality": "Notionality",
+        "nationality": "Nationality",
         "date_of_birth": "Date of Birth",
         "gender": "Gender",
         "edit_profile": "Edit profile",

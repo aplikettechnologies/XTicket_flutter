@@ -1,3 +1,12 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginController extends GetxController {}
+class LoginController extends GetxController {
+  final formKey = GlobalKey<FormState>();
+  bool isPasswordVisibal = false;
+
+  void onPasswordVisibal() {
+    isPasswordVisibal = !isPasswordVisibal;
+    update();
+  }
+}

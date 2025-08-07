@@ -17,18 +17,43 @@ Widget appSelectDate({
       TimeOfDay? pickedTime = await showTimePicker(
         context: context,
         initialTime: TimeOfDay(hour: 7, minute: 15),
-        initialEntryMode: TimePickerEntryMode.input,
+        initialEntryMode: TimePickerEntryMode.dialOnly,
+
         barrierColor: AppColor.barrierColor,
+
         builder: (context, child) {
           return Theme(
             data: Theme.of(context).copyWith(
               colorScheme: ColorScheme.light(
                 primary: AppColor.primaryColor04,
+
                 primaryContainer: AppColor.primaryColor10,
-                onPrimary: Colors.white,
+                onPrimary: AppColor.primaryColor04,
                 onSurface: Colors.black,
               ),
-              textTheme: TextTheme(),
+
+              timePickerTheme: TimePickerThemeData(
+                dialTextStyle: AppStyle.blackReguler12Lato,
+                dialHandColor: AppColor.primaryColor04,
+                dayPeriodColor: AppColor.primaryColor10,
+                dayPeriodBorderSide: BorderSide(color: AppColor.primaryColor04),
+                dayPeriodTextStyle: AppStyle.primary4Medium12Lato,
+                dayPeriodTextColor: AppColor.primaryColor04,
+
+                hourMinuteTextStyle: AppStyle.blackBold16Lato.copyWith(
+                  fontSize: 28.sp,
+                ),
+                dialTextColor: WidgetStateColor.resolveWith((states) {
+                  if (states.contains(WidgetState.selected)) {
+                    return AppColor.white;
+                  }
+                  return AppColor.black;
+                }),
+                hourMinuteShape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  side: BorderSide(color: AppColor.primaryColor04),
+                ),
+              ),
             ),
             child: child!,
           );

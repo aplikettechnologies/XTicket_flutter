@@ -1,4 +1,8 @@
 {
+  "splash": {
+    "ticket": "Ticket ",
+    "at": "At"
+  },
   "onboarding": {
     "skip": "تخطي",
     "buyTicketWith": "اشترِ التذاكر بسهولة",
@@ -157,7 +161,7 @@
     "full_name": "الاسم الكامل",
     "phone_number": "رقم الهاتف",
     "city": "المدينة",
-    "notionality": "الجنسية",
+    "nationality": "الجنسية",
     "date_of_birth": "تاريخ الميلاد",
     "gender": "الجنس",
     "edit_profile": "تعديل الملف الشخصي",

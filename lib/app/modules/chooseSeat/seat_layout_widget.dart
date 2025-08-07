@@ -7,7 +7,7 @@ class SeatLayout extends StatelessWidget {
   final int rows; // vertical lines
   final int columns; // horizontal seats per row
   final double seatSize;
-  final List<int> selectedSeats; // optional: green
+  final List<int> chosenSeats; // optional: green
   final List<int> reservedSeats; // optional: yellow
   final Function(int)? onSeatTap; // 👈 Callback for tap
 
@@ -17,7 +17,7 @@ class SeatLayout extends StatelessWidget {
     required this.rows,
     required this.columns,
     this.seatSize = 12,
-    required this.selectedSeats,
+    required this.chosenSeats,
     required this.reservedSeats,
     this.onSeatTap,
   });
@@ -38,14 +38,14 @@ class SeatLayout extends StatelessWidget {
         spacing: spacing < 2 ? 2 : spacing, // Ensures minimum spacing
         runSpacing: spacing < 2 ? 2 : spacing,
         children: List.generate(seatCount, (index) {
-          bool isSelected = selectedSeats.contains(index);
+          bool isSelected = chosenSeats.contains(index);
           bool isReserved = reservedSeats.contains(index);
 
           Color color = Colors.grey.shade400;
           if (isSelected) {
-            color = AppColor.lightYellow1;
-          } else if (isReserved) {
             color = AppColor.primaryColor04;
+          } else if (isReserved) {
+            color = AppColor.lightYellow1;
           }
 
           return InkWell(

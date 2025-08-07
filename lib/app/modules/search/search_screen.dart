@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:xticket/app/modules/search/search_controller.dart';
+import 'package:xticket/routes/app_routes.dart';
 import 'package:xticket/shared/bottomSheet/search_filter_bottom_sheet.dart';
 import 'package:xticket/shared/dialogs/dialog_select_city.dart';
 import 'package:xticket/shared/utils/app_helper.dart';
@@ -181,7 +182,12 @@ class SearchScreen extends StatelessWidget {
                     itemCount: 15,
                     padding: EdgeInsets.symmetric(horizontal: 16.w),
                     itemBuilder: (context, index) {
-                      return itemSearchList();
+                      return InkWell(
+                        onTap: () {
+                          Get.toNamed(AppRoutes.eventDetails);
+                        },
+                        child: itemSearchList(),
+                      );
                     },
                   ),
                 ),

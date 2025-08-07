@@ -114,7 +114,7 @@ Widget confirmTab({required BuildContext context}) {
                           ),
                           SizedBox(height: 4.h),
                           Text(
-                            'Summer Splash...',
+                            controller.eventTitleTextController.text.toString(),
                             style: AppStyle.neutral4Regular12Manrope,
                           ),
                         ],
@@ -147,7 +147,8 @@ Widget confirmTab({required BuildContext context}) {
                           ),
                           SizedBox(height: 4.h),
                           Text(
-                            'Join us for the annual Summer Splash, the...',
+                            controller.eventDescriptionTextController.text
+                                .toString(),
                             style: AppStyle.neutral4Regular12Manrope,
                           ),
                         ],
@@ -199,7 +200,7 @@ Widget confirmTab({required BuildContext context}) {
                       SizedBox(width: 8.w),
 
                       Text(
-                        'Al Safa Park, Jeddah, Saudi Arabia',
+                        controller.selectLocationTextController.text.toString(),
                         style: AppStyle.primary4Medium14Manrope,
                       ),
                     ],
@@ -249,10 +250,10 @@ Widget confirmTab({required BuildContext context}) {
                           BlendMode.srcIn,
                         ),
                       ),
-                      SizedBox(width: 8.w),
+                      SizedBox(width: 5.w),
 
                       Text(
-                        'Summersplash@gmail.com',
+                        controller.emailTextController.text.toString(),
                         style: AppStyle.primary4Medium14Manrope,
                       ),
                     ],
@@ -276,10 +277,10 @@ Widget confirmTab({required BuildContext context}) {
                           BlendMode.srcIn,
                         ),
                       ),
-                      SizedBox(width: 8.w),
+                      SizedBox(width: 5.w),
 
                       Text(
-                        '123582048',
+                        controller.contactNoTextController.text.toString(),
                         style: AppStyle.primary4Medium14Manrope,
                       ),
                     ],
@@ -288,31 +289,31 @@ Widget confirmTab({required BuildContext context}) {
                 SizedBox(height: 10.h),
 
                 //whatsapp
-                Padding(
-                  padding: EdgeInsets.only(left: 28.w - 12.w),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        AppAssets.icWhatsapp,
-                        height: 20.h,
-                        width: 20.w,
-                        colorFilter: ColorFilter.mode(
-                          AppColor.primaryColor04,
-                          BlendMode.srcIn,
+                if (controller.wpNoTextController.text.isNotEmpty)
+                  Padding(
+                    padding: EdgeInsets.only(left: 28.w - 12.w, bottom: 10.h),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          AppAssets.icWhatsapp,
+                          height: 20.h,
+                          width: 20.w,
+                          colorFilter: ColorFilter.mode(
+                            AppColor.primaryColor04,
+                            BlendMode.srcIn,
+                          ),
                         ),
-                      ),
-                      SizedBox(width: 8.w),
+                        SizedBox(width: 8.w),
 
-                      Text(
-                        '146689776',
-                        style: AppStyle.primary4Medium14Manrope,
-                      ),
-                    ],
+                        Text(
+                          controller.wpNoTextController.text.toString(),
+                          style: AppStyle.primary4Medium14Manrope,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                SizedBox(height: 10.h),
 
                 //price
                 Padding(
@@ -379,11 +380,11 @@ Widget confirmTab({required BuildContext context}) {
                           ),
                           SizedBox(height: 4.h),
                           Text(
-                            '${getTranslation(context, 'create_event.start_time')}: 26/05/2024  06:26 PM',
+                            '${getTranslation(context, 'create_event.start_time')}: 26/05/2024  ${controller.selectStartTime}',
                             style: AppStyle.neutral4Regular12Manrope,
                           ),
                           Text(
-                            '${getTranslation(context, 'create_event.end_time')}: 26/05/2024  11:00 PM',
+                            '${getTranslation(context, 'create_event.end_time')}: 26/05/2024 ${controller.selectEndTime}',
                             style: AppStyle.neutral4Regular12Manrope,
                           ),
                         ],
@@ -481,7 +482,6 @@ Widget confirmTab({required BuildContext context}) {
                 SizedBox(height: 12.h),
                 Padding(
                   padding: EdgeInsets.only(left: 28.w - 12.w),
-
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,

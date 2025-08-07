@@ -21,6 +21,11 @@ class AppAssets {
   static const String icDropdown = "${baseSvg}ic_dropdown.svg";
   static const String icFieldDropdown = "${baseSvg}ic_field_dropdown.svg";
   static const String icCheckBroken = "${baseSvg}ic_check_broken.svg";
+  static String icCamera = '${baseSvg}ic_camera.svg';
+  static String icGallary = '${baseSvg}ic_gallary.svg';
+
+  //Splash
+  static const String icAppLogoBlack = "${baseSvg}ic_app_logo_black.svg";
 
   // Onboarding
   static const String bgOnboarding = "${baseSvg}bg_onboarding.svg";
@@ -34,6 +39,9 @@ class AppAssets {
   static const String icAppLogo = "${baseSvg}ic_app_logo.svg";
   static const String icMail = "${baseSvg}ic_mail.svg";
   static const String icPassword = "${baseSvg}ic_password.svg";
+  static const String icPasswordVisible = "${baseSvg}ic_password_visible.svg";
+  static const String icPasswordInvisible =
+      "${baseSvg}ic_password_invisible.svg";
   static const String icUser = "${baseSvg}ic_user.svg";
   static const String icGoogle = "${baseSvg}ic_google.svg";
   static const String icFacebook = "${baseSvg}ic_facebook.svg";

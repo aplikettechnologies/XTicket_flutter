@@ -1,10 +1,15 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProfileController extends GetxController {
   String? selectCity;
-  String? selectNotionality;
+  String? selectNationality;
   String? selectBirthDay;
   String? selectGender;
+  TextEditingController nameTextController = TextEditingController();
+  TextEditingController phoneNoTextController = TextEditingController();
+
+  final formKey = GlobalKey<FormState>();
 
   // Set selected city
   void updateCity(String city) {
@@ -13,8 +18,8 @@ class ProfileController extends GetxController {
   }
 
   // Set selected nationality
-  void updateNotionality(String notionality) {
-    selectNotionality = notionality;
+  void updateNationality(String nationality) {
+    selectNationality = nationality;
     update();
   }
 

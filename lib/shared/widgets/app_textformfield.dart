@@ -138,7 +138,7 @@ Widget appTextFormField({
               focusedErrorBorder ??
               OutlineInputBorder(
                 borderRadius: BorderRadius.circular(100.r),
-                borderSide: BorderSide.none,
+                borderSide: BorderSide(color: AppColor.red),
               ),
         ),
       ),
