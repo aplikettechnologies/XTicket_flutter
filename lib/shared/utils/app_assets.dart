@@ -118,4 +118,11 @@ class AppAssets {
   static const String icThreeDot = "${baseSvg}ic_three_dot.svg";
   static const String icEdit = "${baseSvg}ic_edit.svg";
   static const String icDelete = "${baseSvg}ic_delete.svg";
+
+  //No Internet
+  static const String icNoInternet = "${baseSvg}no_internet.svg";
+
+  //Payment Methods
+  static const String icGooglePay = "${baseSvg}ic_google_pay.svg";
+  static const String icApplePay = "${baseSvg}ic_apple_pay.svg";
 }

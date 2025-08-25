@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "988277225188",
+    "project_id": "eventatapp-8350c",
+    "storage_bucket": "eventatapp-8350c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988277225188:android:9c9737d4d3d5fa53085ef1",
+        "android_client_info": {
+          "package_name": "com.amjad.eventNew"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "988277225188-nhk98lpcpci5glqop7e5n9a5dasjkguj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amjad.eventNew",
+            "certificate_hash": "02049aa9f13aa3a72881739dafcb0717e237f92a"
+          }
+        },
+        {
+          "client_id": "988277225188-s46qfks5j878fua73bm5ptd0hhlte778.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDJarN7VR8WjcFHYqgJFywoWi02BY6EEM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "988277225188-s46qfks5j878fua73bm5ptd0hhlte778.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "988277225188-64ekclj9mv11plibl5iub07rkveqqfnj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.amjad.eventNew"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988277225188:android:86bf98ff4b6d5649085ef1",
+        "android_client_info": {
+          "package_name": "com.amjad.eventNewScanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "988277225188-s46qfks5j878fua73bm5ptd0hhlte778.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDJarN7VR8WjcFHYqgJFywoWi02BY6EEM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "988277225188-s46qfks5j878fua73bm5ptd0hhlte778.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "988277225188-64ekclj9mv11plibl5iub07rkveqqfnj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.amjad.eventNew"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

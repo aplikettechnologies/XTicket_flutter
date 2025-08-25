@@ -153,35 +153,49 @@ class LoginScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         //Google
-                        Container(
-                          height: 67.h,
-                          width: 67.h,
-                          padding: EdgeInsets.all(16.h),
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(color: AppColor.neutralColor07),
-                          ),
-                          child: SvgPicture.asset(
-                            AppAssets.icGoogle,
-                            height: 36.h,
-                            width: 36.h,
+                        InkWell(
+                          highlightColor: Colors.transparent,
+                          splashColor: Colors.transparent,
+                          onTap: () async => controller.continueWithGoogle(),
+                          child: Container(
+                            height: 67.h,
+                            width: 67.h,
+                            padding: EdgeInsets.all(16.h),
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: AppColor.neutralColor07,
+                              ),
+                            ),
+                            child: SvgPicture.asset(
+                              AppAssets.icGoogle,
+                              height: 36.h,
+                              width: 36.h,
+                            ),
                           ),
                         ),
                         SizedBox(width: 20.w),
 
                         //facebook
-                        Container(
-                          height: 67.h,
-                          width: 67.h,
-                          padding: EdgeInsets.all(16.h),
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(color: AppColor.neutralColor07),
-                          ),
-                          child: SvgPicture.asset(
-                            AppAssets.icFacebook,
-                            height: 36.h,
-                            width: 36.h,
+                        InkWell(
+                          highlightColor: Colors.transparent,
+                          splashColor: Colors.transparent,
+                          onTap: () async {},
+                          child: Container(
+                            height: 67.h,
+                            width: 67.h,
+                            padding: EdgeInsets.all(16.h),
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: AppColor.neutralColor07,
+                              ),
+                            ),
+                            child: SvgPicture.asset(
+                              AppAssets.icFacebook,
+                              height: 36.h,
+                              width: 36.h,
+                            ),
                           ),
                         ),
                       ],

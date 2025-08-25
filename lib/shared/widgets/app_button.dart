@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:xticket/shared/localization/localization_const.dart';
 import 'package:xticket/shared/utils/app_style.dart';
 
 import '../utils/app_color.dart';
@@ -13,7 +14,7 @@ Widget appButton({
   TextStyle? buttonLoadingtextStyle,
   double? width,
   double? height,
-
+  String? loaderText,
   double? borderRadius,
   bool isLoading = false,
 }) {
@@ -41,9 +42,12 @@ Widget appButton({
         },
         child:
             isLoading
-                ? _loadingPleaseWaitWidget(
+                ? loadingPleaseWaitWidget(
                   buttonLoadingtextStyle:
                       buttonLoadingtextStyle ?? AppStyle.buttonLoadingTextStyle,
+                  text:
+                      loaderText ??
+                      getTranslation(context, "onboarding.please_wait"),
                 )
                 : Text(
                   text,
@@ -55,21 +59,28 @@ Widget appButton({
   );
 }
 
-Widget _loadingPleaseWaitWidget({TextStyle? buttonLoadingtextStyle}) {
+Widget loadingPleaseWaitWidget({
+  TextStyle? buttonLoadingtextStyle,
+  required String text,
+  double? h,
+  double? w,
+}) {
   return Row(
     key: const ValueKey('loadingWidget'),
     mainAxisAlignment: MainAxisAlignment.center,
+    crossAxisAlignment: CrossAxisAlignment.center,
     children: [
       SizedBox(
-        width: 18.sp,
-        height: 18.sp,
+        width: w ?? 18.sp,
+        height: h ?? 18.sp,
         child: const CircularProgressIndicator(
           strokeWidth: 2,
           color: Colors.white,
+          strokeCap: StrokeCap.round,
         ),
       ),
       SizedBox(width: 8.w),
-      Text("Please wait...", style: buttonLoadingtextStyle),
+      Text(text, style: buttonLoadingtextStyle),
     ],
   );
 }

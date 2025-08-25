@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:xticket/app/modules/chooseSeat/choose_seat_controller.dart';
 import 'package:xticket/app/modules/chooseSeat/seat_layout_widget.dart';
-import 'package:xticket/app/modules/eventPayment/event_payment_bottomsheet_widget.dart';
 import 'package:xticket/shared/utils/app_color.dart';
 import 'package:xticket/shared/utils/app_style.dart';
 import 'package:xticket/shared/widgets/app_button.dart';
@@ -12,6 +11,7 @@ import 'package:xticket/shared/widgets/skeletonizer_container.dart';
 import '../../../shared/localization/localization_const.dart';
 import '../../../shared/widgets/app_appbar.dart';
 import '../../../shared/widgets/app_image_network.dart';
+import '../eventPayment/event_payment_bottomsheet_widget.dart';
 
 class ChooseSeatScreen extends StatelessWidget {
   const ChooseSeatScreen({super.key});
@@ -39,7 +39,7 @@ class ChooseSeatScreen extends StatelessWidget {
                     children: [
                       Container(
                         height: 50.h,
-                        width: 50.w,  
+                        width: 50.w,
                         padding: EdgeInsets.all(9.w),
                         decoration: BoxDecoration(
                           color: AppColor.neutralColor09,
@@ -142,7 +142,7 @@ class ChooseSeatScreen extends StatelessWidget {
                       context,
                       "choose_seat.continue_to_payment",
                     ),
-                    onPressed: () {
+                    onPressed: () async {
                       Get.bottomSheet(
                         eventPaymentBottomSheetWidget(context: context),
                         isScrollControlled: true,

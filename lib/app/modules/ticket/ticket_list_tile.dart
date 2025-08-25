@@ -39,7 +39,7 @@ Widget ticketListTile({required BuildContext context}) {
         builder: (context) {
           return Dialog(
             backgroundColor: Colors.transparent,
-            insetPadding: const EdgeInsets.all(16),
+            insetPadding: EdgeInsets.all(16.sp),
             child: TicketPopupCard(),
           );
         },

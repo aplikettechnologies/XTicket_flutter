@@ -5,7 +5,8 @@
         "quickEasyChickIn": "Quick & Easy Chick-In",
         "discoverEventsTailoredForYou": "Discover Events Tailored for you",
         "next": "Next",
-        "getstarted": "Get’s Started"
+        "getstarted": "Get’s Started",
+        "please_wait": "Please wait..."
     },
     "login": {
         "welcome": "Welcome",
@@ -146,7 +147,8 @@
         "available": "Available",
         "Selected": "Selected",
         "chosen": "Chosen",
-        "continue_to_payment": "Continue to payment"
+        "continue_to_payment": "Continue to payment",
+        "payment_proccessing": "Payment Proccessing..."
     },
     "payment_bottomsheet": {
         "event_payment": "Event Payment",
@@ -207,5 +209,13 @@
         "select_date": "Select date",
         "reset": "Reset",
         "apply_filters": "Apply filters"
+    },
+    "no_internet": {
+        "no_internet_connection": "No Internet Connection",
+        "retry": "Retry",
+        "failed": "Failed",
+        "success": "Success",
+        "some_thing_want_wrong_please_try_sometime_letter": "Something wan't wrong please try letter",
+        "retrying": "retrying..."
     }
 }

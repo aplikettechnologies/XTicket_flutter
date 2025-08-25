@@ -1,8 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xticket/app/modules/event/event_screen.dart';
 import 'package:xticket/app/modules/home/home_screen.dart';
 import 'package:xticket/app/modules/profile/profile_screen.dart';
+import 'package:xticket/app/modules/ticket/ticket_controller.dart';
 import 'package:xticket/app/modules/ticket/ticket_screen.dart';
 import 'package:xticket/shared/localization/localization_const.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
@@ -13,8 +16,8 @@ import '../nearMe/nearme_screen.dart';
 class DashboardController extends GetxController {
   RxInt currentIndex = 0.obs;
 
-  // // Iconify
-  final List<String> bottomNavIcons = [
+  // Icon labels (lazy evaluated with translation)
+  List<String> get bottomNavIcons => [
     getTranslation(Get.context!, "dashboard.home"),
     getTranslation(Get.context!, "dashboard.myTicket"),
     getTranslation(Get.context!, "dashboard.events"),
@@ -38,7 +41,7 @@ class DashboardController extends GetxController {
     ProfileScreen(),
   ];
 
-  setTabIndex(int index) {
+  void setTabIndex(int index) {
     currentIndex.value = index;
     update();
   }
@@ -48,5 +51,19 @@ class DashboardController extends GetxController {
     await Get.updateLocale(newLocale);
     AppConfiguration.languageCode = languageCode;
     await CurrentLocalStorage.setLanguageCode(languageCode: languageCode);
+  }
+
+  @override
+  Future<void> onInit() async {
+    super.onInit();
+    // 👇 Read index from arguments if passed
+    final args = Get.arguments;
+    log("args==> $args");
+    if (args is Map && args['openIndex'] is int) {
+      setTabIndex(args['openIndex'] as int);
+      if (args['openIndex'] as int == 1) {
+        await Get.find<TicketController>().getTicket();
+      }
+    }
   }
 }

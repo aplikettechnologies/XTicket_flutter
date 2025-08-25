@@ -7,6 +7,7 @@ import 'package:xticket/shared/utils/app_style.dart';
 
 PreferredSizeWidget appAppbar({
   required String title,
+  TextStyle? appBarTextStyle,
   Color? bgColor,
   void Function()? backOnPressed,
   Color? navigationBarColor,
@@ -46,13 +47,8 @@ PreferredSizeWidget appAppbar({
           Padding(
             padding: EdgeInsets.only(left: 20.w, right: 20.w),
             child: Icon(Icons.arrow_back, size: 24.sp),
-            //  SvgPicture.asset(
-            //   AppAssets.icBack,
-            //   height: 24.h,
-            //   width: 24.w,
-            // ),
           ),
     ),
-    title: Text(title, style: AppStyle.appbarTitleTextStyle),
+    title: Text(title, style: appBarTextStyle ?? AppStyle.appbarTitleTextStyle),
   );
 }

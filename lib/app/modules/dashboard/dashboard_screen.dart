@@ -74,8 +74,10 @@ class DashboardScreen extends StatelessWidget {
             ],
           ),
           drawer: customerDrawerWidget(context: context),
-          body:
-              controller.bottomNavigationScreens[controller.currentIndex.value],
+          body: IndexedStack(
+            index: controller.currentIndex.value,
+            children: controller.bottomNavigationScreens,
+          ),
           bottomNavigationBar: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.end,

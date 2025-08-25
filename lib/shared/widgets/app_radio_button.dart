@@ -6,6 +6,8 @@ import '../utils/app_color.dart';
 Widget appRadioButton({
   required bool value,
   required ValueChanged<bool> onChanged,
+  double? h,
+  double? w,
 }) {
   return InkWell(
     highlightColor: Colors.transparent,
@@ -14,8 +16,8 @@ Widget appRadioButton({
       onChanged(!value);
     },
     child: Container(
-      width: 16.w,
-      height: 16.h,
+      width: h ?? 16.w,
+      height: w ?? 16.h,
       alignment: Alignment.center,
       decoration: BoxDecoration(
         shape: BoxShape.circle,

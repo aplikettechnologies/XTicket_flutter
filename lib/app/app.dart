@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:xticket/routes/app_routes.dart';
 import 'package:xticket/shared/localization/localization.dart';
 import 'package:xticket/shared/utils/app_color.dart';
 import '../routes/app_pages.dart';
-import '../routes/app_routes.dart';
 import '../shared/utils/app_configuration.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+  final String initialRoute;
+  const MyApp({super.key, required this.initialRoute});
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
           highlightColor: Colors.transparent,
           scaffoldBackgroundColor: AppColor.white,
         ),
-        initialRoute: AppRoutes.home,
+        initialRoute: AppRoutes.login,
         getPages: AppPages.routes,
         supportedLocales: [Locale('en'), Locale('ar')],
         localizationsDelegates: [

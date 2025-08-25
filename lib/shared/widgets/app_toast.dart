@@ -2,22 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:xticket/shared/utils/app_assets.dart';
 
 import '../utils/app_color.dart';
 import '../utils/app_style.dart';
 
 class AppToast {
-  static showSuccess({
+  /// Show success toast
+  static void showSuccess({
     required String title,
     required String subTitle,
-    required BuildContext context,
     String? prefixIcon,
   }) {
+    final context = Get.overlayContext;
+    if (context == null) return;
+
     showToastWidget(
       Container(
         width: double.infinity,
-
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
@@ -95,56 +98,59 @@ class AppToast {
     );
   }
 
-  // static showFailure({
-  //   required String msg,
-  //   required BuildContext context,
-  //   String? prefixIcon,
-  // }) {
-  //   showToastWidget(
-  //     LayoutBuilder(
-  //       builder: (context, c) {
-  //         return Container(
-  //           margin: EdgeInsets.only(right: 16.w, left: 16.w, top: 24.h),
-  //           padding: EdgeInsets.all(12.w),
-  //           decoration: BoxDecoration(
-  //             color: AppColor.primaryRed600,
-  //             borderRadius: BorderRadius.circular(8.r),
-  //           ),
-  //           child: Row(
-  //             mainAxisAlignment: MainAxisAlignment.start,
-  //             crossAxisAlignment: CrossAxisAlignment.center,
-  //             children: [
-  //               SvgPicture.asset(
-  //                 prefixIcon ?? AppAssests.icToastError,
-  //                 height: 24.h,
-  //                 width: 24.w,
-  //                 colorFilter: ColorFilter.mode(
-  //                   AppColor.white,
-  //                   BlendMode.srcIn,
-  //                 ),
-  //               ),
-  //               SizedBox(width: 4.w),
-  //               Expanded(
-  //                 child: Text(
-  //                   msg,
-  //                   style: AppStyle.whiteSize16RobotoRegular,
-  //                   overflow: TextOverflow.visible,
-  //                   maxLines: 3,
-  //                   softWrap: true,
-  //                 ),
-  //               ),
-  //             ],
-  //           ),
-  //         );
-  //       },
-  //     ),
-  //     context: context,
-  //     duration: Duration(seconds: 5),
-  //     animation: StyledToastAnimation.slideFromTop,
-  //     reverseAnimation: StyledToastAnimation.slideFromTop,
-  //     animDuration: Duration(milliseconds: 350),
-  //     position: StyledToastPosition.top,
-  //     isIgnoring: false,
-  //   );
-  // }
+  /// Show failure toast
+  static void showFailure({required String msg, String? prefixIcon}) {
+    final context = Get.overlayContext;
+    if (context == null) return;
+
+    showToastWidget(
+      LayoutBuilder(
+        builder: (context, c) {
+          return Container(
+            margin: EdgeInsets.only(right: 16.w, left: 16.w, top: 24.h),
+            padding: EdgeInsets.all(12.w),
+            decoration: BoxDecoration(
+              color: AppColor.red,
+              borderRadius: BorderRadius.circular(8.r),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SvgPicture.asset(
+                  prefixIcon ?? AppAssets.icErrorGreen,
+                  height: 24.h,
+                  width: 24.w,
+                  colorFilter: ColorFilter.mode(
+                    AppColor.white,
+                    BlendMode.srcIn,
+                  ),
+                ),
+                SizedBox(width: 4.w),
+                Expanded(
+                  child: Text(
+                    msg,
+                    style: AppStyle.whiteMedium14Lato.copyWith(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 16.sp,
+                    ),
+                    overflow: TextOverflow.visible,
+                    maxLines: 3,
+                    softWrap: true,
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+      ),
+      context: context,
+      duration: Duration(seconds: 5),
+      animation: StyledToastAnimation.slideFromTop,
+      reverseAnimation: StyledToastAnimation.slideFromTop,
+      animDuration: Duration(milliseconds: 350),
+      position: StyledToastPosition.top,
+      isIgnoring: false,
+    );
+  }
 }
