@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import '../../../../shared/flutter_stripe_payment/stripe_payment_services.dart';
 
@@ -27,8 +28,7 @@ class PaymentMethodsController extends GetxController {
       PaymentStatus paymentStatus = await StripePaymentServices.makePayment(
         amount: amount,
         currency: "USD",
-        secretKey:
-            "sk_test_51QHiW9P5lYP89dl21hzzLdMvVBZZxOemttay6DmzDcvxlYYJgsWbcCRruPsEjYfQNketnT12Hbe0OBi0cY3cwPDa00IjANn1kX",
+        secretKey: dotenv.env['STRIPE_SECRET_KEY'] ?? '',
         merchantDisplayName: "Ikay",
       );
 

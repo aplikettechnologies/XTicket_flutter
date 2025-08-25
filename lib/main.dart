@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:xticket/app/app.dart';
@@ -27,6 +28,7 @@ Future<String> getInitData() async {
   await getCurrentLanguage();
 
   final initialRoute = await AppConfigurationService.getInitialRoute();
+  await dotenv.load(fileName: ".env");
 
   // Register global controllers
   Get.put<NoInternetController>(NoInternetController(), permanent: true);
