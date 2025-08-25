@@ -28,7 +28,7 @@ class PaymentMethodsController extends GetxController {
       PaymentStatus paymentStatus = await StripePaymentServices.makePayment(
         amount: amount,
         currency: "USD",
-        secretKey: dotenv.env['STRIPE_SECRET_KEY'] ?? '',
+        secretKey: '',
         merchantDisplayName: "Ikay",
       );
 
